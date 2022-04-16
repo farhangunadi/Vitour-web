@@ -12,24 +12,39 @@
 }
 
 .carousel-caption {
-    top: 30%;
-    left: 10%;
-    bottom: auto;
-    text-align: left;
-    width: 50%;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    top: 35%;
 }
 
 .carousel-caption h2 {
     margin-bottom: 20px;
     font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    letter-spacing: -1.76555px;
+    text-align: center;
+    line-height: 100%;
+}
+
+.carousel-caption p {
+    text-align: center;
 }
 
 .carousel-caption .button1 {
     font-size: 15px;
     width: 200px;
-    height: 50px;
-    text-align: left;
+    height: 60px;
+    text-align: center;
     margin-top: 30px;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0px 8.05871px 20px rgba(60, 106, 255, 0.72);
 }
 
 .carousel-caption i {
@@ -44,7 +59,7 @@
 }
 
 .overlay {
-    position: fixed;
+    position: relative;
     /* Sit on top of the page content */
     display: block;
     /* Hidden by default */
@@ -64,14 +79,12 @@
 @media screen and (max-width: 780px) {
     .carousel-caption {
         width: 70%;
-        left: 50%;
-        top: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
     .carousel-caption h2 {
         margin-bottom: 20px;
-        font-size: 20px;
+        font-size: 30px;
         text-align: center;
     }
     .carousel-caption p {
@@ -81,11 +94,11 @@
         display: none;
     }
     .carousel-caption .button1 {
-        font-size: 0px;
+        font-size: auto;
         width: 180px;
         height: 50px;
         margin-top: 20px;
-        margin-left: 150px;
+        margin-left: -15px;
         justify-items: center;
     }
     .carousel-caption .textButton1 {
@@ -103,7 +116,8 @@
 @media screen and (max-width: 415px) {
     .carousel-caption h2 {
         margin-bottom: 20px;
-        font-size: 13px;
+        font-size: 15px;
         text-align: center;
+        letter-spacing: 0px;
     }
 }

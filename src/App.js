@@ -6,7 +6,7 @@ import VirtualTour from "./components/VirtualTour";
 import About from "./components/About";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
+
 
 function App() {
     return ( 
@@ -18,7 +18,7 @@ function App() {
              <Route path="/virtualtour" element={<VirtualTour/>}/>
              <Route path="/about" element={<About/>}/>
          </Routes>
-         <Header />
+         <Beranda />
     </Router>
     
     );

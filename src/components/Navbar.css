@@ -13,10 +13,10 @@
     color: #0133D4;
 }
 
-.logo {
-    font-size: 30px;
+.img-wrapper {
+    width: 20px;
+    height: auto;
     margin-left: 30px;
-    font-weight: bold;
 }
 
 .nav-links {
@@ -27,8 +27,8 @@
     margin-right: 40px;
 }
 
-.beranda,
-.rekomendasi,
+.Home,
+.Store,
 .vTour,
 .about {
     text-decoration: none;
@@ -39,8 +39,8 @@
     cursor: pointer;
 }
 
-.beranda :hover,
-.rekomendasi :hover,
+.Home :hover,
+.Store :hover,
 .vTour :hover,
 .about :hover {
     color: #005784;
@@ -70,8 +70,8 @@
         transition: all 0.5s ease-out;
         width: 100%;
     }
-    .beranda,
-    .rekomendasi,
+    .Home,
+    .Store,
     .vTour,
     .about {
         color: #0133D4;
@@ -80,8 +80,8 @@
         width: 100%;
         transition: all 0.5s ease;
     }
-    .beranda :hover,
-    .rekomendasi :hover,
+    .Home :hover,
+    .Store :hover,
     .vTour :hover,
     .about :hover {
         background-color: #0133D4;
