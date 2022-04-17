@@ -9,7 +9,7 @@ function Beranda() {
     <>
     <Header />
     <Body />
-    {/* <Footer /> */}
+    <Footer />
     </>
   )
 }

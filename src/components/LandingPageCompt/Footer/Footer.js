@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './footer.css';
+import { FaInstagram,FaLinkedinIn,FaFacebookSquare,FaYoutube,FaTwitter } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -13,13 +14,13 @@ export const Footer = () => {
                <li><a href="/about">About</a></li>
             </ul>
             <ul className="flex-row">
-                <i className="fas fa-youtube"></i>
-                <i className="fas fa-twitter"></i>
-                <i className="fas fa-instagram"></i>
-                <i className="fas fa-facebook"></i>
-                <i className="fas fa-linkedin"></i>
+                <FaInstagram className='iconIG' />
+                <FaLinkedinIn className='iconLI'/>
+                <FaFacebookSquare className='iconFB'/>
+                <FaYoutube className='iconYT'/>
+                <FaTwitter className='iconTT'/>
             </ul>
-            <p>&copy: 2022 Vitour</p>
+            <p className='copyright'>Copyright &#169; 2022. All rights reserved.</p>
         </div>
     </>
   )
