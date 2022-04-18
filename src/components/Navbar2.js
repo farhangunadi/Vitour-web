@@ -9,7 +9,7 @@ function Navbar2() {
                 <img src="./../assets/images/logo 1.png" alt="" className='logo'/>
             </div>
             <ul className={isMobile ? "nav-links-mobile" : "nav-links"} onClick={() => setIsMobile(false)}>
-                <Link to="/Home" className="Home">
+                <Link to="/" className="Home">
                     <li>Home</li>
                 </Link>
                 <Link to="/Store" className="Store">

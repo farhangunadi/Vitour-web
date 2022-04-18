@@ -1,0 +1,8 @@
+.wrap,
+.containerVT {
+    background-color: rgb(230, 238, 255);
+}
+
+.city p {
+    display: none;
+}
