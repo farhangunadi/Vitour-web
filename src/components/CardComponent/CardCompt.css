@@ -50,7 +50,11 @@
     margin-bottom: 1rem;
 }
 
-.card-btn {
+.buttonExplore {
+    text-decoration: none;
+}
+
+.buttonExplore .card-btn {
     display: block;
     width: 100%;
     padding: 1rem;
@@ -65,7 +69,7 @@
     letter-spacing: 0.1rem;
 }
 
-.card-btn:hover,
-.card-btn:active {
+.buttonExplore .card-btn:hover,
+.buttonExplore .card-btn:active {
     background-color: #c3cffc;
 }

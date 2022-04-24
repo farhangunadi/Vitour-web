@@ -2,6 +2,7 @@ import React from 'react';
 import './CardCompt.css';
 import Image from './default-2.jpg';
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const CardCompt = (props) => {
   return (
@@ -12,7 +13,9 @@ export const CardCompt = (props) => {
                <p className="card-text">
                 <FaMapMarkerAlt /> {props.text}
                </p>
-               <button className="card-btn">Explore Now</button>
+               <Link to={props.to} className="buttonExplore">
+                  <button className="card-btn">Explore Now</button>
+               </Link>
            </div>
        </div>   
   )
@@ -21,7 +24,8 @@ export const CardCompt = (props) => {
 CardCompt.defaultProps = {
   header : 'Lorem Ipsum',
   text : 'Lorem Ipsum',
-  image : Image
+  image : Image,
+  to : '/'
 
 }
 

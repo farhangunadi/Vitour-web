@@ -6,6 +6,8 @@ import VirtualTour from "./components/Virtual Tour/VirtualTour";
 import About from "./components/About";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Bandung from './components/Virtual Tour/City/Bandung/bandung';
+import Punclut from './components/Virtual Tour/City/Bandung/Wisata/Punclut';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
              <Route path="/Rekomendasi" element={<Rekomendasi/>}/>
              <Route path="/virtualtour" element={<VirtualTour/>}/>
              <Route path="/about" element={<About/>}/>
+             <Route path="/virtualtour/bandung" element={<Bandung />}/>
+             <Route path="/virtualtour/bandung/punclut" element={<Punclut />}/>
          </Routes>
          {/* <Beranda /> */}
     </Router>

@@ -15,7 +15,7 @@ function VirtualTour() {
         </div>
         <Row>
           <Col>
-            <CardCompt className="city" header="Bandung" image={bandungIMG} text="Indonesia"/>
+            <CardCompt className="city" header="Bandung" image={bandungIMG} text="Indonesia" to={"/virtualtour/bandung"}/>
           </Col>
           <Col>
             <CardCompt header="Jakarta" image={jakartaIMG} text="Indonesia"/>
