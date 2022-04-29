@@ -22,6 +22,7 @@ function App() {
              <Route path="/virtualtour/bandung" element={<Bandung />}/>
              <Route path="/virtualtour/bandung/punclut" element={<Punclut />}/>
          </Routes>
+         
          {/* <Beranda /> */}
     </Router>
     
