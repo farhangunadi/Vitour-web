@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Row, Col, Carousel} from 'react-bootstrap';
 import CardCompt from '../../../CardComponent/CardCompt';
+import CardCompt2 from '../../../CardComponent/CardCompt2';
 import CarouselCompt from '../../../CarouselCompt/CarouselCompt';
 import bdgIMG from './bdg1.jpg';
 import './bandung.css'
@@ -33,6 +34,18 @@ function bandung() {
                 </Col>
                 <Col>
                     <CardCompt header="Tegalega" />
+                </Col>
+            </Row>
+            <h2>Informasi Daerah</h2>
+            <Row>
+                <Col>
+                    <CardCompt2 header="Kuliner"  to={"/virtualtour/bandung/punclut"}/>
+                </Col>
+                <Col>
+                    <CardCompt2 header="Toko Merch"/>
+                </Col>
+                <Col>
+                    <CardCompt2 header="Budaya"/>
                 </Col>
             </Row>
         </div>
