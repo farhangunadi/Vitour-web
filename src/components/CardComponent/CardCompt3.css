@@ -1,0 +1,56 @@
+.card3-container {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.card3-container:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+}
+
+.card3-container .deskripsi {
+    padding: 40px;
+}
+
+.card3-container .deskripsi h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.card3-container .deskripsi p {
+    font-size: 20px;
+}
+
+.card3-container img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.RestoNavigation {
+    text-decoration: none;
+    margin: 0;
+}
+
+.RestoNavigation .card-btn {
+    display: block;
+    width: 30%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #3363ff;
+    background-color: #d8e0fd;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}

@@ -18,10 +18,10 @@ function VirtualTour() {
             <CardCompt className="city" header="Bandung" image={bandungIMG} text="Indonesia" to={"/virtualtour/bandung"}/>
           </Col>
           <Col>
-            <CardCompt header="Jakarta" image={jakartaIMG} text="Indonesia"/>
+            <CardCompt header="Jakarta" image={jakartaIMG} text="Indonesia" to={"/virtualtour/jakarta"}/>
           </Col>
           <Col>
-            <CardCompt header="Purwakarta" image={pwkIMG} text="Indonesia"/>
+            <CardCompt header="Purwakarta" image={pwkIMG} text="Indonesia" to={"/virtualtour/purwakarta"}/>
           </Col>
         </Row>
       </Container>

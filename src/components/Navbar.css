@@ -11,12 +11,20 @@
     height: 75px;
     background-color: white;
     color: #0133D4;
+    padding: 20px;
 }
 
-.img-wrapper {
-    width: 20px;
+.navbar .img-wrapper {
+    width: 200px;
     height: auto;
     margin-left: 30px;
+    justify-content: center;
+}
+
+.navbar .img-wrapper img {
+    width: 50px;
+    height: auto;
+    justify-content: center;
 }
 
 .nav-links {

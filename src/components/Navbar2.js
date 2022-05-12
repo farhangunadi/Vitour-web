@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import Logo from "./../assets/images/logo 1.png"
 import "./Navbar.css";
 function Navbar2() {
     const [isMobile, setIsMobile] = useState(false);
     return (
         <nav className="navbar">
             <div className="img-wrapper">
-                <img src="./../assets/images/logo 1.png" alt="" className='logo'/>
+                <img src={Logo} alt="" className='logo'/>
             </div>
             <ul className={isMobile ? "nav-links-mobile" : "nav-links"} onClick={() => setIsMobile(false)}>
                 <Link to="/" className="Home">

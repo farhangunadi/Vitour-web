@@ -2,14 +2,13 @@ import React from 'react';
 import {Container, Row, Col, Carousel} from 'react-bootstrap';
 import CardCompt from '../../../CardComponent/CardCompt';
 import CardCompt2 from '../../../CardComponent/CardCompt2';
-import CarouselCompt from '../../../CarouselCompt/CarouselCompt';
 import bdgIMG from './bdg1.jpg';
-import './bandung.css'
+import './../city.css';
 
 function bandung() {
   return (
     <>
-        <Container className="container-bdg">
+        <Container className="container-city">
         <div className="title">
             <h1>Bandung </h1>
             <h2>Jawa Barat</h2>
@@ -39,13 +38,13 @@ function bandung() {
             <h2>Informasi Daerah</h2>
             <Row>
                 <Col>
-                    <CardCompt2 header="Kuliner"  to={"/virtualtour/bandung/punclut"}/>
+                    <CardCompt2 header="Kuliner"  to={"/virtualtour/bandung/kuliner"}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Toko Merch"/>
+                    <CardCompt2 header="Toko Merch" to={"/virtualtour/bandung/merchstore"}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Budaya"/>
+                    <CardCompt2 header="Budaya" to={"/virtualtour/bandung/budaya"}/>
                 </Col>
             </Row>
         </div>

@@ -77,11 +77,11 @@
 }
 
 @media screen and (max-width: 780px) {
-    .carousel-caption {
+    /* .carousel-caption {
         width: 70%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-    }
+    } */
     .carousel-caption h2 {
         margin-bottom: 20px;
         font-size: 30px;

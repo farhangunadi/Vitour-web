@@ -1,0 +1,29 @@
+.container-city .title {
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    display: block;
+    text-align: center;
+}
+
+.container-city .img-wrap {
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+}
+
+.container-city .img-wrap img {
+    width: 70%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container-city .description {
+    text-align: justify;
+}
+
+.container-city .content h2 {
+    margin: 10px 0;
+    font-weight: 700;
+}

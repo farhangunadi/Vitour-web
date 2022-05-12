@@ -65,14 +65,34 @@
     padding-top: 11px
 }
 
-.title {
+.title,
+.aboutus {
     margin-top: 50px;
     margin-bottom: 30px;
 }
 
-.title h2 {
+.title h2,
+.aboutus h2 {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
+}
+
+.aboutus p {
+    text-align: justify;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.aboutus .img-wrap {
+    margin: 0 auto;
+    display: block;
+}
+
+.aboutus .img-wrap img {
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    height: auto;
 }
 
 .grid {
