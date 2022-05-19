@@ -4,6 +4,13 @@ import CardCompt from '../../../CardComponent/CardCompt';
 import CardCompt2 from '../../../CardComponent/CardCompt2';
 import jktIMG from './jkt.jpg';
 import './../city.css';
+import KulinerImg from './../../../../assets/images/kuliner.jpg';
+import MerchImg from './../../../../assets/images/merch.jpg';
+import BudayaImg from './../../../../assets/images/budaya.png';
+import Monas from './Foto/monas.jpg';
+import Ancol from './Foto/ancol.jpeg';
+import BlokM from './Foto/blokm.jpg';
+import GBK from './Foto/gbk.jpg'
 
 function jakarta() {
   return (
@@ -23,28 +30,28 @@ function jakarta() {
             <h2>Tempat Wisata</h2>
             <Row>
                 <Col>
-                    <CardCompt header="Monas"  to={""}/>
+                    <CardCompt header="Monas"  to="/virtualtour/jakarta/monas" image={Monas} />
                 </Col>
                 <Col>
-                    <CardCompt header="Ancol"/>
+                    <CardCompt header="Ancol" image={Ancol} />
                 </Col>
                 <Col>
-                    <CardCompt header="Blok M"/>
+                    <CardCompt header="Blok M" image={BlokM} />
                 </Col>
                 <Col>
-                    <CardCompt header="Stadion GBK" />
+                    <CardCompt header="Stadion GBK" image={GBK} />
                 </Col>
             </Row>
             <h2>Informasi Daerah</h2>
             <Row>
                 <Col>
-                    <CardCompt2 header="Kuliner"  to={"/virtualtour/jakarta/kuliner"}/>
+                    <CardCompt2 header="Kuliner"  to={"/virtualtour/jakarta/kuliner"} image={KulinerImg}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Toko Merch" to={"/virtualtour/jakarta/merchstore"}/>
+                    <CardCompt2 header="Toko Merch" to={"/virtualtour/jakarta/merchstore"} image={MerchImg}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Budaya" to={"/virtualtour/jakarta/budaya"}/>
+                    <CardCompt2 header="Budaya" to={"/virtualtour/jakarta/budaya"} image={BudayaImg}/>
                 </Col>
             </Row>
         </div>

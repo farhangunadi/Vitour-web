@@ -44,6 +44,9 @@
     font-weight: 400;
     border-radius: 40px;
     position: relative;
+    background-color: #3d8bff;
+    color: white;
+    border: none;
     box-shadow: 0px 8.05871px 20px rgba(60, 106, 255, 0.72);
 }
 

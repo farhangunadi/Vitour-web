@@ -14,6 +14,9 @@ import { Kuliner } from './components/Info Pariwisata/Kuliner/Kuliner';
 import Budaya from './components/Info Pariwisata/Budaya/Budaya';
 import { Merch } from './components/Info Pariwisata/Toko Merch/Merch';
 import { ItemPage } from './components/Recommendation/ItemPage';
+import KulinerBDG from './components/Virtual Tour/City/Bandung/InfoBandung/KulinerBDG';
+import KulinerJKT from './components/Virtual Tour/City/Jakarta/InfoJakarta/KulinerJKT';
+import Monas from './components/Virtual Tour/City/Jakarta/Wisata/Monas';
 
 
 function App() {
@@ -29,9 +32,11 @@ function App() {
              <Route path="/about" element={<About/>}/>
              <Route path="/virtualtour/bandung" element={<Bandung />}/>
              <Route path="/virtualtour/jakarta" element={<Jakarta />}/>
+             <Route path="/virtualtour/jakarta/kuliner" element={<KulinerJKT />}/>
+             <Route path="/virtualtour/jakarta/monas" element={<Monas />}/>
              <Route path="/virtualtour/purwakarta" element={<Purwakarta />}/>
              <Route path="/virtualtour/bandung/punclut" element={<Punclut />}/>
-             <Route path="/virtualtour/bandung/kuliner" element={<Kuliner />}/>
+             <Route path="/virtualtour/bandung/kuliner" element={<KulinerBDG />}/>
              <Route path="/virtualtour/bandung/budaya" element={<Budaya />}/>
              <Route path="/virtualtour/bandung/merchstore" element={<Merch />}/>
          </Routes>

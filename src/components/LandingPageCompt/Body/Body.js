@@ -3,6 +3,11 @@ import './Body.css';
 import { CardCompt } from '../../CardComponent/CardCompt';
 import {Container, Row, Col, Carousel} from 'react-bootstrap';
 import Logo from './../../../assets/images/logo2.png';
+import Monas from './../../Virtual Tour/City/Jakarta/Foto/monas.jpg'
+import gbk from './../../Virtual Tour/City/Jakarta/Foto/gbk.jpg'
+import AsiaAfrika from './../../Virtual Tour/City/Bandung/Foto/asiaafrika.jpg'
+import Tegalega from './../../Virtual Tour/City/Bandung/Foto/tegalega.jpg'
+
 
 function Body() {
   return (
@@ -20,10 +25,10 @@ function Body() {
                 <h2>Popular Destination</h2>
             </div>
             <div className="grid">
-                <CardCompt className='cardCompt' />
-                <CardCompt className='cardCompt' />
-                <CardCompt className='cardCompt' />
-                <CardCompt className='cardCompt' />
+                <CardCompt className='cardCompt' image={Monas} header="Monas"/>
+                <CardCompt className='cardCompt' image={gbk} header="Stadion GBK" />
+                <CardCompt className='cardCompt' image={AsiaAfrika} header="Asia Afrika" />
+                <CardCompt className='cardCompt' image={Tegalega} header="Lap. Tegalega" />
             </div>
             <div className="aboutus">
             <h2>About us</h2>

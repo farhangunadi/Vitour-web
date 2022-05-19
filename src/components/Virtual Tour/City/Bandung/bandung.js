@@ -4,6 +4,9 @@ import CardCompt from '../../../CardComponent/CardCompt';
 import CardCompt2 from '../../../CardComponent/CardCompt2';
 import bdgIMG from './bdg1.jpg';
 import './../city.css';
+import KulinerImg from './../../../../assets/images/kuliner.jpg';
+import MerchImg from './../../../../assets/images/merch.jpg';
+import BudayaImg from './../../../../assets/images/budaya.png';
 
 function bandung() {
   return (
@@ -38,13 +41,13 @@ function bandung() {
             <h2>Informasi Daerah</h2>
             <Row>
                 <Col>
-                    <CardCompt2 header="Kuliner"  to={"/virtualtour/bandung/kuliner"}/>
+                    <CardCompt2 header="Kuliner"  to={"/virtualtour/bandung/kuliner"} image={KulinerImg}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Toko Merch" to={"/virtualtour/bandung/merchstore"}/>
+                    <CardCompt2 header="Toko Merch" to={"/virtualtour/bandung/merchstore"} image={MerchImg}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Budaya" to={"/virtualtour/bandung/budaya"}/>
+                    <CardCompt2 header="Budaya" to={"/virtualtour/bandung/budaya"} image={BudayaImg}/>
                 </Col>
             </Row>
         </div>

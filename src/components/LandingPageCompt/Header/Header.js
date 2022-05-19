@@ -4,6 +4,7 @@ import {Carousel, Button} from 'react-bootstrap';
 import Image1 from './../../../assets/images/pict (1).png';
 import Image2 from './../../../assets/images/pict (2).png';
 import Image3 from './../../../assets/images/pict (3).png';
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -23,7 +24,9 @@ function Header() {
       <Carousel.Caption>
         <h2>Explore your dream tourist spot virtually</h2>
         <p>Find a tourist spot you want to visit then enjoy the sensation of traveling virtually</p>
-        <Button variant="primary" className='button1'>Start Virtual Tour</Button>
+        {/* <Link to="/virtualtour" className="buttonVitour">
+          <button className="button1">Start Virtual Tour</button>
+        </Link> */}
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -39,7 +42,9 @@ function Header() {
       <Carousel.Caption>
         <h2>Explore your dream tourist spot virtually</h2>
         <p>Find a tourist spot you want to visit then enjoy the sensation of traveling virtually</p>
-        <Button variant="primary" className='button1'>Start Virtual Tour</Button>
+        {/* <Link to="/virtualtour" className="buttonExplore">
+          <button className="button1">Start Virtual Tour</button>
+        </Link> */}
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -55,7 +60,9 @@ function Header() {
       <Carousel.Caption>
         <h2>Explore your dream tourist spot virtually</h2>
         <p>Find a tourist spot you want to visit then enjoy the sensation of traveling virtually</p>
-        <Button variant="primary" className='button1'>Start Virtual Tour</Button>
+        {/* <Link to="/virtualtour" className="buttonExplore">
+          <button className="button1">Start Virtual Tour</button>
+        </Link> */}
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel> 
