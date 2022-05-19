@@ -1,31 +1,33 @@
 import React from "react";
-import logoKampus from '../assets/images/unpad.png'
+import FotoKita1 from '../assets/images/09.jpg'
+import FotoKita2 from '../assets/images/39.jpg'
+import FotoKita3 from '../assets/images/53.jpg'
+import FotoKita4 from '../assets/images/59.jpg'
+import FotoKita5 from '../assets/images/77.jpg'
 
 const AboutCard = ()=>{
     return (
         <>
         <div class="card-group">
         <div class="card">
-        <img src={logoKampus} class="mx-auto card-img-fluid" alt="..." width={300} height={300}/>
+        <img src={FotoKita1} class="mx-auto card-img-fluid" alt="..." width={300} height={300}/>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <h5 class="card-title">Farhan Gunadi</h5>
+            <p class="card-text">Developer</p>
           </div>
         </div>
         <div class="card">
-        <img src={logoKampus} class="mx-auto card-img-fluid" alt="..." width={300} height={300}/>
+        <img src={FotoKita2} class="mx-auto card-img-fluid" alt="..." width={300} height={300}/>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <h5 class="card-title">Raihan Fatoni</h5>
+            <p class="card-text">Developer</p>
           </div>
         </div>
         <div class="card">
-        <img src={logoKampus} class="mx-auto card-img-fluid" alt="..." width={300} height={300}/>
+        <img src={FotoKita3} class="mx-auto card-img-fluid" alt="..." width={300} height={300}/>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <h5 class="card-title">Aidil Fitra</h5>
+            <p class="card-text">Developer</p>
           </div>
         </div>
       </div>
@@ -36,19 +38,19 @@ const AboutCard = ()=>{
       <div class="row row-cols-1 row-cols-md-2 g-2">
   <div class="col">
     <div class="card">
-    <img src={logoKampus} class=" mx-auto card-img-fluid" alt="..." width={300} height={300} />
+    <img src={FotoKita4} class=" mx-auto card-img-fluid" alt="..." width={300} height={300} />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Andre Luckyta Firdaus</h5>
+        <p class="card-text">Developer</p>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card">
-    <img src={logoKampus} class=" mx-auto card-img-fluid" alt="..." width={300} height={300} />
+    <img src={FotoKita5} class=" mx-auto card-img-fluid" alt="..." width={300} height={300} />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">Muhammad Alwan Fauzi</h5>
+        <p class="card-text">Developer</p>
       </div>
     </div>
   </div>
