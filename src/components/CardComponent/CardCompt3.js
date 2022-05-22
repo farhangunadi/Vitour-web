@@ -15,7 +15,7 @@ export const CardCompt3 = (props) => {
                 <div className="RestoNavigation">
                 <button className="card-btn" onClick={() => {
                 window.open("https://www.google.com/maps/search/penjual+karedok+di+bandung/@-6.917931,107.6097062,15z/data=!3m1!4b1", "_blank");
-                }}>Find Resto</button>
+                }}>{props.buttonText}</button>
           </div>
             </Col>
             <Col>
@@ -30,6 +30,7 @@ CardCompt3.defaultProps = {
   title : 'Lorem Ipsum',
   desc : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis porro, unde atque necessitatibus commodi totam quia rerum iusto accusamus dignissimos vero debitis incidunt excepturi error a, nihil optio accusantium in.",
   image : Image ,
+  buttonText : 'Find Out',
 }
 
 export default CardCompt3;

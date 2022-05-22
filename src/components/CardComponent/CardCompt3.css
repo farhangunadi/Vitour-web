@@ -27,12 +27,16 @@
 
 .card3-container .deskripsi p {
     font-size: 20px;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card3-container img {
     width: 100%;
     height: auto;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .RestoNavigation {

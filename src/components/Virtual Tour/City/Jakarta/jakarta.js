@@ -33,13 +33,13 @@ function jakarta() {
                     <CardCompt header="Monas"  to="/virtualtour/jakarta/monas" image={Monas} />
                 </Col>
                 <Col>
-                    <CardCompt header="Ancol" image={Ancol} />
+                    <CardCompt header="Ancol" image={Ancol} to="/comingsoon"/>
                 </Col>
                 <Col>
-                    <CardCompt header="Blok M" image={BlokM} />
+                    <CardCompt header="Blok M" image={BlokM} to="/comingsoon"/>
                 </Col>
                 <Col>
-                    <CardCompt header="Stadion GBK" image={GBK} />
+                    <CardCompt header="Stadion GBK" image={GBK} to="/comingsoon"/>
                 </Col>
             </Row>
             <h2>Informasi Daerah</h2>
@@ -48,7 +48,7 @@ function jakarta() {
                     <CardCompt2 header="Kuliner"  to={"/virtualtour/jakarta/kuliner"} image={KulinerImg}/>
                 </Col>
                 <Col>
-                    <CardCompt2 header="Toko Merch" to={"/virtualtour/jakarta/merchstore"} image={MerchImg}/>
+                    <CardCompt2 header="Toko Merch" to={"/virtualtour/jakarta/merch"} image={MerchImg}/>
                 </Col>
                 <Col>
                     <CardCompt2 header="Budaya" to={"/virtualtour/jakarta/budaya"} image={BudayaImg}/>

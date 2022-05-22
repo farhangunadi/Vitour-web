@@ -29,13 +29,13 @@ function bandung() {
                     <CardCompt header="Punclut"  to={"/virtualtour/bandung/punclut"}/>
                 </Col>
                 <Col>
-                    <CardCompt header="Asia Afrika"/>
+                    <CardCompt header="Asia Afrika" to="/comingsoon"/>
                 </Col>
                 <Col>
-                    <CardCompt header="Curug Pelangi"/>
+                    <CardCompt header="Curug Pelangi" to="/comingsoon"/>
                 </Col>
                 <Col>
-                    <CardCompt header="Tegalega" />
+                    <CardCompt header="Tegalega" to="/comingsoon"/>
                 </Col>
             </Row>
             <h2>Informasi Daerah</h2>

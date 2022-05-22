@@ -15,3 +15,9 @@
     text-align: center;
     margin-bottom: 40px;
 }
+
+.spin-loading {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+}

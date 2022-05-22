@@ -1,19 +1,24 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
+import { Spinner } from 'loading-animations-react';
 import CardCompt3 from '../../../../CardComponent/CardCompt3'
 import { Kuliner } from '../../../../Info Pariwisata/Kuliner/Kuliner'
 import './../../../../Info Pariwisata/InfoPariwisata.css'
 
-function KulinerBDG() {
+function KulinerJKT() {
     const [users, setUsers] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const getData = async () => {
+        setLoading(true)
         try{
-            let response = await axios.get('https://jsonplaceholder.typicode.com/users')
-            setUsers(response.data)
+            let response = await axios.get('https://vitour-backend.herokuapp.com/api/city/culinaries')
+            setUsers(response.data.data)
+            setLoading(false)
         } catch(e) {
             console.log(e.message);
+            setLoading(true)
         }
     }
 
@@ -27,15 +32,18 @@ function KulinerBDG() {
             <h3>DKI Jakarta</h3>
         </div>
             {
+                loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
                 users.map(user => {
+                if(user.city_id == 1)
                     return(
-                        <CardCompt3 title={user.name}/>
+                         <CardCompt3 title={user.nama_kuliner} desc={user.deskripsi_kuliner} />
                     )
                 })
-            }
-            
+            }       
     </Container>
   )
 }
 
-export default KulinerBDG
+export default KulinerJKT
+// https://jsonplaceholder.typicode.com/users
+// https://vitour-backend.herokuapp.com/api/city/culinaries
