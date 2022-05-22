@@ -28,7 +28,7 @@ function Body() {
                 <CardCompt className='cardCompt' image={Monas} header="Monas"/>
                 <CardCompt className='cardCompt' image={gbk} header="Stadion GBK" />
                 <CardCompt className='cardCompt' image={AsiaAfrika} header="Asia Afrika" />
-                <CardCompt className='cardCompt' image={Tegalega} header="Lap. Tegalega" />
+                <CardCompt className='cardCompt' image={Tegalega} header="Tegalega" />
             </div>
             <div className="aboutus">
             <h2>About us</h2>

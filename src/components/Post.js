@@ -11,7 +11,7 @@ export const Post = ({ posts, loading }) => {
     <Container className='item-cont'>
         <div className="grid">
             {posts.map(post => (
-                <CardCompt4 desc={post.title}/>
+                <CardCompt4 desc={post.deskripsi_merchandise} header={post.nama_merchandise} />
             ))}
         </div>
     </Container>

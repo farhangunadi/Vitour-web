@@ -9,13 +9,13 @@ export const ItemPage = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(15);
+  const [postsPerPage] = useState(8);
 
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      setPosts(res.data);
+      const res = await axios.get('https://vitour-backend.herokuapp.com/api/city/merchandises');
+      setPosts(res.data.data);
       setLoading(false);
     };
 

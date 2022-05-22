@@ -9,13 +9,13 @@ export const MerchJKT = (props) => {
     const [users, setUsers] = useState([])
     const [loading, setLoading] = useState(false)
 
-    const getData = async() => {
+    const getData = async () => {
         setLoading(true)
-        try {
+        try{
             let response = await axios.get('https://vitour-backend.herokuapp.com/api/city/merchandises')
             setUsers(response.data.data)
             setLoading(false)
-        } catch (e) {
+        } catch(e) {
             console.log(e.message);
             setLoading(true)
         }
@@ -25,28 +25,23 @@ export const MerchJKT = (props) => {
         getData();
     }, [])
 
-    return ( <
-        Container className = "infoContainer" >
-        <
-        div className = "title" >
-        <
-        h1 > Merch < /h1> <
-        h3 > DKI Jakarta < /h3> <
-        /div> {
-            loading ? < Spinner className = "spin-loading"
-            color1 = "#003bfd"
-            color2 = "#fff" / >:
+  return (
+    <Container className="infoContainer">
+    <div className="title">
+        <h1>Merch</h1>
+        <h3>DKI Jakarta</h3>
+    </div>
+         {
+             loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
                 users.map(user => {
-                    if (user.city_id == 1)
-                        return ( <
-                            CardCompt3 title = { user.nama_merchandise }
-                            desc = { user.deskripsi_merchandise }
-                            buttonText = "Find Merch" / >
+                    if(user.city_id == 1)
+                        return(
+                            <CardCompt3 title={user.nama_merchandise} desc={user.deskripsi_merchandise} buttonText="Find Merch"/>
                         )
                 })
-        } <
-        /Container>
-    )
+            }   
+    </Container>
+  )
 }
 
 export default MerchJKT
