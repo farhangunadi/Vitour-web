@@ -8,6 +8,10 @@
     font-weight: 800;
 }
 
+.recom-cont .link-store {
+    z-index: -100000;
+}
+
 .recom-cont .btn-batik,
 .recom-cont .btn-senirupa,
 .recom-cont .btn-other {

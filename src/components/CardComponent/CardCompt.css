@@ -87,3 +87,17 @@
 .buttonExplore .card-btn:active {
     background-color: #c3cffc;
 }
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .card {
+        margin: 20px auto;
+    }
+}

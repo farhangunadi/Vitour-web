@@ -9,7 +9,7 @@ function Recommendation() {
         <div className="title">
             <h1>Merch Store and Crafter Recommendation</h1>
         </div>
-        <Link to="/item">
+        <Link to="/item" className='link-store'>
             <div className="btn-batik">
                 <div className="caption">
                     <h2>Batik Crafter</h2>
