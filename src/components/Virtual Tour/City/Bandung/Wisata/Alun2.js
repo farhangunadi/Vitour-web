@@ -11,7 +11,8 @@ function Alun2() {
     <Container className='container-wisata'>
         <h2>Alun2, Bandung</h2>
         <div className="iframe-container">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/XML3xOymKKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/XML3xOymKKk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+        </div>
         <div className="content">
           <p>
           Alun-alun Bandung telah menjadi magnet khusus untuk masyarakat lokal maupun masyarakat dari luar daerah. Baik siang maupun malam, Alun-alun Bandung menjadi tempat wisata yang menyenangkan. Sebagai kota yang dibangun dengan mempertimbangkan aspek kosmologi, alun-alun menjadi salah satu elemen pembentuk Kota Bandung sejak pusat pemerintahan Kabupaten Bandung pada 25 September 1810. Alun-alun Bandung mengalami perubahan dari titik batas ruang prafon dan ruang sakral menjadi ruang terbuka publik. Berdasarkan ketentuan Peraturan Daerah Nomor 18 tahun 2011 tentang Rencana Tata Ruang Wilayah Kota Bandung Tahun 2011-2031 Pasal 74 ayat (2) huruf a, perwujudan optimasi fungsi dan pelayanan pusat pelayanan kota dilaksanakan melalui penyusunan Rencana Tata Bangunan dan Lingkungan atau Panduan Rancang Kota.       

@@ -11,7 +11,7 @@ function kawahPutih() {
     <Container className='container-wisata'>
         <h2>Kawah Putih, Bandung</h2>
         <div className="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/znlDVhzWppU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/znlDVhzWppU" title="YouTube video player" allowfullscreen="true" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>        </div>
         <div className="content">
           <p>
             Kawah Putih adalah sebuah tempat wisata di Jawa Barat yang terletak di Desa Alam Endah, Kecamatan Rancabali, Kabupaten Bandung Jawa Barat yang terletak di kaki Gunung Patuha. Kawah putih merupakan sebuah danau yang terbentuk dari letusan Gunung Patuha. Tanah yang bercampur belerang di sekitar kawah ini berwarna putih, lalu warna air yang berada di kawah ini berwarna putih kehijauan, yang unik dari kawah ini adalah airnya kadang berubah warna. Danau Kawah Putih sendiri berada pada ketinggian 2194 m tapi luas total Danau Kawah Putih 25 ha yang dipakai wisata 5 ha dan lokasi kawah sendiri 3 ha.          </p>
