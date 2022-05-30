@@ -9,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Bandung from './components/Virtual Tour/City/Bandung/bandung';
 import Jakarta from './components/Virtual Tour/City/Jakarta/jakarta';
 import Purwakarta from './components/Virtual Tour/City/Purwakarta/purwakarta';
-import Punclut from './components/Virtual Tour/City/Bandung/Wisata/Punclut';
+import Alun2 from './components/Virtual Tour/City/Bandung/Wisata/Alun2';
+import KawahPutih from './components/Virtual Tour/City/Bandung/Wisata/kawahPutih';
 import { Kuliner } from './components/Info Pariwisata/Kuliner/Kuliner';
 import Budaya from './components/Info Pariwisata/Budaya/Budaya';
 import { Merch } from './components/Info Pariwisata/Toko Merch/Merch';
@@ -42,7 +43,8 @@ function App() {
              <Route path="/virtualtour/jakarta/merch" element={<MerchJKT />}/>
              <Route path="/virtualtour/jakarta/monas" element={<Monas />}/>
              <Route path="/virtualtour/purwakarta" element={<Purwakarta />}/>
-             <Route path="/virtualtour/bandung/punclut" element={<Punclut />}/>
+             <Route path="/virtualtour/bandung/alun-alun" element={<Alun2 />}/>
+             <Route path="/virtualtour/bandung/kawah-putih" element={<KawahPutih />}/>
              <Route path="/virtualtour/bandung/kuliner" element={<KulinerBDG />}/>
              <Route path="/virtualtour/bandung/budaya" element={<BudayaBDG />}/>
              <Route path="/virtualtour/bandung/merchstore" element={<MerchBDG />}/>

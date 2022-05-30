@@ -1,8 +1,14 @@
 .wrap,
 .containerVT {
-    background-color: rgb(230, 238, 255);
+    background-color: rgb(255, 255, 255);
 }
 
 .city p {
     display: none;
+}
+
+@media screen and (max-width: 426px) {
+    .city-wrap {
+        display: block;
+    }
 }

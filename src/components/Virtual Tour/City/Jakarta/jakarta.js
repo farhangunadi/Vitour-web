@@ -11,6 +11,7 @@ import Monas from './Foto/monas.jpg';
 import Ancol from './Foto/ancol.jpeg';
 import BlokM from './Foto/blokm.jpg';
 import GBK from './Foto/gbk.jpg'
+import { Footer } from '../../../LandingPageCompt/Footer/Footer';
 
 function jakarta() {
   return (
@@ -56,6 +57,7 @@ function jakarta() {
             </Row>
         </div>
         </Container> 
+    <Footer />
     </>
   )
 }

@@ -7,6 +7,11 @@ import './../city.css';
 import KulinerImg from './../../../../assets/images/kuliner.jpg';
 import MerchImg from './../../../../assets/images/merch.jpg';
 import BudayaImg from './../../../../assets/images/budaya.png';
+import asiaAfrika from './Foto/asiaafrika.jpg';
+import alun2 from './Foto/alun-alun-bandung-profile1639354810.png';
+import kawahPutih from './Foto/5ee5d42ba7d43.jpg'
+import tegalega from './Foto/tegalega.jpg';
+import { Footer } from '../../../LandingPageCompt/Footer/Footer';
 
 function bandung() {
   return (
@@ -26,16 +31,16 @@ function bandung() {
             <h2>Tempat Wisata</h2>
             <Row>
                 <Col>
-                    <CardCompt header="Punclut"  to={"/virtualtour/bandung/punclut"}/>
+                    <CardCompt header="Alun-alun bandung" text="Bandung, Jawa Barat" image={alun2} to={"/virtualtour/bandung/alun-alun"}/>
                 </Col>
                 <Col>
-                    <CardCompt header="Asia Afrika" to="/comingsoon"/>
+                    <CardCompt header="Asia Afrika" text="Bandung, Jawa Barat" image={asiaAfrika}  to="/comingsoon"/>
                 </Col>
                 <Col>
-                    <CardCompt header="Curug Pelangi" to="/comingsoon"/>
+                    <CardCompt header="Kawah Putih" text="Bandung, Jawa Barat" image={kawahPutih} to={"/virtualtour/bandung/kawah-putih"}/>
                 </Col>
                 <Col>
-                    <CardCompt header="Tegalega" to="/comingsoon"/>
+                    <CardCompt header="Tegalega" text="Bandung, Jawa Barat" image={tegalega} to="/comingsoon"/>
                 </Col>
             </Row>
             <h2>Informasi Daerah</h2>
@@ -53,7 +58,7 @@ function bandung() {
         </div>
         </Container>
         
-        
+        <Footer />
     </>
     
     

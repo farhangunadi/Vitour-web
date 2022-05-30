@@ -13,7 +13,7 @@ function VirtualTour() {
         <div className="title">
           <h1>Choose City</h1>
         </div>
-        <Row>
+        <Row className='city-wrap'>
           <Col>
             <CardCompt className="city" header="Bandung" image={bandungIMG} text="Indonesia" to={"/virtualtour/bandung"}/>
           </Col>

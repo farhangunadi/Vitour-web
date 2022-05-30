@@ -5,7 +5,7 @@ import {Container, Row, Col, Carousel} from 'react-bootstrap';
 import Logo from './../../../assets/images/logo2.png';
 import Monas from './../../Virtual Tour/City/Jakarta/Foto/monas.jpg'
 import gbk from './../../Virtual Tour/City/Jakarta/Foto/gbk.jpg'
-import AsiaAfrika from './../../Virtual Tour/City/Bandung/Foto/asiaafrika.jpg'
+import Alun2 from './../../Virtual Tour/City/Bandung/Foto/alun-alun-bandung-profile1639354810.png'
 import Tegalega from './../../Virtual Tour/City/Bandung/Foto/tegalega.jpg'
 
 
@@ -25,9 +25,9 @@ function Body() {
                 <h2>Popular Destination</h2>
             </div>
             <div className="grid">
-                <CardCompt className='cardCompt' image={Monas} header="Monas"/>
+                <CardCompt className='cardCompt' image={Monas} header="Monas" to="/virtualtour/jakarta/monas"/>
                 <CardCompt className='cardCompt' image={gbk} header="Stadion GBK" />
-                <CardCompt className='cardCompt' image={AsiaAfrika} header="Asia Afrika" />
+                <CardCompt className='cardCompt' image={Alun2} header="Alun-Alun Bandung" to={"/virtualtour/bandung/alun-alun"}/>
                 <CardCompt className='cardCompt' image={Tegalega} header="Tegalega" />
             </div>
             <div className="aboutus">

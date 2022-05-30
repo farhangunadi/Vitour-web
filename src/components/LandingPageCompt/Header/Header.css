@@ -110,13 +110,13 @@
     }
 }
 
-@media screen and (max-width: 652px) {
+@media screen and (max-width: 768px) {
     .carousel-caption .button1 {
         display: none;
     }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 426px) {
     .carousel-caption h2 {
         margin-bottom: 20px;
         font-size: 15px;
