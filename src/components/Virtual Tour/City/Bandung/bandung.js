@@ -26,7 +26,10 @@ function bandung() {
         </div>
         <div className="content">
             <div className="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem justo, porttitor ac vestibulum nec, mattis a turpis. Integer sit amet elit ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sollicitudin consectetur vestibulum. Pellentesque finibus in erat eu lacinia. Nam quis orci lorem. Praesent mi felis, euismod eu nunc id, ultricies finibus neque. Fusce eget gravida risus. Quisque a vehicula magna. Pellentesque mattis eu urna ac finibus. Nullam sit amet leo ut ipsum gravida posuere. Duis volutpat urna in neque malesuada euismod. Praesent vitae mi eget ligula accumsan efficitur. Vestibulum molestie tempus odio, ut dapibus felis finibus sit amet. Etiam id lacus sed dui scelerisque volutpat ac nec diam. Donec augue ipsum, auctor nec velit dapibus, malesuada dignissim ligula.</p>
+                <p>Kota Bandung merupakan kota metropolitan terbesar di Provinsi Jawa Barat,sekaligus menjadi ibu kota provinsi tersebut. Kota ini merupakan kota terbesar ketigadi Indonesia setelah Jakarta dan Surabaya menurut jumlah penduduk. Selain itu, KotaBandung juga merupakan kota terbesar di wilayah Pulau Jawa bagian selatan.Sedangkan wilayah Bandung Raya wilayah metropolitan Bandung merupakan metropolitan terbesar ketiga di Indonesia setelah Jabodetabek dan gerbang kertosusila. 
+                <hr></hr>
+                Kota kembang merupakan sebutan lain untuk kota ini, karena pada 1aman dulu kotaini dinilai sangat cantik dengan banyaknya pohon-pohon dan bunga-bunga yangtumbuh di sana. Selain itu Bandung dahulunya disebut juga dengan Parijs van Javakarena keindahannya. Selain itu kota Bandung juga dikenal sebagai kota belanja,dengan mall dan factory outlet yang banyak tersebar di kota ini, dan saat ini berangsur-angsur kota Bandung juga menjadi kota wisata kuliner-an pada tahun2003, British council menjadikan kota Bandung sebagai pilot project kota terkreatif se-asia timur. Saat ini kota Bandung merupakan salah satu kota tujuan utama pariwisata dan pendidikan
+                </p>
             </div>
             <h2>Tempat Wisata</h2>
             <Row>
