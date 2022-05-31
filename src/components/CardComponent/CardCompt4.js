@@ -14,9 +14,11 @@ export const CardCompt4 = (props) => {
                <p className="card-text">
                 <FaMapMarkerAlt /> {props.loc}
                </p>
-               <Link to={props.to} className="buttonExplore">
-                  <button className="card-btn">Send Message</button>
-               </Link>
+               <div className="buttonExplore">
+                  <button onClick={() => {
+                window.open("https://api.whatsapp.com/send?phone=628989040798", "_blank");
+                }} className="card-btn">Send Message</button>
+               </div>
            </div>
        </div>  
   )
@@ -27,7 +29,6 @@ CardCompt4.defaultProps = {
   desc : 'Lorem Ipsum',
   loc : 'Jawa Barat' ,
   image : Image,
-  to : '/'
 
 }
 

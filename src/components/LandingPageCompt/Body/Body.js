@@ -13,14 +13,6 @@ function Body() {
   return (
     <>
         <div className="container">
-            <div className="search-wrapper">
-                <div class="search_box">
-				<input type="text" class="input" placeholder="search..."/>
-				<div class="btn">
-					<p>Search</p>
-				</div>
-			</div>
-            </div>
             <div className="title">
                 <h2>Popular Destination</h2>
             </div>
@@ -49,3 +41,11 @@ function Body() {
 }
 
 export default Body
+            // <div className="search-wrapper">
+            //     <div class="search_box">
+            //         <input type="text" class="input" placeholder="search..."/>
+            //         <div class="btn">
+            //             <p>Search</p>
+            //         </div>
+			//     </div>
+            // </div>

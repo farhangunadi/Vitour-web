@@ -8,9 +8,9 @@ export const Footer = () => {
     <>
         <div className="footer">
             <ul className="flex-row">
-               <li><a href="/beranda">Home</a></li>
+               <li><a href="/">Home</a></li>
                <li><a href="/virtualtour">Virtual Tour</a></li>
-               <li><a href="/rekomendasi">Store</a></li>
+               <li><a href="/Store">Store</a></li>
                <li><a href="/about">About</a></li>
             </ul>
             <ul className="flex-row">
