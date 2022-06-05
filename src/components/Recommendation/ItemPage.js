@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './ItemPage.css';
 import { Container } from 'react-bootstrap';
 import { Post } from './../Post';
 import Pagination from './../Pagination';
 import CardCompt4 from './../CardComponent/CardCompt4'
+import { Carousel } from 'bootstrap';
+import Img from './../../assets/images/bandung.jpg'
+import CarouselCompt from '../CarouselCompt/CarouselCompt';
 
 export const ItemPage = () => {
   const [posts, setPosts] = useState([]);
@@ -35,16 +39,47 @@ export const ItemPage = () => {
   return (
     <Container className='item-container'>
         <h1 className='title-page'>Merch Store and Crafter Recommendation</h1>
-          <div className="search-wrapper">
-              <div class="search_box">
-                  <input 
-                  type="text" 
-                  class="input" 
-                  placeholder="search..."
-                  onChange={(e) => setSearchTitle(e.target.value)}
-                  />
-			      </div>
-          </div>    
+          <div className="filterAdv">
+                    <input                      
+                    type="text"
+                    className="inputFilter2"
+                    placeholder='Search...'
+                    onChange={(e) => setSearchTitle(e.target.value)}/>
+                    <div className="grid">
+                    <select
+                    className="dropdown-select"
+                    on
+                    >
+                      <option value="">City</option>
+                      <option value="Bandung">Bandung</option>
+                      <option value="Jakarta">Jakarta</option>
+                      <option value="Yogyakarta">Yogyakarta</option>
+                      <option value="Purwakarta">Purwakarta</option>
+                    </select>
+                    <select
+                    className="dropdown-select"
+                    >
+                      <option value="">Category</option>
+                      <option value="Culinary">Culinary</option>
+                      <option value="Merchandise">Merchandise</option>
+                      <option value="Fine Art">Fine Art</option>
+                      <option value="Fashion">Fashion</option>
+                    </select>
+                    <select
+                    className="dropdown-select"
+                    >
+                      <option value="">Laguange</option>
+                      <option value="English">English</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    </div>
+                    <div className="button-wrapper-get-all">
+                      <button        
+                        type="button"
+                        value="Search"
+                        className='card-btn'>Search</button>  
+                </div>
+                </div>   
        <div className="grid">
           {loading ? (
             <h3>Loading ...</h3>

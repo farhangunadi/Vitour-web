@@ -8,7 +8,10 @@ import { Link } from "react-router-dom";
 export const CardCompt3 = (props) => {
   return (
     <div className="card3-container">
-        <Row>
+        <Row className='row-card3'>
+            <Col>
+                <img src={props.image} alt="" />
+            </Col>
             <Col className='deskripsi'>
                 <h3>{props.title}</h3>
                 <p>{props.desc}</p>
@@ -17,9 +20,6 @@ export const CardCompt3 = (props) => {
                 window.open("https://www.google.com/maps/search/penjual+karedok+di+bandung/@-6.917931,107.6097062,15z/data=!3m1!4b1", "_blank");
                 }}>{props.buttonText}</button>
           </div>
-            </Col>
-            <Col>
-                <img src={props.image} alt="" />
             </Col>
         </Row>
     </div>

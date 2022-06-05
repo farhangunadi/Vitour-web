@@ -37,6 +37,7 @@
     height: auto;
     margin: 0 auto;
     justify-content: center;
+    object-fit: contain;
 }
 
 .RestoNavigation {
@@ -57,4 +58,45 @@
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 769px) {
+    .card3-container {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+    .card3-container .deskripsi {
+        padding: 20px;
+        max-width: 50%;
+    }
+    .card3-container .deskripsi h3 {
+        font-size: 20px;
+    }
+    .card3-container .deskripsi p {
+        font-size: 10px;
+        text-align: justify;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .RestoNavigation .card-btn {
+        width: 100%;
+        padding: 0.7rem;
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .row-card3 {
+        display: block;
+    }
+    .card3-container .deskripsi {
+        max-width: 100%;
+    }
+    .card3-container .deskripsi p {
+        font-size: 10px;
+        text-align: justify;
+        white-space: normal;
+    }
 }

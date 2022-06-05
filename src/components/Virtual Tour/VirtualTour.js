@@ -26,7 +26,6 @@ function VirtualTour() {
         </Row>
       </Container>
     </div>
-   
   )
 }
 
