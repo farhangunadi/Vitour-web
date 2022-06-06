@@ -12,6 +12,7 @@ import CarouselCompt from '../CarouselCompt/CarouselCompt';
 
 export const ItemPage = () => {
   const [posts, setPosts] = useState([]);
+  const [city, setCities] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(8);
@@ -24,6 +25,14 @@ export const ItemPage = () => {
       setLoading(false);
     };
 
+    const fetchPostsCities = async () => {
+      setLoading(true);
+      const res = await axios.get('https://vitour-backend.herokuapp.com/api/cities');
+      setCities(res.data.data);
+      setLoading(false);
+    };
+
+    fetchPostsCities();
     fetchPosts();
   }, []);
 
@@ -31,7 +40,9 @@ export const ItemPage = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-  const [searchTitle, setSearchTitle] = useState("");
+  const [search, setSearch] = useState("");
+  const [filterCity, setFilterCity] = useState("");
+  
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
@@ -44,22 +55,24 @@ export const ItemPage = () => {
                     type="text"
                     className="inputFilter2"
                     placeholder='Search...'
-                    onChange={(e) => setSearchTitle(e.target.value)}/>
+                    onChange={(e) => setSearch(e.target.value)}/>
                     <div className="grid">
                     <select
                     className="dropdown-select"
-                    on
-                    >
-                      <option value="">City</option>
-                      <option value="Bandung">Bandung</option>
-                      <option value="Jakarta">Jakarta</option>
-                      <option value="Yogyakarta">Yogyakarta</option>
-                      <option value="Purwakarta">Purwakarta</option>
+                    onChange={(e) => setFilterCity(e.target.value)}>
+                    <option value="">City</option>
+                     {
+                        city.map(kota => {
+                          return (
+                            <option value={kota.city_id}>{kota.nama_kota}</option>
+                          )
+                        })
+                     }
                     </select>
                     <select
                     className="dropdown-select"
                     >
-                      <option value="">Category</option>
+                      <option>Category</option>
                       <option value="Culinary">Culinary</option>
                       <option value="Merchandise">Merchandise</option>
                       <option value="Fine Art">Fine Art</option>
@@ -68,7 +81,7 @@ export const ItemPage = () => {
                     <select
                     className="dropdown-select"
                     >
-                      <option value="">Laguange</option>
+                      <option>Laguange</option>
                       <option value="English">English</option>
                       <option value="Other">Other</option>
                     </select>
@@ -76,8 +89,8 @@ export const ItemPage = () => {
                     <div className="button-wrapper-get-all">
                       <button        
                         type="button"
-                        value="Search"
-                        className='card-btn'>Search</button>  
+                        className='card-btn'
+                        >Search</button>  
                 </div>
                 </div>   
        <div className="grid">
@@ -85,9 +98,11 @@ export const ItemPage = () => {
             <h3>Loading ...</h3>
           ) : (
             posts.filter((value) => {
-              if (searchTitle === " "){
+              if (search === " " || filterCity === " "){
                 return value;
-              } else if(value.nama_merchandise.toLowerCase().includes(searchTitle.toLowerCase())){
+              } else if(value.nama_merchandise.toLowerCase().includes(search.toLowerCase())){
+                return value;
+              } else if(value.city_id === filterCity){
                 return value;
               }
             })
@@ -105,3 +120,5 @@ export const ItemPage = () => {
         //     totalPosts={posts.length}
         //     paginate={paginate}
         // />
+
+        

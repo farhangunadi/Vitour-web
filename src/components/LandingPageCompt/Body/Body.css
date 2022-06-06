@@ -2,9 +2,44 @@
     background-color: white;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     width: 100vh;
-    padding: 20px;
+    padding-top: 20px;
+}
+
+.banner-fitur {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: auto auto auto;
+    /* grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
+    align-items: center;
+    text-align: justify;
+    background: linear-gradient(180deg, #0133D4 0%, #3162FF 100%);
+    padding: 30px;
+}
+
+.banner-fitur .banner {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.banner-fitur .banner .banner-img-wrap {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-fitur .banner .banner-img-wrap img {
+    width: 100px;
+    height: auto;
+}
+
+.banner-fitur .banner p {
+    color: white;
+    text-align: center;
+    font-weight: 800;
 }
 
 .search-wrapper {
@@ -72,9 +107,11 @@
 }
 
 .title h2,
-.aboutus h2 {
+.aboutus h2,
+.testimoni h2 {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
+    text-align: center;
 }
 
 .aboutus .aboutus-content {
@@ -112,7 +149,27 @@
     align-items: start;
 }
 
+.testimoni {
+    margin-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.testimoni h2 {
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
+    .banner-fitur .banner {
+        width: 100%;
+    }
+    .banner-fitur .banner .banner-img-wrap img {
+        width: 50px;
+        height: auto;
+    }
+    .banner-fitur .banner p {
+        font-size: 12px;
+    }
     .search-wrapper {
         width: 100%;
     }
@@ -143,5 +200,12 @@
     }
     .aboutus .aboutus-content {
         display: block;
+    }
+    .banner-fitur {
+        display: none;
+    }
+    .testimoni {
+        margin-top: 10px;
+        padding: 0;
     }
 }

@@ -13,7 +13,7 @@ function Navbar2() {
                 <Link to="/" className="Home">
                     <li>Home</li>
                 </Link>
-                <Link to="/Store" className="Store">
+                <Link to="/item" className="Store">
                     <li>Store</li>
                 </Link>
                 <Link to="/virtualtour" className="vTour">

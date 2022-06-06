@@ -58,7 +58,7 @@
     display: none;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1119px) {
     .logo {
         display: flex;
         position: absolute;
@@ -108,3 +108,5 @@
         right: 25px;
     }
 }
+
+@media screen and (max-width: 780px) {}

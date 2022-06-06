@@ -1,6 +1,7 @@
 .wrap,
 .containerVT {
     background-color: rgb(255, 255, 255);
+    margin-bottom: 30px
 }
 
 .city p {

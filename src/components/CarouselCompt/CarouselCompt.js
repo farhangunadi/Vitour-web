@@ -1,74 +1,83 @@
-import React from 'react';
-import {Carousel} from 'react-bootstrap';
-import Image from './../../assets/images/bandung.jpg'
+import React, { useState, useEffect } from "https://cdn.skypack.dev/react";
+import ReactDOM from "https://cdn.skypack.dev/react-dom";
 
+const items = [
+    {
+        icon:"face",
+        copy:'01. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    },{
+        icon:"pets",
+        copy:'02. Sed do eiusmod tempor incididunt ut labore.'
+    },{
+        icon:"stars",
+        copy:'03. Consectetur adipiscing elit.'
+    },{
+        icon:"invert_colors",
+        copy:'04. Ut enim ad minim veniam, quis nostrud exercitation.'
+    },{
+        icon:"psychology",
+        copy:'05. Llamco nisi ut aliquip ex ea commodo consequat.'
+    },{
+        icon:"brightness_7",
+        copy:'06. Misi ut aliquip ex ea commodo consequat.'
+    }
+];
 
-const CarouselCompt = (props) => {
+const Card = (props) => {
   return (
-<Carousel fade={true} interval={5000} controls={false}>
-    <Carousel.Item>
-      <div className="overlay-container">
-        <div className="overlay"></div>
-      </div>
-      <img
-        className="d-block w-100"
-        src={props.image1}
-        alt="First slide"
-        width={900}
-        height="auto"
-      />
-      <Carousel.Caption>
-        <h2>Explore your dream tourist spot virtually</h2>
-        <p>Find a tourist spot you want to visit then enjoy the sensation of traveling virtually</p>
-        {/* <Link to="/virtualtour" className="buttonVitour">
-          <button className="button1">Start Virtual Tour</button>
-        </Link> */}
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-    <div className="overlay"></div>
-      <img
-        className="d-block w-100"
-        src={props.image2}
-        alt="Second slide"
-        width={900}
-        height="auto"
-      />
-
-      <Carousel.Caption>
-        <h2>Explore your dream tourist spot virtually</h2>
-        <p>Find a tourist spot you want to visit then enjoy the sensation of traveling virtually</p>
-        {/* <Link to="/virtualtour" className="buttonExplore">
-          <button className="button1">Start Virtual Tour</button>
-        </Link> */}
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-    <div className="overlay"></div>
-      <img
-        className="d-block w-100"
-        src={props.image3}
-        alt="Third slide"
-        width={900}
-        height="auto"
-      />
-
-      <Carousel.Caption>
-        <h2>Explore your dream tourist spot virtually</h2>
-        <p>Find a tourist spot you want to visit then enjoy the sensation of traveling virtually</p>
-        {/* <Link to="/virtualtour" className="buttonExplore">
-          <button className="button1">Start Virtual Tour</button>
-        </Link> */}
-      </Carousel.Caption>
-    </Carousel.Item>
-  </Carousel> 
+    <li className="card">
+      <span class="material-icons">{props.icon}</span>
+      <p>{props.copy}</p>
+    </li>
   )
 }
 
-CarouselCompt.defaultProps = {
-  image1 : Image,
-  image2 : Image,
-  image3 : Image
+const CarouselCompt = () => {
+  const [moveClass, setMoveClass] = useState('');
+  const [carouselItems, setCarouselItems] = useState(items);
+  
+  useEffect(() => {
+    document.documentElement.style.setProperty('--num', carouselItems.length);
+  }, [carouselItems])
+  
+  const handleAnimationEnd = () => {
+    if(moveClass === 'prev'){
+      shiftNext([...carouselItems]);
+    }else if(moveClass === 'next'){
+      shiftPrev([...carouselItems]);
+    }
+    setMoveClass('')
+  }
+  
+  const shiftPrev = (copy) => {
+    let lastcard = copy.pop();
+    copy.splice(0, 0, lastcard);
+    setCarouselItems(copy);
+  }
+  
+  const shiftNext = (copy) => {
+    let firstcard = copy.shift();
+    copy.splice(copy.length, 0, firstcard);
+    setCarouselItems(copy);
+  }
+  
+  return (
+    <div className="carouselwrapper module-wrapper">
+      <div className="ui">
+        <button onClick={() => setMoveClass('next')} className="prev">
+          <span className="material-icons">chevron_left</span>
+        </button>
+        <button onClick={() => setMoveClass('prev')} className="next">
+          <span className="material-icons">chevron_right</span>
+        </button>
+      </div>
+      <ul onAnimationEnd={handleAnimationEnd} className={`${moveClass} carousel`}>
+        {carouselItems.map((t, index) => 
+          <Card key={t.copy + index} icon={t.icon} copy={t.copy} />
+        )}
+      </ul>
+    </div>
+  )
 }
 
-export default CarouselCompt
+export default CarouselCompt;

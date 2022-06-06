@@ -1,8 +1,6 @@
 import React from 'react';
-import {Container, Row, Col, Carousel} from 'react-bootstrap';
-import CardCompt from '../../../CardComponent/CardCompt';
-import CardCompt2 from '../../../CardComponent/CardCompt2';
-import CarouselCompt from '../../../CarouselCompt/CarouselCompt';
+import {Container} from 'react-bootstrap';
+import { Footer } from '../../LandingPageCompt/Footer/Footer';
 import ImageDefault from './../../CardComponent/default-2.jpg';
 import './bandung.css'
 
@@ -21,6 +19,7 @@ function cityCompt(props) {
             <p>{props.desc}</p>
         </div>
         </Container>
+        <Footer />
     </>
   )
 }
