@@ -6,9 +6,6 @@ import { Container } from 'react-bootstrap';
 import { Post } from './../Post';
 import Pagination from './../Pagination';
 import CardCompt4 from './../CardComponent/CardCompt4'
-import { Carousel } from 'bootstrap';
-import Img from './../../assets/images/bandung.jpg'
-import CarouselCompt from '../CarouselCompt/CarouselCompt';
 
 export const ItemPage = () => {
   const [posts, setPosts] = useState([]);
