@@ -38,6 +38,7 @@
 .LocNavigation {
     text-decoration: none;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 .LocNavigation .card-btn {

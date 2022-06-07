@@ -6,6 +6,7 @@ import { Container } from 'react-bootstrap';
 import { Post } from './../Post';
 import Pagination from './../Pagination';
 import CardCompt4 from './../CardComponent/CardCompt4'
+import { Footer } from '../LandingPageCompt/Footer/Footer';
 
 export const ItemPage = () => {
   const [posts, setPosts] = useState([]);
@@ -45,7 +46,8 @@ export const ItemPage = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <Container className='item-container'>
+   <>
+      <Container className='item-container'>
         <h1 className='title-page'>Merch Store and Crafter Recommendation</h1>
           <div className="filterAdv">
                     <input                      
@@ -54,7 +56,7 @@ export const ItemPage = () => {
                     placeholder='Search...'
                     onChange={(e) => setSearch(e.target.value)}/>
                     <div className="grid">
-                    <select
+                    {/* <select
                     className="dropdown-select"
                     onChange={(e) => setFilterCity(e.target.value)}>
                     <option value="">City</option>
@@ -87,7 +89,7 @@ export const ItemPage = () => {
                       <button        
                         type="button"
                         className='card-btn'
-                        >Search</button>  
+                        >Search</button>   */}
                 </div>
                 </div>   
        <div className="grid">
@@ -106,7 +108,9 @@ export const ItemPage = () => {
             .map((item) => <CardCompt4 desc={item.deskripsi_merchandise} header={item.nama_merchandise} loc={item.alamat_toko}/>)
           )}
         </div>
-            </Container>
+    </Container>
+    <Footer />
+   </>
   )
 }
 
