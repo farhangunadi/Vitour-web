@@ -44,10 +44,10 @@ function Body() {
                 <h2>Popular Destination</h2>
             </div>
             <div className="grid">
-                <CardCompt className='cardCompt' image={Monas} header="Monas" to="/virtualtour/jakarta/monas"/>
-                <CardCompt className='cardCompt' image={gbk} header="Stadion GBK" />
-                <CardCompt className='cardCompt' image={Alun2} header="Alun-Alun Bandung" to={"/virtualtour/bandung/alun-alun"}/>
-                <CardCompt className='cardCompt' image={Tegalega} header="Tegalega" />
+                <CardCompt className='cardCompt' image={Monas} header="Monas" to="/virtualtour/jakarta/monas" text="Jakarta" />
+                <CardCompt className='cardCompt' image={gbk} header="Stadion GBK" text="Jakarta"/>
+                <CardCompt className='cardCompt' image={Alun2} header="Alun-Alun Bandung" to={"/virtualtour/bandung/alun-alun"} text="Bandung" />
+                <CardCompt className='cardCompt' image={Tegalega} header="Tegalega" text="Bandung" />
             </div>
         </div>
         <div className="testimoni">
