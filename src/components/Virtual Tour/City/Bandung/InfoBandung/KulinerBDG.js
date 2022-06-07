@@ -42,6 +42,7 @@ function KulinerBDG() {
               <CardCompt3
                 title={user.nama_kuliner}
                 desc={user.deskripsi_kuliner}
+                loc="https://www.google.com/maps/search/kuliner+bandung/@-6.9177567,107.5832697,13z/data=!3m1!4b1"
               />
             );
         })
