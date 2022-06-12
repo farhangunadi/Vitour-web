@@ -1,34 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios'
-import { Container } from 'react-bootstrap';
-import { Spinner } from 'loading-animations-react';
-import CardCompt3 from '../../../../CardComponent/CardCompt3'
-import './../../../../Info Pariwisata/InfoPariwisata.css'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Container } from "react-bootstrap";
+import { Spinner } from "loading-animations-react";
+import CardCompt3 from "../../../../CardComponent/CardCompt3";
+import "./../../../../Info Pariwisata/InfoPariwisata.css";
 
 function BudayaBDG() {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
-    const getData = async () => {
-        setLoading(true)
-        try{
-            let response = await axios.get('https://vitour-backend.herokuapp.com/api/city/cultures')
-            setUsers(response.data.data)
-            setLoading(false)
-        } catch(e) {
-            setLoading(true)
-            console.log(e.message);
-        }
+  const getData = async () => {
+    setLoading(true);
+    try {
+      let response = await axios.get(
+        "https://vitour-backend.herokuapp.com/api/city/cultures"
+      );
+      setUsers(response.data.data);
+      setLoading(false);
+    } catch (e) {
+      setLoading(true);
+      console.log(e.message);
     }
+  };
 
-    useEffect(() => {
-        getData();
-    }, [])
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <Container className="infoContainer">
-    <div className="title">
+      <div className="title">
         <h1>Budaya</h1>
         <h3>Bandung, Jawa Barat</h3>
+<<<<<<< HEAD
     </div>
     {
         loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
@@ -47,7 +50,23 @@ function BudayaBDG() {
                 )
               })
        }       
+=======
+      </div>
+      {loading ? (
+        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
+      ) : (
+        users.map((user) => {
+          if (user.city_id == 4)
+            return (
+              <CardCompt3
+                title={user.nama_budaya}
+                desc={user.deskripsi_budaya}
+              />
+            );
+        })
+      )}
+>>>>>>> 269cfe182a0a9dbfa9b9f74e3cb965a671548482
     </Container>
-  )
+  );
 }
-export default BudayaBDG
+export default BudayaBDG;

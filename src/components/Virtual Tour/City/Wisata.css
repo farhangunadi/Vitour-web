@@ -23,7 +23,7 @@
 }
 
 .content {
-    margin-top: 200px;
+    margin-top: 210px;
 }
 
 .content p {
@@ -38,6 +38,7 @@
 .LocNavigation {
     text-decoration: none;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 .LocNavigation .card-btn {

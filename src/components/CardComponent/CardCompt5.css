@@ -108,14 +108,19 @@
         font-size: 10px;
     }
     .card5-container .img-wrapper img {
-        width: 100%;
+        width: 50%;
         height: auto;
     }
     .card5-container .deskripsi .sub-title {
         font-size: 12px;
         opacity: 50%;
+        text-align: center;
     }
-    .card5-container .deskripsi p {
+    .card5-container .deskripsi .desc {
         font-size: 10px;
+        text-align: center;
+    }
+    .card5-container .deskripsi h3 {
+        text-align: center;
     }
 }
