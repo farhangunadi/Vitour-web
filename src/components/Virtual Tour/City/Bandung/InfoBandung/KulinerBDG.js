@@ -39,12 +39,10 @@ function KulinerBDG() {
         users.map((user) => {
           if (user.city_id == 4) {
             var gambar;
-
             user.images.map((link) => {
               {
-                console.log(link.images_link);
+                gambar = link.images_link;
               }
-              gambar = link.images_link;
             });
             return (
               <CardCompt3

@@ -111,20 +111,18 @@ export const ItemPage = () => {
                   }
                 })
                 .map((item) => {
-                  var gambar = [];
-                  var counter = 0;
+                  var gambar;
                   item.images.map((link) => {
                     {
-                      console.log(link.images_link);
+                      gambar = link.images_link;
                     }
-                    gambar[counter++] = link.images_link;
                   });
                   return (
                     <CardCompt4
                       desc={item.deskripsi_merchandise}
                       header={item.nama_merchandise}
                       loc={item.alamat_toko}
-                      image={gambar[0]}
+                      image={gambar}
                     />
                   );
                 })}

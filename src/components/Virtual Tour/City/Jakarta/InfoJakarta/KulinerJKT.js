@@ -38,22 +38,17 @@ function KulinerJKT() {
       ) : (
         users.map((user) => {
           if (user.city_id == 24) {
-            {
-              console.log(user.images);
-            }
-            var gambar = [];
-            var counter = 0;
+            var gambar;
             user.images.map((link) => {
               {
-                console.log(link.images_link);
+                gambar = link.images_link;
               }
-              gambar[counter++] = link.images_link;
             });
             return (
               <CardCompt3
                 title={user.nama_kuliner}
                 desc={user.deskripsi_kuliner}
-                image={gambar[0]}
+                image={gambar}
               />
             );
           }
