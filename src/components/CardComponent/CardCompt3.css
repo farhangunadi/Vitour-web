@@ -39,6 +39,7 @@
     margin: 0 auto;
     justify-content: center;
     object-fit: cover;
+    max-height: 300px;
 }
 
 .RestoNavigation {
