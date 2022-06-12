@@ -22,13 +22,14 @@
 .card3-container .deskripsi h3 {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    font-size: 50px;
+    font-size: 28px;
 }
 
 .card3-container .deskripsi p {
-    font-size: 20px;
+    font-size: 12px;
     text-align: justify;
     overflow: hidden;
+    white-space: normal;
     text-overflow: ellipsis;
 }
 
@@ -37,7 +38,7 @@
     height: auto;
     margin: 0 auto;
     justify-content: center;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .RestoNavigation {

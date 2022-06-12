@@ -32,23 +32,31 @@ export const MerchBDG = (props) => {
       <div className="title">
         <h1>Merch</h1>
         <h3>Bandung, Jawa Barat</h3>
-    </div>
-         {
-             loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
-                users.map(user => {
-                    if(user.city_id == 4)
-                        var gambar;
+      </div>
+      {loading ? (
+        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
+      ) : (
+        users.map((user) => {
+          if (user.city_id == 4) {
+            var gambar;
 
-                        user.images.map(link =>{
-                            {console.log(link.images_link)}
-                            gambar = link.images_link;
-                            
-                        })
-                        return(
-                            <CardCompt3 title={user.nama_merchandise} desc={user.deskripsi_merchandise} image={gambar} buttonText="Find Merch"/>
-                        )
-                })
-            }   
+            user.images.map((link) => {
+              {
+                console.log(link.images_link);
+              }
+              gambar = link.images_link;
+            });
+            return (
+              <CardCompt3
+                title={user.nama_merchandise}
+                desc={user.deskripsi_merchandise}
+                image={gambar}
+                buttonText="Find Merch"
+              />
+            );
+          }
+        })
+      )}
     </Container>
   );
 };

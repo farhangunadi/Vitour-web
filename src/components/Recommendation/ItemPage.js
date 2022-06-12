@@ -97,25 +97,38 @@ export const ItemPage = () => {
           {loading ? (
             <Dots className="spin-loading" color1="#003bfd" color2="#fff" />
           ) : (
-            posts.filter((value) => {
-              if (search === " " || filterCity === " "){
-                return value;
-              } else if(value.nama_merchandise.toLowerCase().includes(search.toLowerCase())){
-                return value;
-              } else if(value.city_id === filterCity){
-                return value;
-              }
-            })
-            .map((item) => {
-              var gambar = [];
-              var counter = 0;
-              item.images.map(link =>{
-                {console.log(link.images_link)}
-                gambar[counter++] = link.images_link;       
-              })
-              return(<CardCompt4 desc={item.deskripsi_merchandise} header={item.nama_merchandise} loc={item.alamat_toko} image={gambar[0]}/>)
-            }
-            )
+            <div className="grid-item">
+              {posts
+                .filter((value) => {
+                  if (search === " " || filterCity === " ") {
+                    return value;
+                  } else if (
+                    value.nama_merchandise
+                      .toLowerCase()
+                      .includes(search.toLowerCase())
+                  ) {
+                    return value;
+                  }
+                })
+                .map((item) => {
+                  var gambar = [];
+                  var counter = 0;
+                  item.images.map((link) => {
+                    {
+                      console.log(link.images_link);
+                    }
+                    gambar[counter++] = link.images_link;
+                  });
+                  return (
+                    <CardCompt4
+                      desc={item.deskripsi_merchandise}
+                      header={item.nama_merchandise}
+                      loc={item.alamat_toko}
+                      image={gambar[0]}
+                    />
+                  );
+                })}
+            </div>
           )}
         </div>
       </Container>

@@ -28,27 +28,37 @@ function KulinerJKT() {
     getData();
   }, []);
   return (
-     <Container className="infoContainer">
-        <div className="title">
-            <h1>Kuliner</h1>
-            <h3>DKI Jakarta</h3>
-        </div>
+    <Container className="infoContainer">
+      <div className="title">
+        <h1>Kuliner</h1>
+        <h3>DKI Jakarta</h3>
+      </div>
+      {loading ? (
+        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
+      ) : (
+        users.map((user) => {
+          if (user.city_id == 24) {
             {
-                loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
-                users.map(user => {
-                if(user.city_id == 24)
-                    {console.log(user.images)}
-                    var gambar = [];
-                    var counter = 0;
-                    user.images.map(link =>{
-                        {console.log(link.images_link)}
-                        gambar[counter++] = link.images_link;      
-                    })
-                    return(
-                         <CardCompt3 title={user.nama_kuliner} desc={user.deskripsi_kuliner} image={gambar[0]}/>
-                    )
-                })
-            }       
+              console.log(user.images);
+            }
+            var gambar = [];
+            var counter = 0;
+            user.images.map((link) => {
+              {
+                console.log(link.images_link);
+              }
+              gambar[counter++] = link.images_link;
+            });
+            return (
+              <CardCompt3
+                title={user.nama_kuliner}
+                desc={user.deskripsi_kuliner}
+                image={gambar[0]}
+              />
+            );
+          }
+        })
+      )}
     </Container>
   );
 }

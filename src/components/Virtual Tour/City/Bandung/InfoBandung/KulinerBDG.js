@@ -28,27 +28,34 @@ function KulinerBDG() {
     getData();
   }, []);
   return (
-     <Container className="infoContainer">
-        <div className="title">
-            <h1>Kuliner</h1>
-            <h3>Bandung, Jawa Barat</h3>
-        </div>
-            {
-                loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
-                users.map(user => {
-                    if(user.city_id == 4)
-                        var gambar;
+    <Container className="infoContainer">
+      <div className="title">
+        <h1>Kuliner</h1>
+        <h3>Bandung, Jawa Barat</h3>
+      </div>
+      {loading ? (
+        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
+      ) : (
+        users.map((user) => {
+          if (user.city_id == 4) {
+            var gambar;
 
-                        user.images.map(link =>{
-                            {console.log(link.images_link)}
-                            gambar = link.images_link;
-                            
-                        })
-                        return(
-                            <CardCompt3 title={user.nama_kuliner} desc={user.deskripsi_kuliner} image={gambar} />
-                        )
-                })
-            }       
+            user.images.map((link) => {
+              {
+                console.log(link.images_link);
+              }
+              gambar = link.images_link;
+            });
+            return (
+              <CardCompt3
+                title={user.nama_kuliner}
+                desc={user.deskripsi_kuliner}
+                image={gambar}
+              />
+            );
+          }
+        })
+      )}
     </Container>
   );
 }

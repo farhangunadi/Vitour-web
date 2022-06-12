@@ -32,23 +32,34 @@ export const MerchJKT = (props) => {
       <div className="title">
         <h1>Merch</h1>
         <h3>DKI Jakarta</h3>
-    </div>
-         {
-             loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
-                users.map(user => {
-                    if(user.city_id == 24)
-                        {console.log(user.images)}
-                        var gambar = [];
-                        var counter = 0;
-                        user.images.map(link =>{
-                            {console.log(link.images_link)}
-                            gambar[counter++] = link.images_link;      
-                        })
-                        return(
-                            <CardCompt3 title={user.nama_merchandise} desc={user.deskripsi_merchandise} image={gambar[0]} buttonText="Find Merch"/>
-                        )
-                })
-            }   
+      </div>
+      {loading ? (
+        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
+      ) : (
+        users.map((user) => {
+          if (user.city_id == 24) {
+            {
+              console.log(user.images);
+            }
+            var gambar = [];
+            var counter = 0;
+            user.images.map((link) => {
+              {
+                console.log(link.images_link);
+              }
+              gambar[counter++] = link.images_link;
+            });
+            return (
+              <CardCompt3
+                title={user.nama_merchandise}
+                desc={user.deskripsi_merchandise}
+                image={gambar[0]}
+                buttonText="Find Merch"
+              />
+            );
+          }
+        })
+      )}
     </Container>
   );
 };
