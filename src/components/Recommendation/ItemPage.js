@@ -50,55 +50,6 @@ export const ItemPage = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-<<<<<<< HEAD
-    <Container className='item-container'>
-        <h1 className='title-page'>Merch Store and Crafter Recommendation</h1>
-          <div className="filterAdv">
-                    <input                      
-                    type="text"
-                    className="inputFilter2"
-                    placeholder='Search...'
-                    onChange={(e) => setSearch(e.target.value)}/>
-                    <div className="grid">
-                    <select
-                    className="dropdown-select"
-                    onChange={(e) => setFilterCity(e.target.value)}>
-                    <option value="">City</option>
-                     {
-                        city.map(kota => {
-                          return (
-                            <option value={kota.city_id}>{kota.nama_kota}</option>
-                          )
-                        })
-                     }
-                    </select>
-                    <select
-                    className="dropdown-select"
-                    >
-                      <option>Category</option>
-                      <option value="Culinary">Culinary</option>
-                      <option value="Merchandise">Merchandise</option>
-                      <option value="Fine Art">Fine Art</option>
-                      <option value="Fashion">Fashion</option>
-                    </select>
-                    <select
-                    className="dropdown-select"
-                    >
-                      <option>Laguange</option>
-                      <option value="English">English</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    </div>
-                    <div className="button-wrapper-get-all">
-                      <button        
-                        type="button"
-                        className='card-btn'
-                        >Search</button>  
-                </div>
-                </div>   
-       <div className="grid">
-         
-=======
     <>
       <Container className="item-container">
         <h1 className="title-page">Merch Store and Crafter Recommendation</h1>
@@ -143,11 +94,9 @@ export const ItemPage = () => {
           </div> */}
         </div>
         <div className="item-container">
->>>>>>> 269cfe182a0a9dbfa9b9f74e3cb965a671548482
           {loading ? (
             <Dots className="spin-loading" color1="#003bfd" color2="#fff" />
           ) : (
-<<<<<<< HEAD
             posts.filter((value) => {
               if (search === " " || filterCity === " "){
                 return value;
@@ -167,34 +116,6 @@ export const ItemPage = () => {
               return(<CardCompt4 desc={item.deskripsi_merchandise} header={item.nama_merchandise} loc={item.alamat_toko} image={gambar[0]}/>)
             }
             )
-=======
-            <div className="grid-item">
-              {posts
-                .filter((value) => {
-                  if (search === " " || filterCity === " ") {
-                    return value;
-                  } else if (
-                    value.nama_merchandise
-                      .toLowerCase()
-                      .includes(search.toLowerCase())
-                  ) {
-                    return value;
-                  } else if (value.city_id === filterCity) {
-                    return value;
-                  }
-                })
-                .map((item) => (
-                  <>
-                    <CardCompt4
-                      key={item.merchandise_id}
-                      desc={item.deskripsi_merchandise}
-                      header={item.nama_merchandise}
-                      loc={item.alamat_toko}
-                    />
-                  </>
-                ))}
-            </div>
->>>>>>> 269cfe182a0a9dbfa9b9f74e3cb965a671548482
           )}
         </div>
       </Container>

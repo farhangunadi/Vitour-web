@@ -31,7 +31,6 @@ function BudayaBDG() {
       <div className="title">
         <h1>Budaya</h1>
         <h3>Bandung, Jawa Barat</h3>
-<<<<<<< HEAD
     </div>
     {
         loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
@@ -50,22 +49,6 @@ function BudayaBDG() {
                 )
               })
        }       
-=======
-      </div>
-      {loading ? (
-        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
-      ) : (
-        users.map((user) => {
-          if (user.city_id == 4)
-            return (
-              <CardCompt3
-                title={user.nama_budaya}
-                desc={user.deskripsi_budaya}
-              />
-            );
-        })
-      )}
->>>>>>> 269cfe182a0a9dbfa9b9f74e3cb965a671548482
     </Container>
   );
 }

@@ -32,7 +32,6 @@ export const MerchJKT = (props) => {
       <div className="title">
         <h1>Merch</h1>
         <h3>DKI Jakarta</h3>
-<<<<<<< HEAD
     </div>
          {
              loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
@@ -50,23 +49,6 @@ export const MerchJKT = (props) => {
                         )
                 })
             }   
-=======
-      </div>
-      {loading ? (
-        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
-      ) : (
-        users.map((user) => {
-          if (user.city_id == 24)
-            return (
-              <CardCompt3
-                title={user.nama_merchandise}
-                desc={user.deskripsi_merchandise}
-                buttonText="Find Merch"
-              />
-            );
-        })
-      )}
->>>>>>> 269cfe182a0a9dbfa9b9f74e3cb965a671548482
     </Container>
   );
 };

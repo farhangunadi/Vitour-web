@@ -28,7 +28,6 @@ function KulinerBDG() {
     getData();
   }, []);
   return (
-<<<<<<< HEAD
      <Container className="infoContainer">
         <div className="title">
             <h1>Kuliner</h1>
@@ -50,27 +49,6 @@ function KulinerBDG() {
                         )
                 })
             }       
-=======
-    <Container className="infoContainer">
-      <div className="title">
-        <h1>Kuliner</h1>
-        <h3>Bandung, Jawa Barat</h3>
-      </div>
-      {loading ? (
-        <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
-      ) : (
-        users.map((user) => {
-          if (user.city_id == 4)
-            return (
-              <CardCompt3
-                title={user.nama_kuliner}
-                desc={user.deskripsi_kuliner}
-                loc="https://www.google.com/maps/search/kuliner+bandung/@-6.9177567,107.5832697,13z/data=!3m1!4b1"
-              />
-            );
-        })
-      )}
->>>>>>> 269cfe182a0a9dbfa9b9f74e3cb965a671548482
     </Container>
   );
 }
