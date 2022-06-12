@@ -33,9 +33,17 @@ function BudayaJKT() {
     {
         loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
          users.map(user => {
-            if(user.city_id == 1)
+            if(user.city_id == 24)
+              {console.log(user.images)}
+              var gambar = [];
+              var counter = 0;
+              user.images.map(link =>{
+                {console.log(link.images_link)}
+                gambar[counter++] = link.images_link;
+                            
+              })
                 return(
-                    <CardCompt3 title={user.nama_budaya} desc={user.deskripsi_budaya} />
+                    <CardCompt3 title={user.nama_budaya} desc={user.deskripsi_budaya} image={gambar[0]}/>
                 )
               })
        }       

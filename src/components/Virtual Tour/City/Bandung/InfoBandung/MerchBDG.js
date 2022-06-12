@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Spinner } from 'loading-animations-react';
 import CardCompt3 from '../../../../CardComponent/CardCompt3'
 import './../../../../Info Pariwisata/InfoPariwisata.css'
+import { counter } from '@fortawesome/fontawesome-svg-core';
 
 export const MerchBDG = (props) => {
     const [users, setUsers] = useState([])
@@ -24,7 +25,7 @@ export const MerchBDG = (props) => {
     useEffect(() => {
         getData();
     }, [])
-
+    console.log(users);
   return (
     <Container className="infoContainer">
     <div className="title">
@@ -35,8 +36,15 @@ export const MerchBDG = (props) => {
              loading ? <Spinner className="spin-loading" color1="#003bfd" color2="#fff"/> :
                 users.map(user => {
                     if(user.city_id == 4)
+                        var gambar;
+
+                        user.images.map(link =>{
+                            {console.log(link.images_link)}
+                            gambar = link.images_link;
+                            
+                        })
                         return(
-                            <CardCompt3 title={user.nama_merchandise} desc={user.deskripsi_merchandise} buttonText="Find Merch"/>
+                            <CardCompt3 title={user.nama_merchandise} desc={user.deskripsi_merchandise} image={gambar} buttonText="Find Merch"/>
                         )
                 })
             }   

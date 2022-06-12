@@ -91,6 +91,7 @@ export const ItemPage = () => {
                 </div>
                 </div>   
        <div className="grid">
+         
           {loading ? (
             <h3>Loading ...</h3>
           ) : (
@@ -103,7 +104,16 @@ export const ItemPage = () => {
                 return value;
               }
             })
-            .map((item) => <CardCompt4 desc={item.deskripsi_merchandise} header={item.nama_merchandise} loc={item.alamat_toko}/>)
+            .map((item) => {
+              var gambar = [];
+              var counter = 0;
+              item.images.map(link =>{
+                {console.log(link.images_link)}
+                gambar[counter++] = link.images_link;       
+              })
+              return(<CardCompt4 desc={item.deskripsi_merchandise} header={item.nama_merchandise} loc={item.alamat_toko} image={gambar[0]}/>)
+            }
+            )
           )}
         </div>
             </Container>
