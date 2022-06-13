@@ -8,7 +8,7 @@ import KulinerImg from "./../../../../assets/images/kuliner.jpg";
 import MerchImg from "./../../../../assets/images/merch.jpg";
 import BudayaImg from "./../../../../assets/images/budaya.png";
 import asiaAfrika from "./Foto/asiaafrika.jpg";
-import alun2 from "./Foto/alun-alun-bandung-profile1639354810.png";
+import alun2 from "./Foto/5e045866d9090.jpg";
 import kawahPutih from "./Foto/5ee5d42ba7d43.jpg";
 import tegalega from "./Foto/tegalega.jpg";
 import { Footer } from "../../../LandingPageCompt/Footer/Footer";
