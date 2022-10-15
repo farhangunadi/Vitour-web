@@ -4,8 +4,20 @@ import Logo from "./../assets/images/logo 1.png";
 import "./Navbar.css";
 function Navbar2() {
   const [isMobile, setIsMobile] = useState(false);
+  const [stickyNav, setStickyNav] = useState(false);
+
+  const changeNavbarBackground = () => {
+    if (window.scrollY >= 100) {
+      setStickyNav(true);
+    } else {
+      setStickyNav(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeNavbarBackground);
+
   return (
-    <nav className="navbar">
+    <nav className={stickyNav ? "navbar active" : "navbar"}>
       <div className="img-wrapper">
         <img src={Logo} alt="" className="logo" />
       </div>

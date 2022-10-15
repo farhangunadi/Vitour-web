@@ -5,13 +5,33 @@
 }
 
 .navbar {
+    position: fixed!important;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-wrap: nowrap!important;
+    align-items: flex-start!important;
     height: 75px;
-    background-color: white;
-    color: #0133D4;
+    background-color: transparent;
     padding: 20px;
+    width: 100%;
+    z-index: 100;
+    transition: 0.3s ease-in;
+}
+
+.navbar.active {
+    background-color: #1900a7;
+}
+
+.navbar.solid {
+    background-color: #490D40;
+    transition: background-color 1s ease 0s;
+    box-shadow: 0 0 4px grey;
+}
+
+.navbar.solid .Home,
+.navbar.solid .Store,
+.navbar.solid .vTour,
+.navbar.solid .about {
+    color: #0400d8;
 }
 
 .navbar .img-wrapper {
@@ -31,7 +51,7 @@
     display: flex;
     justify-content: flex-end;
     list-style: none;
-    width: 75%;
+    width: 100%;
     margin-right: 40px;
 }
 
@@ -40,7 +60,7 @@
 .vTour,
 .about {
     text-decoration: none;
-    color: #0133D4;
+    color: #ffffff;
     font-size: 20px;
     padding: 10px;
     margin: 0 20px;
@@ -51,7 +71,7 @@
 .Store :hover,
 .vTour :hover,
 .about :hover {
-    color: #005784;
+    color: #c5ecff;
 }
 
 .mobile-menu-icon {
