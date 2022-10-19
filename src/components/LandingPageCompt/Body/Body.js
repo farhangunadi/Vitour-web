@@ -2,10 +2,6 @@ import React from "react";
 import "./Body.css";
 import { CardCompt } from "../../CardComponent/CardCompt";
 import Logo from "./../../../assets/images/logo2.png";
-import Monas from "./../../Virtual Tour/City/Jakarta/Foto/monas.jpg";
-import gbk from "./../../Virtual Tour/City/Jakarta/Foto/gbk.jpg";
-import Alun2 from "./../../Virtual Tour/City/Bandung/Foto/alun-alun-bandung-profile1639354810.png";
-import Tegalega from "./../../Virtual Tour/City/Bandung/Foto/tegalega.jpg";
 import fiturImg1 from "./../../../assets/images/fitur (1).png";
 import fiturImg2 from "./../../../assets/images/fitur (2).png";
 import fiturImg3 from "./../../../assets/images/fitur (3).png";
@@ -14,6 +10,7 @@ import pakSandi from "./../../../assets/images/pakSandi.jpg";
 import ridwanKamil from "./../../../assets/images/ridwanKamil.jpg";
 import rektorUnpad from "./../../../assets/images/rektorUnpad.jpeg";
 import { CardCompt5 } from "../../CardComponent/CardCompt5";
+import SliderCard from "../../CardComponent/SliderCard";
 
 function Body() {
   return (
@@ -39,37 +36,7 @@ function Body() {
         </div>
       </div>
       <div className="container">
-        <div className="title">
-          <h2>Popular Destination</h2>
-        </div>
-        <div className="grid">
-          <CardCompt
-            className="cardCompt"
-            image={Monas}
-            header="Monas"
-            to="/virtualtour/jakarta/monas"
-            text="Jakarta"
-          />
-          <CardCompt
-            className="cardCompt"
-            image={gbk}
-            header="Stadion GBK"
-            text="Jakarta"
-          />
-          <CardCompt
-            className="cardCompt"
-            image={Alun2}
-            header="Alun-Alun Bandung"
-            to={"/virtualtour/bandung/alun-alun"}
-            text="Bandung"
-          />
-          <CardCompt
-            className="cardCompt"
-            image={Tegalega}
-            header="Tegalega"
-            text="Bandung"
-          />
-        </div>
+        <SliderCard />
       </div>
       <div className="testimoni">
         <h2>Testimoni</h2>
