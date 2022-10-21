@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Spinner } from "loading-animations-react";
 import CardCompt3 from "../../../../CardComponent/CardCompt3";
-import { Kuliner } from "../../../../Info Pariwisata/Kuliner/Kuliner";
+// import { Kuliner } from "../../../../Info Pariwisata/Kuliner/Kuliner";
 import "./../../../../Info Pariwisata/InfoPariwisata.css";
 
 function KulinerJKT() {
@@ -37,12 +37,11 @@ function KulinerJKT() {
         <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
       ) : (
         users.map((user) => {
-          if (user.city_id == 24) {
+          if (user.city_id === 24) {
             var gambar;
             user.images.map((link) => {
-              {
-                gambar = link.images_link;
-              }
+              gambar = link.images_link;
+              return null;
             });
             return (
               <CardCompt3
@@ -51,6 +50,8 @@ function KulinerJKT() {
                 image={gambar}
               />
             );
+          } else {
+            return <h1>Item is not available</h1>;
           }
         })
       )}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import CardCompt from "../../../CardComponent/CardCompt";
 import CardCompt2 from "../../../CardComponent/CardCompt2";
 import bdgIMG from "./bdg1.jpg";

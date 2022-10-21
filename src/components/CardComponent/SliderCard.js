@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CardCompt from "./CardCompt4";
+// import CardCompt from "./CardCompt4";
 import "./SliderCard.css";
 import Monas from "./../Virtual Tour/City/Jakarta/Foto/monas.jpg";
-import gbk from "./../Virtual Tour/City/Jakarta/Foto/gbk.jpg";
-import Alun2 from "./../Virtual Tour/City/Bandung/Foto/alun-alun-bandung-profile1639354810.png";
-import Tegalega from "./../Virtual Tour/City/Bandung/Foto/tegalega.jpg";
+// import gbk from "./../Virtual Tour/City/Jakarta/Foto/gbk.jpg";
+// import Alun2 from "./../Virtual Tour/City/Bandung/Foto/alun-alun-bandung-profile1639354810.png";
+// import Tegalega from "./../Virtual Tour/City/Bandung/Foto/tegalega.jpg";
 
 export default class SliderCard extends Component {
   render() {
@@ -49,7 +49,7 @@ export default class SliderCard extends Component {
         <h2 className="title_slider">Popular Destination</h2>
         <Slider {...settings}>
           <div>
-            <a className="card_container">
+            <div className="card_container">
               <img src={Monas} alt="" className="card_img" />
               <div className="card_content">
                 <h2 className="card_title">Monas</h2>
@@ -68,10 +68,10 @@ export default class SliderCard extends Component {
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
           <div>
-            <a className="card_container">
+            <div className="card_container">
               <img src={Monas} alt="" className="card_img" />
               <div className="card_content">
                 <h2 className="card_title">Monas</h2>
@@ -90,10 +90,10 @@ export default class SliderCard extends Component {
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
           <div>
-            <a className="card_container">
+            <div className="card_container">
               <img src={Monas} alt="" className="card_img" />
               <div className="card_content">
                 <h2 className="card_title">Monas</h2>
@@ -112,10 +112,10 @@ export default class SliderCard extends Component {
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
           <div>
-            <a className="card_container">
+            <div className="card_container">
               <img src={Monas} alt="" className="card_img" />
               <div className="card_content">
                 <h2 className="card_title">Monas</h2>
@@ -134,10 +134,10 @@ export default class SliderCard extends Component {
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
           <div>
-            <a className="card_container">
+            <div className="card_container">
               <img src={Monas} alt="" className="card_img" />
               <div className="card_content">
                 <h2 className="card_title">Monas</h2>
@@ -156,7 +156,7 @@ export default class SliderCard extends Component {
                   </button>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
 
           {/* <div>

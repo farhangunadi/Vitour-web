@@ -3,11 +3,11 @@ import { Dots } from "loading-animations-react";
 import axios from "axios";
 import "./ItemPage.css";
 import { Container } from "react-bootstrap";
-import { Post } from "./../Post";
-import Pagination from "./../Pagination";
+// import { Post } from "./../Post";
+// import Pagination from "./../Pagination";
 import CardCompt4 from "./../CardComponent/CardCompt4";
 import { Footer } from "../LandingPageCompt/Footer/Footer";
-import { CardModal } from "../CardComponent/CardModal";
+// import { CardModal } from "../CardComponent/CardModal";
 
 export const ItemPage = () => {
   const [posts, setPosts] = useState([]);
@@ -42,12 +42,12 @@ export const ItemPage = () => {
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  // const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const [search, setSearch] = useState("");
   const [filterCity, setFilterCity] = useState("");
 
   // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -113,9 +113,8 @@ export const ItemPage = () => {
                 .map((item) => {
                   var gambar;
                   item.images.map((link) => {
-                    {
-                      gambar = link.images_link;
-                    }
+                    gambar = link.images_link;
+                    return null;
                   });
                   return (
                     <CardCompt4

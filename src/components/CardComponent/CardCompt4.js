@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./CardCompt.css";
 import Image from "./default-2.jpg";
 import { FaMapMarkerAlt } from "react-icons/fa";

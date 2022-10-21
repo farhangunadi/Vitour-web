@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "./../../Wisata.css";
-import { Link } from "react-router-dom";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+// import { Link } from "react-router-dom";
+import { GoogleApiWrapper } from "google-maps-react";
 import { Footer } from "../../../../LandingPageCompt/Footer/Footer";
 
 function Alun2() {

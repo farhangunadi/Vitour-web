@@ -2,7 +2,6 @@
     background-color: #fff;
     border-radius: 0.4rem;
     overflow: hidden;
-    transition: 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,28 +10,25 @@
     padding: 30px;
 }
 
-.card5-container:hover {
-    transform: translateY(-0.5%);
-    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
-}
-
 .card5-container .deskripsi {
     padding: 40px;
 }
 
 .card5-container .deskripsi h3 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat';
     font-weight: 800;
     font-size: 30px;
 }
 
 .card5-container .deskripsi .sub-title {
+    font-family: 'Montserrat';
     font-size: 20px;
     opacity: 50%;
 }
 
 .card5-container .deskripsi .desc {
-    font-size: 20px;
+    font-family: 'Montserrat';
+    font-size: 15px;
     text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -46,7 +42,9 @@
 
 .card5-container .img-wrapper img {
     height: 100%;
-    width: 55%;
+    min-height: 324px;
+    max-height: 324px;
+    width: 90%;
     object-fit: cover;
     border-radius: 50%;
 }

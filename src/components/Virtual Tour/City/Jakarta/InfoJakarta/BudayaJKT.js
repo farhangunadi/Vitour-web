@@ -36,12 +36,11 @@ function BudayaJKT() {
         <Spinner className="spin-loading" color1="#003bfd" color2="#fff" />
       ) : (
         users.map((user) => {
-          if (user.city_id == 24) {
+          if (user.city_id === 24) {
             var gambar;
             user.images.map((link) => {
-              {
-                gambar = link.images_link;
-              }
+              gambar = link.images_link;
+              return null;
             });
             return (
               <CardCompt3
@@ -50,6 +49,8 @@ function BudayaJKT() {
                 image={gambar}
               />
             );
+          } else {
+            return <h1>Item is not available</h1>;
           }
         })
       )}

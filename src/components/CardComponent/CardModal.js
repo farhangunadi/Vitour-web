@@ -1,5 +1,4 @@
 import React from "react";
-import { Modal } from "bootstrap";
 
 export const CardModal = (props) => {
   return props.trigger ? (

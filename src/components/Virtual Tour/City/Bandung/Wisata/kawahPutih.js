@@ -1,8 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import "./../../Wisata.css";
-
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+// import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import { Footer } from "../../../../LandingPageCompt/Footer/Footer";
 
 function kawahPutih() {

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Header.css";
-import { Carousel, Button } from "react-bootstrap";
-import Image1 from "./../../../assets/images/pict (1).png";
-import Image2 from "./../../../assets/images/pict (2).png";
-import Image3 from "./../../../assets/images/pict (3).png";
-import { Link } from "react-router-dom";
+// import { Carousel, Button } from "react-bootstrap";
+// import Image1 from "./../../../assets/images/pict (1).png";
+// import Image2 from "./../../../assets/images/pict (2).png";
+// import Image3 from "./../../../assets/images/pict (3).png";
+// import { Link } from "react-router-dom";
 import "@fortawesome/free-solid-svg-icons";
 
 function Header() {
