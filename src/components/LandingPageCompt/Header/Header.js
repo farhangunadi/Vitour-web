@@ -25,7 +25,7 @@ function Header() {
               type="text"
               name="search-bar"
               id="search-bar-homepage"
-              placeholder="What you want to find?"
+              placeholder="Where do you want visit?"
             />
           </div>
         </div>

@@ -21,6 +21,7 @@ import BudayaBDG from "./components/Virtual Tour/City/Bandung/InfoBandung/Budaya
 import BudayaJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/BudayaJKT";
 import MerchJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/MerchJKT";
 import Comingsoon from "./components/ComingSoon/comingsoon";
+import ApiTest from "./components/API test/ApiTest";
 
 function App() {
   return (

@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
+import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 // import CardCompt from "./CardCompt4";
 import "./SliderCard.css";
 import Monas from "./../Virtual Tour/City/Jakarta/Foto/monas.jpg";
@@ -9,14 +11,47 @@ import Monas from "./../Virtual Tour/City/Jakarta/Foto/monas.jpg";
 // import Alun2 from "./../Virtual Tour/City/Bandung/Foto/alun-alun-bandung-profile1639354810.png";
 // import Tegalega from "./../Virtual Tour/City/Bandung/Foto/tegalega.jpg";
 
-export default class SliderCard extends Component {
+export class SliderCard extends Component {
+  slider() {
+    {
+      return (
+        this.props.data &&
+        this.props.data.map((post) => {
+          return (
+            <div>
+              <div className="card_container" key={post.id}>
+                <img src={Monas} alt="" className="card_img" />
+                <div className="card_content">
+                  <h2 className="card_title">{post.nama_kota}</h2>
+                  <p className="card_desc">Indonesia</p>
+                  <div className="card_btn_wrap">
+                    <button
+                      onClick={() => {
+                        window.open(
+                          "https://api.whatsapp.com/send?phone=628989040798",
+                          "_blank"
+                        );
+                      }}
+                      className="card-btn"
+                    >
+                      Discover
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      );
+    }
+  }
   render() {
     const settings = {
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 1,
+      slidesToScroll: 3,
       responsive: [
         {
           breakpoint: 1024,
@@ -47,128 +82,7 @@ export default class SliderCard extends Component {
     return (
       <div className="slider-container">
         <h2 className="title_slider">Popular Destination</h2>
-        <Slider {...settings}>
-          <div>
-            <div className="card_container">
-              <img src={Monas} alt="" className="card_img" />
-              <div className="card_content">
-                <h2 className="card_title">Monas</h2>
-                <p className="card_desc">Jakarta, Indonesia</p>
-                <div className="card_btn_wrap">
-                  <button
-                    onClick={() => {
-                      window.open(
-                        "https://api.whatsapp.com/send?phone=628989040798",
-                        "_blank"
-                      );
-                    }}
-                    className="card-btn"
-                  >
-                    Discover
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card_container">
-              <img src={Monas} alt="" className="card_img" />
-              <div className="card_content">
-                <h2 className="card_title">Monas</h2>
-                <p className="card_desc">Jakarta, Indonesia</p>
-                <div className="card_btn_wrap">
-                  <button
-                    onClick={() => {
-                      window.open(
-                        "https://api.whatsapp.com/send?phone=628989040798",
-                        "_blank"
-                      );
-                    }}
-                    className="card-btn"
-                  >
-                    Discover
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card_container">
-              <img src={Monas} alt="" className="card_img" />
-              <div className="card_content">
-                <h2 className="card_title">Monas</h2>
-                <p className="card_desc">Jakarta, Indonesia</p>
-                <div className="card_btn_wrap">
-                  <button
-                    onClick={() => {
-                      window.open(
-                        "https://api.whatsapp.com/send?phone=628989040798",
-                        "_blank"
-                      );
-                    }}
-                    className="card-btn"
-                  >
-                    Discover
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card_container">
-              <img src={Monas} alt="" className="card_img" />
-              <div className="card_content">
-                <h2 className="card_title">Monas</h2>
-                <p className="card_desc">Jakarta, Indonesia</p>
-                <div className="card_btn_wrap">
-                  <button
-                    onClick={() => {
-                      window.open(
-                        "https://api.whatsapp.com/send?phone=628989040798",
-                        "_blank"
-                      );
-                    }}
-                    className="card-btn"
-                  >
-                    Discover
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="card_container">
-              <img src={Monas} alt="" className="card_img" />
-              <div className="card_content">
-                <h2 className="card_title">Monas</h2>
-                <p className="card_desc">Jakarta, Indonesia</p>
-                <div className="card_btn_wrap">
-                  <button
-                    onClick={() => {
-                      window.open(
-                        "https://api.whatsapp.com/send?phone=628989040798",
-                        "_blank"
-                      );
-                    }}
-                    className="card-btn"
-                  >
-                    Discover
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* <div>
-            <CardCompt
-              className="cardCompt"
-              image={Monas}
-              header="Monas"
-              to="/virtualtour/jakarta/monas"
-              text="Jakarta"
-            />
-          </div> */}
-        </Slider>
+        <Slider {...settings}>{this.slider()}</Slider>
       </div>
     );
   }

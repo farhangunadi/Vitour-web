@@ -13,7 +13,7 @@
 
 .content-homepage-container {
     margin-top: 13%;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 .content-homepage-container .homepage-title {
@@ -22,7 +22,9 @@
     font-weight: 700;
     font-size: 50.322px;
     color: #FFFFFF;
-    width: 55%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .content-homepage-container .homepage-title mark {
@@ -36,23 +38,32 @@
 
 .content-homepage-container .homepage-desc {
     font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
+    margin-top: 40px!important;
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     line-height: 30px;
     color: #ffffffcb;
     width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.search-bar {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 #search-bar-homepage {
     padding: 20px 15px;
-    border-radius: 0px;
+    border-radius: 20px;
     border: none;
     font-size: 18px;
     box-shadow: 0px 9.77778px 47.6667px 1.22222px rgba(2, 47, 70, 0.15);
     color: #001868;
     width: 500px;
+    text-align: center;
 }
 
 #search-bar-homepage:focus {

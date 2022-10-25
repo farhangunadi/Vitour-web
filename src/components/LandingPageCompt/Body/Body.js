@@ -1,20 +1,41 @@
-import React from "react";
+//library
+import React, { useState, useEffect } from "react";
 import "./Body.css";
+import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
+//component
+import { CardCompt5 } from "../../CardComponent/CardCompt5";
+import { SliderCard } from "../../CardComponent/SliderCard";
 // import { CardCompt } from "../../CardComponent/CardCompt";
-// import Logo from "./../../../assets/images/logo2.png";
+
+//image
+import Monas from "../../Virtual Tour/City/Jakarta/Foto/monas.jpg";
 import fiturImg1 from "./../../../assets/images/fitur (1).png";
 import fiturImg2 from "./../../../assets/images/fitur (2).png";
 import fiturImg3 from "./../../../assets/images/fitur (3).png";
-import { Carousel } from "react-bootstrap";
 import pakSandi from "./../../../assets/images/pakSandi.jpg";
 import ridwanKamil from "./../../../assets/images/ridwanKamil.jpg";
 import rektorUnpad from "./../../../assets/images/rektorUnpad.jpeg";
-import { CardCompt5 } from "../../CardComponent/CardCompt5";
-import SliderCard from "../../CardComponent/SliderCard";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-regular-svg-icons";
+// import Logo from "./../../../assets/images/logo2.png";
+
 function Body() {
+  //get cities data
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    const fetchPostsCities = async () => {
+      const res = await axios.get(
+        "https://vitour-backend.herokuapp.com/api/cities"
+      );
+      console.log(res);
+      setCities(res.data.data);
+    };
+    fetchPostsCities();
+  }, []);
+
+  console.log(cities);
   return (
     <>
       <div className="banner-fitur">
@@ -38,7 +59,7 @@ function Body() {
         </div>
       </div>
       <div className="container">
-        <SliderCard />
+        <SliderCard data={cities} />
         <div className="banner-merch">
           <div className="banner-merch-img-wrapper">
             <img
