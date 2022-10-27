@@ -25,18 +25,26 @@ function Navbar2() {
         className={isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={() => setIsMobile(false)}
       >
-        <Link to="/" className="Home">
-          <li>Home</li>
-        </Link>
-        <Link to="/item" className="Store">
-          <li>Store</li>
-        </Link>
-        <Link to="/virtualtour" className="vTour">
-          <li>Virtual Tour</li>
-        </Link>
-        <Link to="/about" className="about">
-          <li>About</li>
-        </Link>
+        <li>
+          <a href="/" className="Home">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/item" className="Store">
+            Store
+          </a>
+        </li>
+        <li>
+          <a href="/virtualtour" className="vTour">
+            Virtual Tour
+          </a>
+        </li>
+        <li>
+          <a href="/about" className="about">
+            About
+          </a>
+        </li>
       </ul>
       <button
         className="mobile-menu-icon"

@@ -9,7 +9,7 @@
 .banner-fitur {
     display: grid;
     gap: 4rem;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 30% 30% 30%;
     /* grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); */
     align-items: center;
     text-align: justify;

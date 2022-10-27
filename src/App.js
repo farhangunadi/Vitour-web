@@ -22,36 +22,38 @@ import BudayaJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/Budaya
 import MerchJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/MerchJKT";
 import Comingsoon from "./components/ComingSoon/comingsoon";
 import ApiTest from "./components/API test/ApiTest";
+import City from "./components/Virtual Tour/City/DetailCity";
 
 function App() {
   return (
     <Router>
       <Navbar2 />
       <Routes>
-        <Route path="/" element={<Beranda />} />{" "}
-        <Route path="/Store" element={<Rekomendasi />} />{" "}
-        <Route path="/item" element={<ItemPage />} />{" "}
-        <Route path="/!#" element={<ItemPage />} />{" "}
-        <Route path="/virtualtour" element={<VirtualTour />} />{" "}
-        <Route path="/about" element={<About />} />{" "}
-        <Route path="/virtualtour/bandung" element={<Bandung />} />{" "}
-        <Route path="/virtualtour/jakarta" element={<Jakarta />} />{" "}
-        <Route path="/virtualtour/jakarta/kuliner" element={<KulinerJKT />} />{" "}
-        <Route path="/virtualtour/jakarta/budaya" element={<BudayaJKT />} />{" "}
-        <Route path="/virtualtour/jakarta/merch" element={<MerchJKT />} />{" "}
-        <Route path="/virtualtour/jakarta/monas" element={<Monas />} />{" "}
-        <Route path="/virtualtour/purwakarta" element={<Purwakarta />} />{" "}
-        <Route path="/virtualtour/bandung/alun-alun" element={<Alun2 />} />{" "}
+        <Route path="/" element={<Beranda />} />
+        <Route path="/Store" element={<Rekomendasi />} />
+        <Route path="/item" element={<ItemPage />} />
+        <Route path="/!#" element={<ItemPage />} />
+        <Route path="/virtualtour" element={<VirtualTour />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/city/:id" element={<City />} />
+        <Route path="/virtualtour/bandung" element={<Bandung />} />
+        <Route path="/virtualtour/jakarta" element={<Jakarta />} />
+        <Route path="/virtualtour/jakarta/kuliner" element={<KulinerJKT />} />
+        <Route path="/virtualtour/jakarta/budaya" element={<BudayaJKT />} />
+        <Route path="/virtualtour/jakarta/merch" element={<MerchJKT />} />
+        <Route path="/virtualtour/jakarta/monas" element={<Monas />} />
+        <Route path="/virtualtour/purwakarta" element={<Purwakarta />} />
+        <Route path="/virtualtour/bandung/alun-alun" element={<Alun2 />} />
         <Route
           path="/virtualtour/bandung/kawah-putih"
           element={<KawahPutih />}
-        />{" "}
-        <Route path="/virtualtour/bandung/kuliner" element={<KulinerBDG />} />{" "}
-        <Route path="/virtualtour/bandung/budaya" element={<BudayaBDG />} />{" "}
-        <Route path="/virtualtour/bandung/merchstore" element={<MerchBDG />} />{" "}
-        <Route path="/comingsoon" element={<Comingsoon />} />{" "}
-      </Routes>{" "}
-      {/* <Beranda /> */}{" "}
+        />
+        <Route path="/virtualtour/bandung/kuliner" element={<KulinerBDG />} />
+        <Route path="/virtualtour/bandung/budaya" element={<BudayaBDG />} />
+        <Route path="/virtualtour/bandung/merchstore" element={<MerchBDG />} />
+        <Route path="/comingsoon" element={<Comingsoon />} />
+      </Routes>
+      {/* <Beranda /> */}
     </Router>
   );
 }

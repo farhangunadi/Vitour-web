@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Body.css";
 import { Carousel } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 //component
@@ -20,22 +20,26 @@ import ridwanKamil from "./../../../assets/images/ridwanKamil.jpg";
 import rektorUnpad from "./../../../assets/images/rektorUnpad.jpeg";
 // import Logo from "./../../../assets/images/logo2.png";
 
-function Body() {
+function Body(props) {
   //get cities data
   const [cities, setCities] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPostsCities = async () => {
       const res = await axios.get(
         "https://vitour-backend.herokuapp.com/api/cities"
       );
-      console.log(res);
       setCities(res.data.data);
     };
     fetchPostsCities();
   }, []);
 
-  console.log(cities);
+  //handler untuk navigasi ke page detail city
+  const handleCityDetail = (id, nama_kota) => {
+    navigate(`/city/${id}`, { state: { id: id, nama_kota: nama_kota } });
+  };
+
   return (
     <>
       <div className="banner-fitur">
@@ -59,7 +63,7 @@ function Body() {
         </div>
       </div>
       <div className="container">
-        <SliderCard data={cities} />
+        <SliderCard data={cities} goDetail={handleCityDetail} />
         <div className="banner-merch">
           <div className="banner-merch-img-wrapper">
             <img

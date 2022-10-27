@@ -1,5 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
-import axios from "axios";
+import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,37 +12,34 @@ import Monas from "./../Virtual Tour/City/Jakarta/Foto/monas.jpg";
 
 export class SliderCard extends Component {
   slider() {
-    {
-      return (
-        this.props.data &&
-        this.props.data.map((post) => {
-          return (
-            <div>
-              <div className="card_container" key={post.id}>
-                <img src={Monas} alt="" className="card_img" />
-                <div className="card_content">
-                  <h2 className="card_title">{post.nama_kota}</h2>
-                  <p className="card_desc">Indonesia</p>
-                  <div className="card_btn_wrap">
-                    <button
-                      onClick={() => {
-                        window.open(
-                          "https://api.whatsapp.com/send?phone=628989040798",
-                          "_blank"
-                        );
-                      }}
-                      className="card-btn"
-                    >
-                      Discover
-                    </button>
-                  </div>
+    return (
+      this.props.data &&
+      this.props.data.map((post) => {
+        return (
+          <div>
+            <div
+              className="card_container"
+              onClick={() => this.props.goDetail(post.city_id, post.nama_kota)}
+              key={post.city_id}
+            >
+              <img src={Monas} alt="" className="card_img" />
+              <div className="card_content">
+                <h2 className="card_title">{post.nama_kota}</h2>
+                <p className="card_desc">Indonesia</p>
+                <div className="card_btn_wrap">
+                  <button
+                    onClick={() => this.props.goDetail(post.city_id)}
+                    className="card-btn"
+                  >
+                    Discover
+                  </button>
                 </div>
               </div>
             </div>
-          );
-        })
-      );
-    }
+          </div>
+        );
+      })
+    );
   }
   render() {
     const settings = {

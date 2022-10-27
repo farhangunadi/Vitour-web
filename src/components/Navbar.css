@@ -55,25 +55,41 @@
     list-style: none;
     width: 100%;
     margin-right: 40px;
+    margin-top: 10px;
 }
 
-.Home,
-.Store,
-.vTour,
-.about {
+li .Home,
+li .Store,
+li .vTour,
+li .about {
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
     padding: 10px;
     margin: 0 20px;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    transition: .3s;
 }
 
-.Home :hover,
-.Store :hover,
-.vTour :hover,
-.about :hover {
-    color: #c5ecff;
+li .Home:hover,
+li .Store:hover,
+li .vTour:hover,
+li .about:hover {
+    color: #d4d8ff;
+    background-color: #5b606fdf;
+    border-radius: 10px;
+}
+
+.navbar.active li .Home:hover,
+.navbar.active li .Store:hover,
+.navbar.active li .vTour:hover,
+.navbar.active li .about:hover {
+    color: #1e02bd;
+    background-color: white;
+    border-radius: 10px;
 }
 
 .mobile-menu-icon {
