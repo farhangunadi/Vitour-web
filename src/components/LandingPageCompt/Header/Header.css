@@ -70,6 +70,37 @@
     outline: #cad6ff;
 }
 
+@media screen and (max-width: 426px) {
+    .header-homepage {
+        width: 82vh;
+        height: 82vh;
+    }
+    .content-homepage-container .homepage-title {
+        font-size: 30px;
+    }
+    .content-homepage-container {
+        margin-top: 20%;
+        /* margin-left: 50px; */
+    }
+    .content-homepage-container .homepage-desc {
+        font-size: 15px;
+        margin-top: 18px!important;
+        width: 82%;
+        line-height: 25px;
+    }
+    .search-bar {
+        width: inherit;
+        margin: 30px 10px;
+    }
+    #search-bar-homepage {
+        width: 82%;
+        margin: 0 auto;
+        display: block;
+        padding: 16px 15px;
+        border-radius: 12px;
+    }
+}
+
 
 /* .carousel {
     margin: auto;

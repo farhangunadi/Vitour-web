@@ -1,9 +1,10 @@
-.container {
+.container-body {
     background-color: white;
     justify-content: center;
     align-items: center;
-    width: 100vh;
-    padding-top: 20px;
+    width: 100%;
+    padding: 20px 10%;
+    margin: 0 auto;
 }
 
 .banner-fitur {
@@ -391,8 +392,34 @@
 }
 
 @media screen and (max-width: 426px) {
-    .container {
-        padding: 20px 40px;
+    .container-body {
+        margin: 0 auto;
+    }
+    .banner-merch {
+        display: block;
+    }
+    .banner-merch-img-wrapper {
+        margin-left: 0;
+    }
+    .banner-merch-img-wrapper .img-banner-merch {
+        border-radius: 7px;
+    }
+    .banner-merch-title {
+        margin-top: 20px;
+        font-size: 27px;
+        line-height: 38px;
+    }
+    .banner-merch-desc {
+        font-size: 13px;
+        width: 100%;
+        line-height: 23px;
+    }
+    .category-desc {
+        width: 100%;
+        font-size: 13px;
+    }
+    .category-item {
+        margin: 10px 20px;
     }
     .grid {
         display: block;

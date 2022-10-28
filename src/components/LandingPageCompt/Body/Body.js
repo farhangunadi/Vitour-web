@@ -23,6 +23,7 @@ import rektorUnpad from "./../../../assets/images/rektorUnpad.jpeg";
 function Body(props) {
   //get cities data
   const [cities, setCities] = useState([]);
+  const [cityImage, setCityImage] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +32,9 @@ function Body(props) {
         "https://vitour-backend.herokuapp.com/api/cities"
       );
       setCities(res.data.data);
+      // console.log("HASIL :", res.data.data);
     };
+
     fetchPostsCities();
   }, []);
 
@@ -62,7 +65,13 @@ function Body(props) {
           <p>Recommendation Store</p>
         </div>
       </div>
-      <div className="container">
+      <div className="container-body">
+        {cities.map((post) => {
+          post.images.map((image) => {
+            console.log("kota :", post.nama_kota);
+            console.log("link :", image);
+          });
+        })}
         <SliderCard data={cities} goDetail={handleCityDetail} />
         <div className="banner-merch">
           <div className="banner-merch-img-wrapper">

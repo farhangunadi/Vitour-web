@@ -45,6 +45,18 @@ function Navbar2() {
             About
           </a>
         </li>
+        <div className="auth">
+          <li>
+            <a href="/login" className="login">
+              Login
+            </a>
+          </li>
+          <li>
+            <a href="/register" className="register">
+              Register
+            </a>
+          </li>
+        </div>
       </ul>
       <button
         className="mobile-menu-icon"

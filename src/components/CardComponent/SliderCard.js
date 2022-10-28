@@ -14,15 +14,25 @@ export class SliderCard extends Component {
   slider() {
     return (
       this.props.data &&
-      this.props.data.map((post) => {
+      this.props.data.map((post, index) => {
         return (
           <div>
             <div
+              key={index}
               className="card_container"
               onClick={() => this.props.goDetail(post.city_id, post.nama_kota)}
               key={post.city_id}
             >
-              <img src={Monas} alt="" className="card_img" />
+              {post.images.map((image, index) => {
+                return (
+                  <img
+                    key={index}
+                    src={image.images_link}
+                    alt=""
+                    className="card_img"
+                  />
+                );
+              })}
               <div className="card_content">
                 <h2 className="card_title">{post.nama_kota}</h2>
                 <p className="card_desc">Indonesia</p>

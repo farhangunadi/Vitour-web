@@ -58,10 +58,18 @@
     margin-top: 10px;
 }
 
+.auth {
+    display: flex;
+    width: fit-content;
+    margin-left: 100px;
+}
+
 li .Home,
 li .Store,
 li .vTour,
-li .about {
+li .about,
+li .login,
+li .register {
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
@@ -72,6 +80,19 @@ li .about {
     font-style: normal;
     font-weight: 500;
     transition: .3s;
+}
+
+li .login {
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px 20px!important;
+    transition: .2s ease-in;
+}
+
+li .login:hover {
+    color: #e2e5fb;
+    background-color: #5b606ff0;
+    border-color: #81889df0;
 }
 
 li .Home:hover,
@@ -108,22 +129,37 @@ li .about:hover {
     }
     .nav-links-mobile {
         position: absolute;
-        display: block;
+        display: grid;
         list-style: none;
-        background-color: white;
+        background-color: #0133D4;
         left: 0;
         top: 75px;
         transition: all 0.5s ease-out;
         width: 100%;
         z-index: 100;
+        padding-left: 0;
+        padding-top: 1rem;
     }
-    .Home,
-    .Store,
-    .vTour,
-    .about {
-        color: #0133D4;
+    .auth {
+        margin-left: 0;
+        display: contents;
+        margin-top: 20px;
+    }
+    li {
+        padding: 10px;
+        margin: 0 auto;
         text-align: center;
-        padding: 32px;
+    }
+    li .login {
+        border: none;
+    }
+    li .Home,
+    li .Store,
+    li .vTour,
+    li .about,
+    li .login,
+    li .register {
+        color: #ffffff;
         width: 100%;
         transition: all 0.5s ease;
     }
@@ -138,7 +174,7 @@ li .about:hover {
         display: block;
         position: absolute;
         font-size: 30px;
-        color: #0133D4;
+        color: #ffffff;
         background: none;
         border: none;
         outline: none;
