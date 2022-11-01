@@ -99,7 +99,7 @@
     width: 90%;
 } */
 
-.start-learning {
+.discover {
     width: 90%;
     margin: 15px auto;
     padding: 15px 10px;
@@ -109,7 +109,7 @@
     border: none;
 }
 
-.start-learning .link-crs {
+.discover .link-crs {
     font-weight: bolder;
     color: #003EFF;
     text-decoration: none;
@@ -118,7 +118,13 @@
     font-size: 12px;
 }
 
-.start-learning .link-crs:hover {
+.discover .link-crs:hover {
     color: #002fbd;
     transform: scale(1.02);
+}
+
+@media screen and (max-width: 376px) {
+    .card_title {
+        font-size: 1.5rem;
+    }
 }

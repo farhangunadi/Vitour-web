@@ -7,7 +7,7 @@ export const CardCompt6 = (props) => {
       <img src={props.image} alt="" className="card-img" />
       <h2 className="title-card">{props.title}</h2>
       <p className="description-card">{props.desc}</p>
-      <div className="start-learning">
+      <div className="discover">
         <a className="link-crs" onClick={() => this.props.goDetail(props.id)}>
           Discover
         </a>
@@ -17,8 +17,7 @@ export const CardCompt6 = (props) => {
 };
 CardCompt6.defaultProps = {
   title: "Lorem Ipsum",
-  desc:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, aperiam.",
+  desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, aperiam.",
   image: "https://picsum.photos/400/200",
   to: "/",
   key: "1",

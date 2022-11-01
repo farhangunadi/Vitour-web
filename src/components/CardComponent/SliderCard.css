@@ -94,3 +94,9 @@
 .slick-next::before {
     color: rgba(0, 0, 0, 0.63)!important;
 }
+
+@media screen and (max-width: 376px) {
+    .card_title {
+        font-size: 1.5rem;
+    }
+}

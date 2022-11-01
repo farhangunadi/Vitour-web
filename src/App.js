@@ -23,12 +23,15 @@ import MerchJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/MerchJK
 import Comingsoon from "./components/ComingSoon/comingsoon";
 import ApiTest from "./components/API test/ApiTest";
 import City from "./components/Virtual Tour/City/DetailCity";
+import Detail_Item from "./components/API test/Detail_Item";
+import Destination from "./components/Virtual Tour/Destination/Destination";
 
 function App() {
   return (
     <Router>
       <Navbar2 />
       <Routes>
+        {/* <Route path="/" element={<Detail_Item />} /> */}
         <Route path="/" element={<Beranda />} />
         <Route path="/Store" element={<Rekomendasi />} />
         <Route path="/item" element={<ItemPage />} />
@@ -36,6 +39,7 @@ function App() {
         <Route path="/virtualtour" element={<VirtualTour />} />
         <Route path="/about" element={<About />} />
         <Route path="/city/:id" element={<City />} />
+        <Route path="/destination/:nama_destinasi" element={<Destination />} />
         <Route path="/virtualtour/bandung" element={<Bandung />} />
         <Route path="/virtualtour/jakarta" element={<Jakarta />} />
         <Route path="/virtualtour/jakarta/kuliner" element={<KulinerJKT />} />

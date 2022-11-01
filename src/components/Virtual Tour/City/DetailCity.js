@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ImageDefault from "./../../CardComponent/default-2.jpg";
 import CardCompt2 from "../../CardComponent/CardCompt2";
@@ -18,6 +19,8 @@ function DetailCity(props) {
   const dummy = [1, 2, 3, 4, 5, 6, 7, 8];
   const city_id = location.state.id;
   const city_name = location.state.nama_kota;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCityByID = async () => {
@@ -42,24 +45,47 @@ function DetailCity(props) {
         });
     };
 
-    const fetchCityPicture = async () => {
-      axios.get();
-    };
-
     fetchDestination();
     fetchCityByID();
   }, []);
+
+  //handler untuk navigasi ke page destination
+  const handleDestination = (id, nama_destinasi) => {
+    navigate(`/destination/${id}`, {
+      state: { id: id, nama_destinasi: nama_destinasi },
+    });
+    console.log("success");
+  };
 
   let getDestinationData = () => {
     return destinasi
       .filter((filterData) => filterData.city_id === city_id)
       .map((data) => {
-        console.log("data map:", data.length);
+        // console.log("data map:", data.length);
         return data != null ? (
-          <CardCompt6
-            title={data.nama_destinasi}
-            desc={data.deskripsi_destinasi}
-          ></CardCompt6>
+          // <CardCompt6
+          //   title={data.nama_destinasi}
+          //   desc={data.deskripsi_destinasi}
+          //   id={data.destination_id}
+          //   goDetail={handleDestination}
+          // ></CardCompt6>
+          <div className="ctm-card-container2" key={props.key}>
+            <img
+              src="https://picsum.photos/400/200"
+              alt=""
+              className="card-img"
+            />
+            <h2 className="title-card">{data.nama_destinasi}</h2>
+            <p className="description-card">{data.deskripsi_destinasi}</p>
+            <div
+              className="discover"
+              onClick={() =>
+                handleDestination(data.destination_id, data.nama_destinasi)
+              }
+            >
+              <a className="link-crs">Discover</a>
+            </div>
+          </div>
         ) : (
           <h2 className="alert">Kosong</h2>
         );

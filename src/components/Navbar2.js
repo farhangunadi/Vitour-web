@@ -26,35 +26,35 @@ function Navbar2() {
         onClick={() => setIsMobile(false)}
       >
         <li>
-          <a href="/" className="Home">
+          <Link to="/" className="Home">
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/item" className="Store">
+          <Link to="/item" className="Store">
             Store
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/virtualtour" className="vTour">
+          <Link to="/virtualtour" className="vTour">
             Virtual Tour
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/about" className="about">
+          <Link to="/about" className="about">
             About
-          </a>
+          </Link>
         </li>
         <div className="auth">
           <li>
-            <a href="/login" className="login">
+            <Link to="/login" className="login">
               Login
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/register" className="register">
+            <Link to="/register" className="register">
               Register
-            </a>
+            </Link>
           </li>
         </div>
       </ul>
