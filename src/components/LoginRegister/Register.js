@@ -7,7 +7,7 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import gambarLogin from "../../assets/images/LoginRegister/login.png";
+import gambarLogin from "./../../assets/images/LoginRegister/login.png";
 import "./Login.css";
 
 function Register(props) {

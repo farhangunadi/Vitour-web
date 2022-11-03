@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import gambarLogin from "../../assets/images/LoginRegister/login.png";
-import gambarGoogle from "../../assets/images/LoginRegister/google.png";
-import gambarFacebook from "../../assets/images/LoginRegister/facebook.png";
-import gambarTwitter from "../../assets/images/LoginRegister/twitter.png";
+import gambarLogin from "./../../assets/images/LoginRegister/login.png";
+import gambarGoogle from "./../../assets/images/LoginRegister/google.png";
+import gambarFacebook from "./../../assets/images/LoginRegister/facebook.png";
+import gambarTwitter from "./../../assets/images/LoginRegister/twitter.png";
 import "./Login.css";
 
 function Login(props) {
