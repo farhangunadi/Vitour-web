@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import Navbar2 from "./components/Navbar2";
 import Beranda from "./components/Beranda";
 import Rekomendasi from "./components/Recommendation/Recommendation";
@@ -14,13 +14,22 @@ import City from "./components/Virtual Tour/City/DetailCity";
 import Detail_Item from "./components/API test/Detail_Item";
 import Destination from "./components/Virtual Tour/Destination/Destination";
 import Budaya from "./components/Info Pariwisata/Budaya/Budaya";
+import Login from "./components/LoginRegister/Login";
+import Register from "./components/LoginRegister/Register";
 
 function App() {
+  // const [token, setToken] = useState("");
+
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
   return (
     <Router>
       <Navbar2 />
       <Routes>
         {/* <Route path="/" element={<Detail_Item />} /> */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<Beranda />} />
         <Route path="/Store" element={<Rekomendasi />} />
         <Route path="/item" element={<ItemPage />} />
