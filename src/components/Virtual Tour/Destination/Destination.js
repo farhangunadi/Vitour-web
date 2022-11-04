@@ -12,7 +12,10 @@ function Destination() {
   const location = useLocation();
   const id = location.state.id;
   console.log(location.state);
+
   const [destination, setDestination] = useState([]);
+  const [video, setVideo] = useState([]);
+  const [handle, setHandle] = useState(false);
 
   useEffect(() => {
     const fetchDestination = async () => {
@@ -21,11 +24,13 @@ function Destination() {
         .then((res) => {
           console.log("result :", res.data.data);
           setDestination(res.data.data[0]);
+          setVideo(res.data.data[0].videovrs[0].link_video);
+          setHandle(true);
         });
     };
 
     fetchDestination();
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -47,7 +52,7 @@ function Destination() {
           className="video_destinasi"
           width="946.67"
           height="420"
-          src="https://www.youtube.com/embed/w7uaPX-YL0k"
+          src={handle ? video : "https://www.youtube.com/embed/aKtb7Y3qOck"}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -5,7 +5,7 @@ import "./ItemPage.css";
 import { Container } from "react-bootstrap";
 // import { Post } from "./../Post";
 // import Pagination from "./../Pagination";
-import CardCompt4 from "./../CardComponent/CardCompt4";
+import CardCompt4 from "./../Component/CardComponent/CardCompt4";
 import { Footer } from "../LandingPageCompt/Footer/Footer";
 // import { CardModal } from "../CardComponent/CardModal";
 

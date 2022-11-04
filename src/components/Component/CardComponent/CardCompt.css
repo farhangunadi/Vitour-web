@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Nunito:wght@700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.card:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 120px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-header {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0d0d0d;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-desc {
+    font-size: 15px;
+    font-weight: 400;
+    color: #22007f;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    font-size: 0.8rem;
+    letter-spacing: 0rem;
+    line-height: 1.7;
+    color: #3d3d3d;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.buttonExplore {
+    text-decoration: none;
+}
+
+.buttonExplore .card-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #3363ff;
+    background-color: #d8e0fd;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+
+.buttonExplore .card-btn:hover,
+.buttonExplore .card-btn:active {
+    background-color: #c3cffc;
+}
+
+@media screen and (max-width: 769px) {
+    .card {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+    .buttonExplore .card-btn {}
+}
+
+@media screen and (max-width: 426px) {
+    .card {
+        margin: 20px auto;
+    }
+}

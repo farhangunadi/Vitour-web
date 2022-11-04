@@ -4,14 +4,14 @@ import "./Body.css";
 import { Carousel } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Dots } from "loading-animations-react";
 
 //component
-import { CardCompt5 } from "../../CardComponent/CardCompt5";
-import { SliderCard } from "../../CardComponent/SliderCard";
+import { CardCompt5 } from "../../Component/CardComponent/CardCompt5";
+import { SliderCard } from "../../Component/CardComponent/SliderCard";
 // import { CardCompt } from "../../CardComponent/CardCompt";
 
 //image
-import Monas from "../../Virtual Tour/City/Jakarta/Foto/monas.jpg";
 import fiturImg1 from "./../../../assets/images/fitur (1).png";
 import fiturImg2 from "./../../../assets/images/fitur (2).png";
 import fiturImg3 from "./../../../assets/images/fitur (3).png";
@@ -23,15 +23,17 @@ import rektorUnpad from "./../../../assets/images/rektorUnpad.jpeg";
 function Body(props) {
   //get cities data
   const [cities, setCities] = useState([]);
-  const [cityImage, setCityImage] = useState([]);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPostsCities = async () => {
+      setLoading(true);
       const res = await axios.get(
         "https://vitour-backend.herokuapp.com/api/cities"
       );
       setCities(res.data.data);
+      setLoading(false);
       // console.log("HASIL :", res.data.data);
     };
 
@@ -66,13 +68,13 @@ function Body(props) {
         </div>
       </div>
       <div className="container-body">
-        {cities.map((post) => {
-          post.images.map((image) => {
-            console.log("kota :", post.nama_kota);
-            console.log("link :", image);
-          });
-        })}
-        <SliderCard data={cities} goDetail={handleCityDetail} />
+        {loading ? (
+          <div className="wrap_loading">
+            <Dots className="spin-loading" color1="#003bfd" color2="#fff" />
+          </div>
+        ) : (
+          <SliderCard data={cities} goDetail={handleCityDetail} />
+        )}
         <div className="banner-merch">
           <div className="banner-merch-img-wrapper">
             <img

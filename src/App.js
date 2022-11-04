@@ -7,24 +7,13 @@ import VirtualTour from "./components/Virtual Tour/VirtualTour";
 import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Bandung from "./components/Virtual Tour/City/Bandung/bandung";
-import Jakarta from "./components/Virtual Tour/City/Jakarta/jakarta";
-import Purwakarta from "./components/Virtual Tour/City/Purwakarta/purwakarta";
-import Alun2 from "./components/Virtual Tour/City/Bandung/Wisata/Alun2";
-import KawahPutih from "./components/Virtual Tour/City/Bandung/Wisata/kawahPutih";
 import { ItemPage } from "./components/Recommendation/ItemPage";
-import KulinerBDG from "./components/Virtual Tour/City/Bandung/InfoBandung/KulinerBDG";
-import MerchBDG from "./components/Virtual Tour/City/Bandung/InfoBandung/MerchBDG";
-import KulinerJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/KulinerJKT";
-import Monas from "./components/Virtual Tour/City/Jakarta/Wisata/Monas";
-import BudayaBDG from "./components/Virtual Tour/City/Bandung/InfoBandung/BudayaBDG";
-import BudayaJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/BudayaJKT";
-import MerchJKT from "./components/Virtual Tour/City/Jakarta/InfoJakarta/MerchJKT";
 import Comingsoon from "./components/ComingSoon/comingsoon";
 import ApiTest from "./components/API test/ApiTest";
 import City from "./components/Virtual Tour/City/DetailCity";
 import Detail_Item from "./components/API test/Detail_Item";
 import Destination from "./components/Virtual Tour/Destination/Destination";
+import Budaya from "./components/Info Pariwisata/Budaya/Budaya";
 
 function App() {
   return (
@@ -39,8 +28,9 @@ function App() {
         <Route path="/virtualtour" element={<VirtualTour />} />
         <Route path="/about" element={<About />} />
         <Route path="/city/:id" element={<City />} />
-        <Route path="/destination/:nama_destinasi" element={<Destination />} />
-        <Route path="/virtualtour/bandung" element={<Bandung />} />
+        <Route path="/destination/:id" element={<Destination />} />
+        <Route path="/culture" element={<Budaya />} />
+        {/* <Route path="/virtualtour/bandung" element={<Bandung />} />
         <Route path="/virtualtour/jakarta" element={<Jakarta />} />
         <Route path="/virtualtour/jakarta/kuliner" element={<KulinerJKT />} />
         <Route path="/virtualtour/jakarta/budaya" element={<BudayaJKT />} />
@@ -54,7 +44,7 @@ function App() {
         />
         <Route path="/virtualtour/bandung/kuliner" element={<KulinerBDG />} />
         <Route path="/virtualtour/bandung/budaya" element={<BudayaBDG />} />
-        <Route path="/virtualtour/bandung/merchstore" element={<MerchBDG />} />
+        <Route path="/virtualtour/bandung/merchstore" element={<MerchBDG />} /> */}
         <Route path="/comingsoon" element={<Comingsoon />} />
       </Routes>
       {/* <Beranda /> */}
