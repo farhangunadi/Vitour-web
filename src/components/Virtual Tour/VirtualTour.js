@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { CardCompt } from "../Component/CardComponent/CardCompt";
 import "./VirtualTour.css";
-import bandungIMG from "./../../assets/images/bandung.jpg";
-import jakartaIMG from "./../../assets/images/jakarta.jpg";
-import pwkIMG from "./../../assets/images/pwk.jpg";
+import axios from "axios";
+import { Dots } from "loading-animations-react";
 import { Footer } from "../LandingPageCompt/Footer/Footer";
 
 function VirtualTour() {
+  const [city, setCity] = useState([]);
+
+  useEffect(() => {
+    const fetchCity = async () => {
+      const res = await axios.get(
+        "https://vitour-backend.herokuapp.com/api/cities"
+      );
+      setCity(res.data.data);
+    };
+    fetchCity();
+  }, []);
   return (
     <>
       <div className="wrap">
@@ -15,33 +25,9 @@ function VirtualTour() {
           <div className="title">
             <h1>Choose City</h1>
           </div>
-          <Row className="city-wrap">
-            <Col>
-              <CardCompt
-                className="city"
-                header="Bandung"
-                image={bandungIMG}
-                text="Indonesia"
-                to={"/virtualtour/bandung"}
-              />
-            </Col>
-            <Col>
-              <CardCompt
-                header="Jakarta"
-                image={jakartaIMG}
-                text="Indonesia"
-                to={"/virtualtour/jakarta"}
-              />
-            </Col>
-            <Col>
-              <CardCompt
-                header="Purwakarta"
-                image={pwkIMG}
-                text="Indonesia"
-                to={"/virtualtour/purwakarta"}
-              />
-            </Col>
-          </Row>
+          <div className="city-wrap">
+            <CardCompt data={city} />
+          </div>
         </Container>
       </div>
       <Footer />
