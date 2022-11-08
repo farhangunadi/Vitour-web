@@ -1,0 +1,133 @@
+/* Container */
+
+.store_container {
+    box-sizing: border-box;
+    padding-top: 15vh!important;
+    padding: 20px;
+}
+
+.store_content_container {
+    margin-top: 5vh;
+    display: flex;
+}
+
+.store_sidebar_menu {
+    width: 20vw;
+    background-color: aqua;
+    margin-right: 2vw;
+}
+
+
+/* ==== */
+
+
+/* Header Title */
+
+.store_header {
+    width: 100%;
+}
+
+.store_header_title {
+    width: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5vw;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* ==== */
+
+
+/* Card */
+
+.store_item_list {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 10px;
+}
+
+.store_card_item_container {
+    width: fit-content;
+    max-width: 17vw;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.store_card_item_image_wrap {
+    display: block;
+    margin: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.store_card_item_image {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px 10px 5px 5px;
+    display: block;
+}
+
+.store_card_item_title {
+    font-size: 1.5vw;
+    font-weight: bolder;
+    color: rgb(38, 38, 38);
+    text-align: left;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.store_card_item_desc {
+    font-size: 0.8vw;
+    font-weight: 500;
+    color: rgb(77, 77, 77);
+    text-align: left;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.item_price {
+    font-size: 1.2vw;
+    font-weight: bolder;
+    color: rgb(36, 36, 36);
+    text-align: left;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.store_card_item_btn_wrap {
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px 10px;
+    border: 3px solid;
+    background-color: #88a3fcaa;
+    border-radius: 10px;
+    border: none;
+}
+
+.store_card_item_btn_wrap .item_btn {
+    font-weight: bolder;
+    color: #003EFF;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+
+
+/* ==== */

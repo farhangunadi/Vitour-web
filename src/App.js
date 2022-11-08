@@ -16,6 +16,7 @@ import Destination from "./components/Virtual Tour/Destination/Destination";
 import Budaya from "./components/Info Pariwisata/Budaya/Budaya";
 import Login from "./components/LoginRegister/Login";
 import Register from "./components/LoginRegister/Register";
+import Store from "./components/Store Page/Store";
 
 function App() {
   // const [token, setToken] = useState("");
@@ -31,8 +32,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Beranda />} />
-        <Route path="/Store" element={<Rekomendasi />} />
+        {/* <Route path="/Store" element={<Rekomendasi />} /> */}
         <Route path="/item" element={<ItemPage />} />
+        <Route path="/store" element={<Store />} />
         <Route path="/!#" element={<ItemPage />} />
         <Route path="/virtualtour" element={<VirtualTour />} />
         <Route path="/about" element={<About />} />
