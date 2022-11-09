@@ -16,9 +16,7 @@ function Header() {
             <mark>Discover</mark> Your Dream and Favorite Destination Virtually
           </h1>
           <p className="homepage-desc">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
-            recusandae doloribus cumque impedit qui corrupti molestias fugit
-            minima ducimus.
+            Find Everthing About Your Dream Destination With Virtual Tour, Culiner, Culture and Merch From The City You Choose
           </p>
           <div className="search-bar">
             <input

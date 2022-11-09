@@ -25,7 +25,7 @@ function About() {
                 VITOUR akan menjadi solusi alternatif bagi anda yang ingin
                 melakukan rekreasi tanpa khawatir akan keterbatasan waktu, biaya
                 dan tempat. Dalam jangka panjang VITOUR juga dapat meningkatkan
-                pengetahuan masyarakat mengenai pariwisata lokal.
+                pengetahuan masyarakat mengenai pariwisata lokal. 
               </p>
             </div>
             <div className="img-wrap">
