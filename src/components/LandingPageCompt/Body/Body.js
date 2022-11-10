@@ -88,10 +88,7 @@ function Body(props) {
               Get Special Merch From Several Destination
             </h1>
             <p className="banner-merch-desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
-              harum beatae ducimus eos aut itaque, ipsum, accusantium recusandae
-              possimus quisquam odit ullam? Cupiditate nisi quibusdam quos,
-              nobis dolor amet aperiam?
+              Recommendation spesial merch from us only for you!
             </p>
             <Link to="#">
               <button className="baner-merch-button">Find It</button>
@@ -101,10 +98,7 @@ function Body(props) {
         <div className="categories">
           <h1 className="category-title">Categories</h1>
           <p className="category-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim in
-            dolore debitis, voluptate iure veritatis inventore dicta laudantium
-            quaerat earum delectus voluptates vitae modi, porro nihil illo, ea
-            illum sapiente.
+            Choose categories you want to see it!
           </p>
           <div className="category-container">
             <Link to="#">
