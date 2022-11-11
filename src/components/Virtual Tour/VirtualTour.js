@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { CardCompt } from "../Component/CardComponent/CardCompt";
+import { Link, useNavigate } from "react-router-dom";
 import "./VirtualTour.css";
 import axios from "axios";
 import { Dots } from "loading-animations-react";
@@ -8,6 +9,7 @@ import { Footer } from "../LandingPageCompt/Footer/Footer";
 
 function VirtualTour() {
   const [city, setCity] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCity = async () => {
@@ -18,6 +20,10 @@ function VirtualTour() {
     };
     fetchCity();
   }, []);
+
+  const handleCityDetail = (id, nama_kota) => {
+    navigate(`/city/${id}`, { state: { id: id, nama_kota: nama_kota } });
+  };
   return (
     <>
       <div className="wrap">
@@ -26,7 +32,7 @@ function VirtualTour() {
             <h1>Choose City</h1>
           </div>
           <div className="city-wrap">
-            <CardCompt data={city} />
+            <CardCompt data={city} goDetail={handleCityDetail} />
           </div>
         </Container>
       </div>

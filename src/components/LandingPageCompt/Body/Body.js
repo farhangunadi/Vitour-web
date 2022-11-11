@@ -90,16 +90,14 @@ function Body(props) {
             <p className="banner-merch-desc">
               Recommendation spesial merch from us only for you!
             </p>
-            <Link to="#">
+            <Link to="/store">
               <button className="baner-merch-button">Find It</button>
             </Link>
           </div>
         </div>
         <div className="categories">
           <h1 className="category-title">Categories</h1>
-          <p className="category-desc">
-            Choose categories you want to see it!
-          </p>
+          <p className="category-desc">Choose categories you want to see it!</p>
           <div className="category-container">
             <Link to="#">
               <div className="category-item">

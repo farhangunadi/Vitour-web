@@ -52,12 +52,12 @@
 }
 
 .nav-links {
+    margin: auto;
     display: flex;
     justify-content: flex-end;
     list-style: none;
     width: 100%;
     margin-right: 40px;
-    margin-top: 10px;
 }
 
 .auth {
@@ -74,7 +74,7 @@ li .login,
 li .register {
     text-decoration: none;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     padding: 10px;
     margin: 0 20px;
     cursor: pointer;
@@ -92,9 +92,8 @@ li .login {
 }
 
 li .login:hover {
-    color: #e2e5fb;
-    background-color: #5b606ff0;
-    border-color: #81889df0;
+    color: #d4d8ff;
+    background-color: #5b606fdf;
 }
 
 li .Home:hover,
@@ -109,7 +108,8 @@ li .about:hover {
 .navbar.active li .Home:hover,
 .navbar.active li .Store:hover,
 .navbar.active li .vTour:hover,
-.navbar.active li .about:hover {
+.navbar.active li .about:hover,
+.navbar.active li .login:hover {
     color: #1e02bd;
     background-color: white;
     border-radius: 10px;

@@ -11,8 +11,8 @@ export const CardCompt = (props) => {
         <div
           key={index}
           className="card_container"
-          onClick={() => this.props.goDetail(post.city_id, post.nama_kota)}
-          key={post.city_id}
+          onClick={() => props.goDetail(post.city_id, post.nama_kota)}
+          key={post}
         >
           {post.images.map((image, index) => {
             return (
@@ -29,7 +29,7 @@ export const CardCompt = (props) => {
             <p className="card_desc">Indonesia</p>
             <div className="card_btn_wrap">
               <button
-                onClick={() => this.props.goDetail(post.city_id)}
+                onClick={() => props.goDetail(post.city_id)}
                 className="card-btn"
               >
                 Discover

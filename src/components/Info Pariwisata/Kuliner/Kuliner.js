@@ -1,22 +1,80 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import { CardCompt3 } from './../../CardComponent/CardCompt3';
-import "./../InfoPariwisata.css"
-import useFetch from '../../Fetch/useFetch';
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import { HeaderCompt } from "../../Component/Header/HeaderCompt";
+import { CardCompt3 } from "./../../Component/CardComponent/CardCompt3";
+import "../Budaya/culture.css";
+import SliderCompt3 from "../../Component/SliderCompt/SliderCompt3";
 
-export const Kuliner = (props) => {
- 
+function Kuliner(props) {
+  const location = useLocation();
+  const city_id = location.state.id;
+  const city_name = location.state.title;
+  console.log(city_name);
+
+  const [culinary, setCulinary] = useState([]);
+
+  useEffect(() => {
+    const fetchCulinary = async () => {
+      axios
+        .get(
+          `https://vitour-backend.herokuapp.com/api/city/culinaries?filter=${city_id}`
+        )
+        .then((res) => {
+          console.log("culinaries :", res.data.data);
+          setCulinary(res.data.data);
+        });
+    };
+    fetchCulinary();
+  }, []);
   return (
-    <Container className="infoContainer">
-    <div className="title">
-        <h1>Kuliner</h1>
-        <h3>{props.loc}</h3>
-    </div>
-        <CardCompt3 title={props.title} desc={props.desc}/>
-    </Container>
-  )
+    <>
+      <HeaderCompt
+        title={`Discover Culinary in ${city_name}`}
+        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem provident quasi repudiandae qui ducimus ullam obcaecati. Neque, quas itaque! Distinctio odit dolorum inventore quibusdam, enim molestiae."
+      ></HeaderCompt>
+      <section id="section2-culture">
+        <SliderCompt3 data={culinary}></SliderCompt3>
+      </section>
+      {/* <section id="section3-culture">
+        <div class="background-culture-3">
+          <div class="description-culture-3">
+            <div class="subtitle-culture-3">
+              <div class="line"></div>
+              <div class="subtitle2 indonesia-culture-3">Indonesia</div>
+              <div class="line"></div>
+            </div>
+            <div class="title-culture-3">
+              <div class="h3">Explore more culture in indonesia</div>
+            </div>
+            <div class="body-culture-3">
+              <div class="bodytext">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+                viverra sapien arcu id sed pretium. Rhoncus, arcu cras ac ut
+                curabitur dui tristique.
+              </div>
+            </div>
+            <div class="explore">
+              <a class="explore-more" href="#">
+                <button class="btn btn-explore">
+                  <div class="bodytext">Explore More</div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      {/* <div class="back">
+        <a class="back-destination" href="#">
+          <button class="btn btn-back">
+            <div class="bodytext">Back to Destination</div>
+          </button>
+        </a>
+      </div> */}
+    </>
+  );
 }
 Kuliner.defaultProps = {
-    loc : "Kota, Provinsi"
-}
-
+  loc: "Kota, Provinsi",
+};
+export default Kuliner;

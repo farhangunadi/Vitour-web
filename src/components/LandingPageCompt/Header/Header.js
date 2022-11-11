@@ -16,16 +16,17 @@ function Header() {
             <mark>Discover</mark> Your Dream and Favorite Destination Virtually
           </h1>
           <p className="homepage-desc">
-            Find Everthing About Your Dream Destination With Virtual Tour, Culiner, Culture and Merch From The City You Choose
+            Find Everthing About Your Dream Destination With Virtual Tour,
+            Culiner, Culture and Merch From The City You Choose
           </p>
-          <div className="search-bar">
+          {/* <div className="search-bar">
             <input
               type="text"
               name="search-bar"
               id="search-bar-homepage"
               placeholder="Where do you want visit?"
             />
-          </div>
+          </div> */}
         </div>
       </section>
     </>

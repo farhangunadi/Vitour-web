@@ -35,6 +35,55 @@ function Store() {
     fetchMerch();
   }, []);
 
+  const radioChangeHandler = (e) => {
+    const value = e.target.value;
+    if (value === "makanan") {
+      setMerch(
+        merch
+          .filter((item) => {
+            if (item === null) {
+              return <p>Kosong</p>;
+            } else if (item.merchandise_type.includes(value)) {
+              return item;
+            }
+          })
+          .map((post) => {
+            return post;
+          })
+      );
+    } else if (value === "aksesoris") {
+      setMerch(
+        merch
+          .filter((item) => item.merchandise_type.includes(value))
+          .map((post) => {
+            return post;
+          })
+      );
+    } else if (value === "pakaian") {
+      setMerch(
+        merch
+          .filter((item) => item.merchandise_type.includes(value))
+          .map((post) => {
+            return post;
+          })
+      );
+    } else if (value === "null") {
+      setMerch(
+        merch
+          .filter((item) => item.merchandise_type.includes(value))
+          .map((post) => {
+            return post;
+          })
+      );
+    } else if (value === "All") {
+      setMerch(
+        merch.map((post) => {
+          return post;
+        })
+      );
+    }
+  };
+
   return (
     <div className="store_container">
       <div className="store_header">
@@ -56,11 +105,23 @@ function Store() {
             <h2 className="menu_title">Category</h2>
             <hr />
             <div className="menu_cat">
-              <input type="radio" name="category" id="category" value="All" />
+              <input
+                type="radio"
+                name="category"
+                id="category"
+                value="All"
+                onChange={radioChangeHandler}
+              />
               <span className="cat_2">All</span>
             </div>
             <div className="menu_cat">
-              <input type="radio" name="category" id="category" value="Shirt" />
+              <input
+                type="radio"
+                name="category"
+                id="category"
+                value="pakaian"
+                onChange={radioChangeHandler}
+              />
               <span className="cat_1">Shirt</span>
             </div>
             <div className="menu_cat">
@@ -68,12 +129,19 @@ function Store() {
                 type="radio"
                 name="category"
                 id="category"
-                value="Accessories"
+                value="aksesoris"
+                onChange={radioChangeHandler}
               />
               <span className="cat_2">Accessories</span>
             </div>
             <div className="menu_cat">
-              <input type="radio" name="category" id="category" value="Food" />
+              <input
+                type="radio"
+                name="category"
+                id="category"
+                value="makanan"
+                onChange={radioChangeHandler}
+              />
               <span className="cat_3">Food</span>
             </div>
           </div>
@@ -115,6 +183,7 @@ function Store() {
                   <Link
                     className="item_link"
                     to={`/store/item/${post.merchandise_id}`}
+                    state={post.merchandise_id}
                   >
                     <div key={post} className="store_card_item_container">
                       <div className="store_card_item_image_wrap">

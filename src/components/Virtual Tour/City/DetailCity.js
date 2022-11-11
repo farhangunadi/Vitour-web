@@ -145,12 +145,16 @@ function DetailCity(props) {
           <CardCompt2
             header="Kuliner"
             image="https://www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Daerah-tiap-Provinsi-di-Indonesia-Serta-Daerah-Asalnya.jpg"
+            sendId={city_id}
+            title={city_name}
+            address={"culinary"}
           ></CardCompt2>
           <CardCompt2
             header="Budaya"
             image="https://sumbernesia.com/wp-content/uploads/2019/01/Keragaman-Kebudayaan-Indonesia.jpg"
             sendId={city_id}
             title={city_name}
+            address={"culture"}
             // goToCulture={handleCulture(city_id)}
           ></CardCompt2>
           <CardCompt2

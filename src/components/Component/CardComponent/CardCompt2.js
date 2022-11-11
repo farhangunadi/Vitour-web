@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const CardCompt2 = (props) => {
   const [data, setData] = useState({ id: props.sendId, title: props.title });
   return (
-    <Link to="/culture" state={data}>
+    <Link to={`/${props.address}`} state={data}>
       <a class="card">
         <img src={props.image} alt="" class="img" />
         <span class="overlay"></span>
@@ -30,7 +30,8 @@ export const CardCompt2 = (props) => {
 
 CardCompt2.defaultProps = {
   header: "Lorem Ipsum",
-  text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, nisi blanditiis cum repudiandae eius architecto autem.",
+  text:
+    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis, nisi blanditiis cum repudiandae eius architecto autem.",
   image: Image,
   to: "/",
 };
