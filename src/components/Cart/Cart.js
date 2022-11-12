@@ -28,7 +28,7 @@ function Cart(props) {
   const deleteHandling = (cartId) => {
     // e.preventDefault();
     console.log(cartId)
-    axios.post(`https://vitour-backend.herokuapp.com/api/delete/`+ cartId, {
+    axios.delete(`https://vitour-backend.herokuapp.com/api/cart/`+ cartId, {
       headers: {
         'Authorization': `Bearer ${myToken}`
       }
@@ -36,7 +36,7 @@ function Cart(props) {
       .then(res => { 
         if(res.status === 200){
           alert(res.data.message);
-          // window.location.reload(true);
+          window.location.reload(true);
         } else if (res.status === 400) {
           alert(res.data.message);
           // window.location.reload(true);
