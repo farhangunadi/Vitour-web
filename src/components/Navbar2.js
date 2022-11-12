@@ -13,17 +13,22 @@ function isLogged() {
   
   return (
     <div className="auth logged-in" >
-          <li>
-            <Link to="/profile" className="login">
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link to="/" onClickCapture={logout} className="logout">
-              Logout
-            </Link>
-          </li>
-        </div>
+      <li>
+        <Link to="/my-cart" className="login">
+          My Cart
+        </Link>
+      </li>
+      <li>
+        <Link to="/profile" className="login">
+          Profile
+        </Link>
+      </li>
+      <li>
+        <Link to="/" onClickCapture={logout} className="logout">
+          Logout
+        </Link>
+      </li>
+    </div>
   )
 }
 
@@ -63,7 +68,7 @@ function Navbar2() {
 
   useEffect(() => {
     if(sessionStorage.getItem('token')) {
-      console.log(sessionStorage.getItem('token'))
+      // console.log(sessionStorage.getItem('token'))
       setRightButton(isLogged)
       // window.location.reload(true);
     }
@@ -72,7 +77,7 @@ function Navbar2() {
   return (
     <nav className={stickyNav ? "navbar active" : "navbar"}>
       <div className="img-wrapper">
-        <img src={Logo} alt="" className="logo" />
+        <Link to="/"><img src={Logo} alt="" className="logo" /></Link>
       </div>
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
