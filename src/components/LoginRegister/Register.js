@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
@@ -15,9 +16,11 @@ function Register(props) {
     const [password, setPassword] = useState("");
     const [name, setName] = useState('');
     const [validated, setValidated] = useState(false);
+    let navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
+        
 
         const form = e.currentTarget;
         if (form.checkValidity() === false) {
@@ -38,10 +41,25 @@ function Register(props) {
             password: password
         }, { withCredentials: false })
             .then(res => {
-                console.log(res);
-                console.log(res.data);
-                console.log(res.data.data.token)
+                if(res.status === 201) {
+                    console.log(res);
+                    console.log(res.data);
+                    // console.log(res.data.data.token);
+                    alert("Account succesfully registered!");
+                    navigate('/login');
+                    // window.location.reload(true);
+                }
+                
                 // setToken(res.data.token)
+            }).catch(error => {
+                // let parsedErrors = [];
+                // parsedErrors = JSON.parse(error.request.response);
+                console.log(error.response.data)
+                alert(error.response.data);
+                navigate('/login');
+                // setHandleErrors(parsedErrors);
+    
+                // setIsSubmitted(true);
             })
 
         // setToken(res.data.token);
@@ -59,7 +77,7 @@ function Register(props) {
         <Col id="form-section">
             <Container>
                 <h1>Lets Get Started</h1>
-                <p className="mb-3 text-muted" >Have an account <a href='#'>Login</a></p>
+                <p className="mb-3 text-muted" >Have an account <a href="/login">Login</a></p>
                 <Form noValidate validated={validated} onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="name" style={{fontWeight: "bold"}}>
                         <Form.Label>Name</Form.Label>
