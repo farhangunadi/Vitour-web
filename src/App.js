@@ -17,21 +17,26 @@ import Budaya from "./components/Info Pariwisata/Budaya/Budaya";
 import Kuliner from "./components/Info Pariwisata/Kuliner/Kuliner";
 import Login from "./components/LoginRegister/Login";
 import Register from "./components/LoginRegister/Register";
+import Profile from "./components/Profile/UserProfile";
 import Store from "./components/Store Page/Store";
 import { DetailItem } from "./components/Store Page/DetailItem";
+import Protected from "./components/ProtectedRoute";
 
 function App() {
   // const [token, setToken] = useState("");
-
-  // if(!token) {
-  //   return <Login setToken={setToken} />
-  // }
+  // const [isLoggedIn, setIsLoggedIn] = useState[false];
+  // setTokenSession(token);
+  if(sessionStorage.getItem('token')) {
+    console.log(sessionStorage.getItem('token'));
+  }
+  
   return (
     <Router>
       <Navbar2 />
       <Routes>
         {/* <Route path="/" element={<Detail_Item />} /> */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Protected> <Profile /> </Protected>}/>
+        <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Beranda />} />
         {/* <Route path="/Store" element={<Rekomendasi />} /> */}
