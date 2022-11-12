@@ -217,6 +217,89 @@
     margin-left: 20px;
 }
 
-@media screen {
+.navbar-login-register {
+    height: 75px;
+    background-color: #7a67ff;
+    /* background-color: transparent; */
+    padding: 8px;
+    padding-top: 15px;
+    width: 100%;
+    margin-top: 0px;
+    position:absolute;
+    /* margin-top: 10px; */
+}
+
+.img-wrapper {
+    width: 200px;
+    height: auto;
+    margin: auto 30px;
+    justify-content: center;
+}
+
+.img-wrapper img {
+    width: 50px;
+    height: auto;
+    justify-content: center;
+}
+
+.page-name {
+    margin-left: -150px;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 1119px) {
+    .logo {
+        display: flex;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        padding-top: 0px;
+    }
+
+    #form-section .via{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: #373737;
+        padding-left: 180px;
+    }
+    
+    #form-section .alternate-login{
+        margin-left: 105px;
+    }
+    
+    .page-name {
+        margin-left: -180px;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 880px) {
+
+    #gambar{
+        display: none;
+        object-fit: cover;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    #form-section #formBasicEmail,
+    #form-section #formBasicPassword {
+        width: 450px;
+    }
+
+    #form-section .via{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: #373737;
+        padding-left: 150px;
+    }
+    
+    #form-section .alternate-login{
+        margin-left: 75px;
+    }
     
 }

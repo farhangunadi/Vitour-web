@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import gambarLogin from "./../../assets/images/LoginRegister/login.png";
 import "./Login.css";
+import LoginRegisterNavBar from './LoginRegisterNavBar';
 
 function Register(props) {
     const [email, setEmail] = useState("");
@@ -66,6 +67,8 @@ function Register(props) {
     }
 
   return (
+    <>
+    <LoginRegisterNavBar pageName={"Register Page"} />
     <Container className="vh-100 px-0" fluid={true}>
       <Row >
         <Col style={{ backgroundImage: `url(${gambarLogin}`}} id='gambar'>
@@ -139,6 +142,8 @@ function Register(props) {
         </Col>
       </Row>
     </Container>
+    </>
+    
   )
 }
 

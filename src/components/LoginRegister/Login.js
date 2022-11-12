@@ -12,6 +12,7 @@ import gambarFacebook from "./../../assets/images/LoginRegister/facebook.png";
 import gambarTwitter from "./../../assets/images/LoginRegister/twitter.png";
 import "./Login.css";
 import { useNavigate } from 'react-router-dom';
+import LoginRegisterNavBar from './LoginRegisterNavBar';
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -22,11 +23,6 @@ function Login(props) {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        try{
-
-        } catch (error) {
-
-        }
         axios.post(`https://vitour-backend.herokuapp.com/api/login`, { 
             email: email,
             password: password
@@ -37,7 +33,7 @@ function Login(props) {
                     console.log(res);
                     console.log(res.data);
                     console.log(res.data.data.token)
-                    sessionStorage.setItem('token', JSON.stringify(res.data.data.token));
+                    sessionStorage.setItem('token', res.data.data.token);
                     // setToken(res.data.data.token)
                     
                     navigate('/');
@@ -68,6 +64,8 @@ function Login(props) {
     }
     // console.log("saya aidil")
   return (
+    <>
+    <LoginRegisterNavBar pageName={"Login Page"} />
     <Container className="vh-100 px-0" fluid={true}>
       <Row >
         <Col style={{ backgroundImage: `url(${gambarLogin}`}} id='gambar'>
@@ -133,6 +131,8 @@ function Login(props) {
         </Col>
       </Row>
     </Container>
+    </>
+    
   )
 }
 
