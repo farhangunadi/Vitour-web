@@ -1,10 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./../assets/images/logo-white.png";
+import Logout from "./LoginRegister/Logout"
 import "./Navbar.css";
+
+function isLogged() {
+
+  const logout = () => {
+    sessionStorage.clear();
+    window.location.reload(true);
+  };
+  
+  return (
+    <div className="auth logged-in" >
+          <li>
+            <Link to="/profile" className="login">
+              Profile
+            </Link>
+          </li>
+          <li>
+            <Link to="/" onClickCapture={logout} className="logout">
+              Logout
+            </Link>
+          </li>
+        </div>
+  )
+}
+
+function isNotLogged() {
+  return (
+    <div className="auth">
+      <li>
+        <Link to="/login" className="login">
+          Login
+        </Link>
+      </li>
+      <li>
+        <Link to="/register" className="register">
+          Register
+        </Link>
+      </li>
+    </div>
+  )
+}
+
 function Navbar2() {
   const [isMobile, setIsMobile] = useState(false);
   const [stickyNav, setStickyNav] = useState(false);
+  const [rightButton, setRightButton] = useState(isNotLogged);
 
   const changeNavbarBackground = () => {
     if (window.scrollY >= 100) {
@@ -15,6 +58,16 @@ function Navbar2() {
   };
 
   window.addEventListener("scroll", changeNavbarBackground);
+  
+  
+
+  useEffect(() => {
+    if(sessionStorage.getItem('token')) {
+      console.log(sessionStorage.getItem('token'))
+      setRightButton(isLogged)
+      // window.location.reload(true);
+    }
+  }, [])
 
   return (
     <nav className={stickyNav ? "navbar active" : "navbar"}>
@@ -45,18 +98,12 @@ function Navbar2() {
             About
           </Link>
         </li>
-        <div className="auth">
-          <li>
-            <Link to="/login" className="login">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/register" className="register">
-              Register
-            </Link>
-          </li>
+        <div>
+          {rightButton}
         </div>
+        
+
+        
       </ul>
       <button
         className="mobile-menu-icon"
