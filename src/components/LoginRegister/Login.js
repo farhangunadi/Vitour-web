@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 import { Container, Row, Col } from "react-bootstrap";
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -11,11 +11,13 @@ import gambarGoogle from "./../../assets/images/LoginRegister/google.png";
 import gambarFacebook from "./../../assets/images/LoginRegister/facebook.png";
 import gambarTwitter from "./../../assets/images/LoginRegister/twitter.png";
 import "./Login.css";
+import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [msg, setMsg] = useState('');
+    // const [msg, setMsg] = useState('');
+    let navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -29,13 +31,39 @@ function Login(props) {
             email: email,
             password: password
         }, { withCredentials: false })
-            .then(res => {
-                console.log(res);
-                console.log(res.data);
-                console.log(res.data.data.token)
-                // setToken(res.data.token)
+            .then(res => { 
+                if(res.status === 200){
+                    // alert('!LOGGED');
+                    console.log(res);
+                    console.log(res.data);
+                    console.log(res.data.data.token)
+                    sessionStorage.setItem('token', JSON.stringify(res.data.data.token));
+                    // setToken(res.data.data.token)
+                    
+                    navigate('/');
+                    window.location.reload(true);
+                    // return res.data;
+                    
+                    
+                } else if (res.status === 400) {
+                    // console.log(res.data);
+                    alert(res.data.message);
+                } 
+                // console.log(res.data);
+                // alert('!LOGGED');
+                // navigate("/")
+                
+            }).catch(error => {
+                // let parsedErrors = [];
+                // parsedErrors = JSON.parse(error.request.response);
+                console.log(error.response.data.message)
+                alert(error.response.data.message);
+                // setHandleErrors(parsedErrors);
+    
+                // setIsSubmitted(true);
             })
-
+            // setToken("token123")
+            // sessionStorage.setItem('token', JSON.stringify("token123"));
         // setToken(res.data.token);
     }
     // console.log("saya aidil")
@@ -50,7 +78,6 @@ function Login(props) {
         </Col>
         <Col id="form-section">
             <Container>
-            <p className="has-text-centered">{msg}</p>
                 <Form onSubmit={handleLogin}>
                     
                         <Form.Group className="mb-3" controlId="formBasicEmail" style={{fontWeight: "bold"}}>
