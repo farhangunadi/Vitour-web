@@ -5,7 +5,7 @@ import Beranda from "./components/Beranda";
 import Rekomendasi from "./components/Recommendation/Recommendation";
 import VirtualTour from "./components/Virtual Tour/VirtualTour";
 import About from "./components/About";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemPage } from "./components/Recommendation/ItemPage";
 import Comingsoon from "./components/ComingSoon/comingsoon";
@@ -21,6 +21,8 @@ import Profile from "./components/Profile/UserProfile";
 import Store from "./components/Store Page/Store";
 import { DetailItem } from "./components/Store Page/DetailItem";
 import Protected from "./components/ProtectedRoute";
+import Cart from "./components/Cart/Cart";
+import LoginRegisterNavBar from "./components/LoginRegister/LoginRegisterNavBar";
 
 function App() {
   // const [token, setToken] = useState("");
@@ -32,12 +34,18 @@ function App() {
   
   return (
     <Router>
-      <Navbar2 />
+      {/* <LoginRegisterNavBar /> */}
       <Routes>
-        {/* <Route path="/" element={<Detail_Item />} /> */}
-        <Route path="/profile" element={<Protected> <Profile /> </Protected>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
+      </Routes>
+
+      {/* semua routes masukin aja dsini dlu, nanti comment mana yang harus dibatesi buat routesnya */}
+      <Navbar2 />
+      <Routes>
+        <Route path="/my-cart" element={<Protected> <Cart/> </Protected>} />
+        {/* <Route path="/" element={<Detail_Item />} /> */}
+        <Route path="/profile" element={<Protected> <Profile /> </Protected>}/>
         <Route path="/" element={<Beranda />} />
         {/* <Route path="/Store" element={<Rekomendasi />} /> */}
         <Route path="/item" element={<ItemPage />} />
