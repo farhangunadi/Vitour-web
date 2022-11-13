@@ -9,7 +9,7 @@ function About() {
   return (
     <div>
       <div className="container">
-        <h1>Our Team</h1>
+      <h1></h1>
         <AboutCard />
         <div className="aboutus">
           <h2>About us</h2>
@@ -34,6 +34,7 @@ function About() {
           </div>
         </div>
       </div>
+      
       <Footer />
     </div>
   );

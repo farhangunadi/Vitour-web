@@ -106,9 +106,9 @@ function Login(props) {
                             </Col>
                         </Row>
                         <Row className="mb-3">
-                            <Form.Group as={Col} className="mb-3" controlId="formBasicCheckbox">
+                            {/* <Form.Group as={Col} className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
+                            </Form.Group> */}
                             <Col style={{padding:8}}><a href='#'>Forget Password</a></Col>
                         </Row>
                         <div className="via">
