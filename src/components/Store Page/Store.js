@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Select from "react-select";
 import { Dots } from "loading-animations-react";
 import Image from "../../assets/images/kuliner.jpg";
 import "./Store.css";
@@ -8,8 +9,8 @@ import "./Store.css";
 function Store() {
   const [dummy, setDummy] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
   const [search, setSearch] = useState("");
-  const [filterCity, setFilterCity] = useState("");
   const [merch, setMerch] = useState([]);
+  const [filterItem, setfilterItem] = useState([]);
   const [city, setCity] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -20,6 +21,7 @@ function Store() {
         .get(`https://vitour-backend.herokuapp.com/api/city/merchandises`)
         .then((res) => {
           setMerch(res.data.data);
+          setfilterItem(res.data.data);
           setLoading(false);
         });
     };
@@ -35,54 +37,41 @@ function Store() {
     fetchMerch();
   }, []);
 
-  const radioChangeHandler = (e) => {
-    const value = e.target.value;
-    if (value === "makanan") {
-      setMerch(
-        merch
-          .filter((item) => {
-            if (item === null) {
-              return <p>Kosong</p>;
-            } else if (item.merchandise_type.includes(value)) {
-              return item;
-            }
-          })
-          .map((post) => {
-            return post;
-          })
-      );
-    } else if (value === "aksesoris") {
-      setMerch(
-        merch
-          .filter((item) => item.merchandise_type.includes(value))
-          .map((post) => {
-            return post;
-          })
-      );
-    } else if (value === "pakaian") {
-      setMerch(
-        merch
-          .filter((item) => item.merchandise_type.includes(value))
-          .map((post) => {
-            return post;
-          })
-      );
-    } else if (value === "null") {
-      setMerch(
-        merch
-          .filter((item) => item.merchandise_type.includes(value))
-          .map((post) => {
-            return post;
-          })
-      );
-    } else if (value === "All") {
-      setMerch(
-        merch.map((post) => {
-          return post;
-        })
-      );
-    }
+  const filterCategory = (catItem) => {
+    const result = filterItem.filter((curData) => {
+      if (catItem === "All") {
+        return curData;
+      }
+      return catItem === curData.merchandise_type;
+    });
+    setMerch(result);
+    console.log(result);
   };
+
+  const filterCity = (event) => {
+    let value = event.target.value;
+    console.log(value);
+    const resultFilter = filterItem.filter((curData) => {
+      if (value === "All") {
+        return curData;
+      }
+      return curData.city_id === value;
+    });
+    setMerch(resultFilter);
+    console.log("city_id", value);
+  };
+
+  //remove duplicate array when mapping inside jsx
+  const uniqueItem = [];
+  const uniqueCat = filterItem.filter((element) => {
+    const isDuplicate = uniqueItem.includes(element.merchandise_type);
+
+    if (!isDuplicate) {
+      uniqueItem.push(element.merchandise_type);
+      return true;
+    }
+    return false;
+  });
 
   return (
     <div className="store_container">
@@ -110,45 +99,30 @@ function Store() {
                 name="category"
                 id="category"
                 value="All"
-                onChange={radioChangeHandler}
+                onChange={() => filterCategory("All")}
               />
               <span className="cat_2">All</span>
             </div>
-            <div className="menu_cat">
-              <input
-                type="radio"
-                name="category"
-                id="category"
-                value="pakaian"
-                onChange={radioChangeHandler}
-              />
-              <span className="cat_1">Shirt</span>
-            </div>
-            <div className="menu_cat">
-              <input
-                type="radio"
-                name="category"
-                id="category"
-                value="aksesoris"
-                onChange={radioChangeHandler}
-              />
-              <span className="cat_2">Accessories</span>
-            </div>
-            <div className="menu_cat">
-              <input
-                type="radio"
-                name="category"
-                id="category"
-                value="makanan"
-                onChange={radioChangeHandler}
-              />
-              <span className="cat_3">Food</span>
-            </div>
+            {uniqueCat.map((cat) => {
+              return (
+                <div className="menu_cat">
+                  <input
+                    type="radio"
+                    name="category"
+                    id="category"
+                    value={cat.merchandise_type}
+                    onChange={() => filterCategory(cat.merchandise_type)}
+                  />
+                  <span className="cat_1">{cat.merchandise_type}</span>
+                </div>
+              );
+            })}
           </div>
           <div className="city_menu">
             <h2 className="city_menu_title">City</h2>
             <hr />
-            <select name="city_select" id="city_select">
+            <select name="city_select" id="city_select" onChange={filterCity}>
+              <option value="All">All</option>
               {city.map((option) => {
                 return (
                   <option value={option.city_id}>{option.nama_kota}</option>
