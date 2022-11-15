@@ -5,7 +5,7 @@ import Beranda from "./components/Beranda";
 import Rekomendasi from "./components/Recommendation/Recommendation";
 import VirtualTour from "./components/Virtual Tour/VirtualTour";
 import About from "./components/About";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ItemPage } from "./components/Recommendation/ItemPage";
 import Comingsoon from "./components/ComingSoon/comingsoon";
@@ -23,29 +23,46 @@ import { DetailItem } from "./components/Store Page/DetailItem";
 import Protected from "./components/ProtectedRoute";
 import Cart from "./components/Cart/Cart";
 import LoginRegisterNavBar from "./components/LoginRegister/LoginRegisterNavBar";
+import SearchDestination from "./components/Virtual Tour/Destination/SearchDestination";
 
 function App() {
   // const [token, setToken] = useState("");
   // const [isLoggedIn, setIsLoggedIn] = useState[false];
   // setTokenSession(token);
-  if(sessionStorage.getItem('token')) {
-    console.log(sessionStorage.getItem('token'));
+  if (sessionStorage.getItem("token")) {
+    console.log(sessionStorage.getItem("token"));
   }
-  
+
   return (
     <Router>
       {/* <LoginRegisterNavBar /> */}
       <Routes>
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
 
       {/* semua routes masukin aja dsini dlu, nanti comment mana yang harus dibatesi buat routesnya */}
       <Navbar2 />
       <Routes>
-        <Route path="/my-cart" element={<Protected> <Cart/> </Protected>} />
+        <Route
+          path="/my-cart"
+          element={
+            <Protected>
+              {" "}
+              <Cart />{" "}
+            </Protected>
+          }
+        />
         {/* <Route path="/" element={<Detail_Item />} /> */}
-        <Route path="/profile" element={<Protected> <Profile /> </Protected>}/>
+        <Route
+          path="/profile"
+          element={
+            <Protected>
+              {" "}
+              <Profile />{" "}
+            </Protected>
+          }
+        />
         <Route path="/" element={<Beranda />} />
         {/* <Route path="/Store" element={<Rekomendasi />} /> */}
         <Route path="/item" element={<ItemPage />} />
@@ -56,23 +73,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/city/:id" element={<City />} />
         <Route path="/destination/:id" element={<Destination />} />
+        <Route path="/search" element={<SearchDestination />} />
         <Route path="/culture" element={<Budaya />} />
         <Route path="/culinary" element={<Kuliner />} />
-        {/* <Route path="/virtualtour/bandung" element={<Bandung />} />
-        <Route path="/virtualtour/jakarta" element={<Jakarta />} />
-        <Route path="/virtualtour/jakarta/kuliner" element={<KulinerJKT />} />
-        <Route path="/virtualtour/jakarta/budaya" element={<BudayaJKT />} />
-        <Route path="/virtualtour/jakarta/merch" element={<MerchJKT />} />
-        <Route path="/virtualtour/jakarta/monas" element={<Monas />} />
-        <Route path="/virtualtour/purwakarta" element={<Purwakarta />} />
-        <Route path="/virtualtour/bandung/alun-alun" element={<Alun2 />} />
-        <Route
-          path="/virtualtour/bandung/kawah-putih"
-          element={<KawahPutih />}
-        />
-        <Route path="/virtualtour/bandung/kuliner" element={<KulinerBDG />} />
-        <Route path="/virtualtour/bandung/budaya" element={<BudayaBDG />} />
-        <Route path="/virtualtour/bandung/merchstore" element={<MerchBDG />} /> */}
+
         <Route path="/comingsoon" element={<Comingsoon />} />
       </Routes>
       {/* <Beranda /> */}

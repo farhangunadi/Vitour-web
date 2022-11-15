@@ -4,7 +4,7 @@ import "./Header.css";
 // import Image1 from "./../../../assets/images/pict (1).png";
 // import Image2 from "./../../../assets/images/pict (2).png";
 // import Image3 from "./../../../assets/images/pict (3).png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "@fortawesome/free-solid-svg-icons";
 
 function Header() {
@@ -19,14 +19,17 @@ function Header() {
             Find Everthing About Your Dream Destination With Virtual Tour,
             Culiner, Culture and Merch From The City You Choose
           </p>
-          {/* <div className="search-bar">
-            <input
+          <div className="search-bar">
+            {/* <input
               type="text"
               name="search-bar"
               id="search-bar-homepage"
               placeholder="Where do you want visit?"
-            />
-          </div> */}
+            /> */}
+            <Link to="/search">
+              <button>search</button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

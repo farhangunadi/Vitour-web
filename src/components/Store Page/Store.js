@@ -11,6 +11,7 @@ function Store() {
   const [search, setSearch] = useState("");
   const [merch, setMerch] = useState([]);
   const [filterItem, setfilterItem] = useState([]);
+  const [filterCity, setfilterCity] = useState([]);
   const [city, setCity] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -22,6 +23,7 @@ function Store() {
         .then((res) => {
           setMerch(res.data.data);
           setfilterItem(res.data.data);
+          setfilterCity(res.data.data);
           setLoading(false);
         });
     };
@@ -48,7 +50,7 @@ function Store() {
     console.log(result);
   };
 
-  const filterCity = (event) => {
+  const filterCityById = (event) => {
     let value = event.target.value;
     console.log(value);
     const resultFilter = filterItem.filter((curData) => {
@@ -121,7 +123,11 @@ function Store() {
           <div className="city_menu">
             <h2 className="city_menu_title">City</h2>
             <hr />
-            <select name="city_select" id="city_select" onChange={filterCity}>
+            <select
+              name="city_select"
+              id="city_select"
+              onChange={filterCityById}
+            >
               <option value="All">All</option>
               {city.map((option) => {
                 return (
