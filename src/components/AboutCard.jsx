@@ -42,12 +42,12 @@ const AboutCard = ()=>{
     <div class="row mb-4">
       <div class="col-lg-5">
         <h2 class="display-4 font-weight-light">Our team</h2>
-        <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p class="font-italic text-muted">Meet our best team!</p>
       </div>
     </div>
 
     <div class="row text-center">
-      <div class="col-xl-3 col-sm-6 mb-5">
+      <div class="col-xl-6 col-sm-6 mb-5 row-center">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/29e69b9fc9912d1d9c2dd.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
           <h5 class="mb-0">Muhammad Alwan Fauzi</h5><span class="small text-uppercase text-muted">Project Manager</span>
           <ul class="social mb-0 list-inline mt-3">
@@ -59,9 +59,9 @@ const AboutCard = ()=>{
         </div>
       </div>
 
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/29e69b9fc9912d1d9c2dd.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
-        <h5 class="mb-0">Muhammad Alwan Fauzi</h5><span class="small text-uppercase text-muted">Project Manager</span>
+      <div class="col-xl-6 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/43e6249b05ff682a42350.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
+        <h5 class="mb-0">Aidil Fitra</h5><span class="small text-uppercase text-muted">Scrum Master</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
@@ -71,9 +71,9 @@ const AboutCard = ()=>{
         </div>
       </div>
 
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/29e69b9fc9912d1d9c2dd.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
-        <h5 class="mb-0">Muhammad Alwan Fauzi</h5><span class="small text-uppercase text-muted">Project Manager</span>
+      <div class="col-xl-4 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/2a8705447920571c79846.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
+        <h5 class="mb-0">Muhammad Raihan Fatoni</h5><span class="small text-uppercase text-muted">Back End</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
@@ -83,9 +83,21 @@ const AboutCard = ()=>{
         </div>
       </div>
 
-      <div class="col-xl-3 col-sm-6 mb-5">
-        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/29e69b9fc9912d1d9c2dd.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
-        <h5 class="mb-0">Muhammad Alwan Fauzi</h5><span class="small text-uppercase text-muted">Project Manager</span>
+      <div class="col-xl-4 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://telegra.ph/file/422c75a705c3befa15c4a.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
+        <h5 class="mb-0">Farhan Gunadi</h5><span class="small text-uppercase text-muted">Front End</span>
+          <ul class="social mb-0 list-inline mt-3">
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-sm-6 mb-5">
+        <div class="bg-white rounded shadow-sm py-5 px-5"><img src="https://telegra.ph/file/fb3735e042d383beb8648.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"></img>
+        <h5 class="mb-0">Farhan Maulana</h5><span class="small text-uppercase text-muted">UI/UX Designer</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
