@@ -76,7 +76,6 @@ function App() {
         <Route path="/search" element={<SearchDestination />} />
         <Route path="/culture" element={<Budaya />} />
         <Route path="/culinary" element={<Kuliner />} />
-
         <Route path="/comingsoon" element={<Comingsoon />} />
       </Routes>
       {/* <Beranda /> */}

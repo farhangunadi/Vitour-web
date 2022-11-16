@@ -170,11 +170,16 @@ function SearchDestination() {
           .map((data) => {
             return (
               <div className="ctm-card-container2" key={data.destination_id}>
-                <img
-                  src="https://picsum.photos/400/200"
-                  alt=""
-                  className="card-img"
-                />
+                {data.images.slice(0, 1).map((image, index) => {
+                  return (
+                    <img
+                      key={index}
+                      src={image.images_link}
+                      alt=""
+                      className="card-img destinationList"
+                    />
+                  );
+                })}
                 <h2 className="title-card">{data.nama_destinasi}</h2>
                 <p className="description-card">{data.deskripsi_destinasi}</p>
                 <div

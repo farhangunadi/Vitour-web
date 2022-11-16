@@ -68,6 +68,7 @@ function DetailCity(props) {
     });
     console.log("success");
   };
+
   let getDestinationData = () => {
     if (loading) {
       return (
@@ -90,11 +91,16 @@ function DetailCity(props) {
                     className="ctm-card-container2"
                     key={data.destination_id}
                   >
-                    <img
-                      src="https://picsum.photos/400/200"
-                      alt=""
-                      className="card-img"
-                    />
+                    {data.images.slice(0, 1).map((image, index) => {
+                      return (
+                        <img
+                          key={index}
+                          src={image.images_link}
+                          alt=""
+                          className="card-img destinationList"
+                        />
+                      );
+                    })}
                     <h2 className="title-card">{data.nama_destinasi}</h2>
                     <p className="description-card">
                       {data.deskripsi_destinasi}
@@ -148,6 +154,7 @@ function DetailCity(props) {
             sendId={city_id}
             title={city_name}
             address={"culinary"}
+            text="Find some culinary from this city in here"
           ></CardCompt2>
           <CardCompt2
             header="Budaya"
@@ -155,11 +162,16 @@ function DetailCity(props) {
             sendId={city_id}
             title={city_name}
             address={"culture"}
+            text="Get know culture from this city in here"
             // goToCulture={handleCulture(city_id)}
           ></CardCompt2>
           <CardCompt2
             header="Merch"
             image="https://lpem.baznas.go.id/wp-content/uploads/2021/01/BAZNAS-Zakat-LPEM-26-Jan-2b.jpeg"
+            sendId={city_id}
+            title={city_name}
+            address={"store"}
+            text="Get some souvenirs 100% original from city in here"
           ></CardCompt2>
         </div>
       </section>

@@ -78,3 +78,8 @@
 .city_info {
     margin-bottom: 30px;
 }
+
+.ctm-card-container2 .destinationList {
+    max-height: 10vw;
+    object-fit: cover;
+}

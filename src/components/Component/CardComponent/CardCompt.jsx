@@ -14,7 +14,7 @@ export const CardCompt = (props) => {
           onClick={() => props.goDetail(post.city_id, post.nama_kota)}
           key={post}
         >
-          {post.images.map((image, index) => {
+          {post.images.slice(0, 1).map((image, index) => {
             return (
               <img
                 key={index}

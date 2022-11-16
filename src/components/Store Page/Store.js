@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import { Dots } from "loading-animations-react";
@@ -75,6 +76,17 @@ function Store() {
     return false;
   });
 
+  //function for filter by city
+  const filterByCity = (city_id, city_name) => {
+    const result = filterCity.filter((curData) => {
+      if (city_id === "All") {
+        return curData;
+      }
+      return city_id === curData.city_id;
+    });
+    setMerch(result);
+    console.log(result);
+  };
   return (
     <div className="store_container">
       <div className="store_header">
@@ -123,7 +135,27 @@ function Store() {
           <div className="city_menu">
             <h2 className="city_menu_title">City</h2>
             <hr />
-            <select
+            <DropdownButton id="dropdown-item-button filter_city" title="City">
+              <Dropdown.Item
+                as="button"
+                value="All"
+                onClick={() => filterByCity("All")}
+              >
+                All
+              </Dropdown.Item>
+              {city.map((kota) => {
+                return (
+                  <Dropdown.Item
+                    as="button"
+                    value={kota.city_id}
+                    onClick={() => filterByCity(kota.city_id, kota.nama_kota)}
+                  >
+                    {kota.nama_kota}
+                  </Dropdown.Item>
+                );
+              })}
+            </DropdownButton>
+            {/* <select
               name="city_select"
               id="city_select"
               onChange={filterCityById}
@@ -134,10 +166,7 @@ function Store() {
                   <option value={option.city_id}>{option.nama_kota}</option>
                 );
               })}
-            </select>
-          </div>
-          <div className="menu_btn_wrap">
-            <a className="apply_filter">Apply Filter</a>
+            </select> */}
           </div>
         </div>
         <div className="store_item_list">

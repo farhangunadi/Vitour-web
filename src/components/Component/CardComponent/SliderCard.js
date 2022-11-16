@@ -22,7 +22,7 @@ export class SliderCard extends Component {
               onClick={() => this.props.goDetail(post.city_id, post.nama_kota)}
               key={post.city_id}
             >
-              {post.images.map((image, index) => {
+              {post.images.slice(0, 1).map((image, index) => {
                 return (
                   <img
                     key={index}

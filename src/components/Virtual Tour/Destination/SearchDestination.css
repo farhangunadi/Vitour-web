@@ -50,3 +50,8 @@
     font-weight: 700;
     background-color: transparent;
 }
+
+.destinationList {
+    max-height: 10vw;
+    object-fit: cover;
+}
