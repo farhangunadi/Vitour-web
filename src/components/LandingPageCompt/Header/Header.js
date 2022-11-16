@@ -1,13 +1,19 @@
 import React from "react";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 // import { Carousel, Button } from "react-bootstrap";
 // import Image1 from "./../../../assets/images/pict (1).png";
 // import Image2 from "./../../../assets/images/pict (2).png";
 // import Image3 from "./../../../assets/images/pict (3).png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "@fortawesome/free-solid-svg-icons";
 
 function Header() {
+  const navigate = useNavigate();
+  const handleCityDetail = (keyword) => {
+    const cat = "";
+    navigate(`/search`, { state: { keyword: keyword, cat: cat } });
+  };
   return (
     <>
       <section className="header-homepage">
@@ -19,14 +25,22 @@ function Header() {
             Find Everthing About Your Dream Destination With Virtual Tour,
             Culiner, Culture and Merch From The City You Choose
           </p>
-          {/* <div className="search-bar">
+          <div className="search-bar">
             <input
               type="text"
               name="search-bar"
               id="search-bar-homepage"
               placeholder="Where do you want visit?"
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  handleCityDetail(e.target.value);
+                }
+              }}
             />
-          </div> */}
+            {/* <Link to="/search">
+              <button>search</button>
+            </Link> */}
+          </div>
         </div>
       </section>
     </>

@@ -296,23 +296,19 @@
     margin: 0 10px;
 }
 
-.category-item:nth-child(1) {
+.link:nth-child(1) .category-item {
     background: rgba(0, 56, 255, 0.14);
 }
 
-.category-item:nth-child(2) {
+.link:nth-child(2) .category-item {
     background: #C5FFC4;
 }
 
-.category-item:nth-child(3) {
+.link:nth-child(3) .category-item {
     background: #FFE2C8;
 }
 
-.category-item:nth-child(4) {
-    background: #CCFFF0;
-}
-
-.beach,
+.nature,
 .cat1 {
     fill: #0039FF;
     color: #0039FF;
@@ -324,7 +320,7 @@
     color: #06BC00;
 }
 
-.city,
+.history,
 .cat3 {
     fill: #FF7900;
     color: #FF7900;
