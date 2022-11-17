@@ -119,6 +119,25 @@ li .about:hover {
     display: none;
 }
 
+#profile-menu {
+    margin-right: 25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    
+}
+
+.prof-drop {
+    /* background-color: #9888ff; */
+    display: none;
+}
+
+.hide-nav {
+    top: -500px;
+}
+
 @media screen and (max-width: 1119px) {
     .logo {
         display: flex;
@@ -182,6 +201,16 @@ li .about:hover {
         outline: none;
         top: 15px;
         right: 25px;
+    }
+
+    .prof-drop {
+        /* background-color: #9888ff; */
+        display: block;
+    }
+
+    #profile-menu {
+        display: none;
+        
     }
 }
 
