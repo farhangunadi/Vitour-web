@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { Container, Row, Col} from "react-bootstrap";
 
 //style
 import "./Destination.css";
@@ -16,6 +17,7 @@ function Destination() {
   const [destination, setDestination] = useState([]);
   const [video, setVideo] = useState([]);
   const [handle, setHandle] = useState(false);
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     const fetchDestination = async () => {
@@ -25,7 +27,9 @@ function Destination() {
           console.log("result :", res.data.data);
           setDestination(res.data.data[0]);
           setVideo(res.data.data[0].videovrs[0].link_video);
+          setPhotos(res.data.data[0].images)
           setHandle(true);
+          console.log(res.data.data[0].images)
         });
     };
 
@@ -47,11 +51,19 @@ function Destination() {
           <p className="desc_destination">{destination.deskripsi_destinasi}</p>
         </div>
       </section>
+      
+      <section className="top_destinasi">
+       <div className="rekomendasi_destinasi">
+          <h1 className="title_destination">Rekomendasi Tempat</h1>
+          <p className="desc_destination">{destination.deskripsi_destinasi}</p>
+       </div>
+      </section>
+
       <section className="wrap_video_destinasi">
         <iframe
           className="video_destinasi"
-          width="946.67"
-          height="420"
+          width="100%"
+          height="700"
           src={handle ? video : "https://www.youtube.com/embed/aKtb7Y3qOck"}
           title="YouTube video player"
           frameBorder="0"
@@ -62,37 +74,59 @@ function Destination() {
       <section className="gallery_destinasi">
         <h1 className="title_gallery">Destination Photos</h1>
         <div className="grid_gallery">
-          <img
-            src="https://indonesiakaya.com/wp-content/uploads/2020/10/raja-ampat-surga1200.jpg"
-            alt=""
-            className="img_destination"
-          />
-          <img
-            src="https://akcdn.detik.net.id/visual/2020/12/10/pulau-misool-raja-ampat-indonesia_169.jpeg?w=650"
-            alt=""
-            className="img_destination"
-          />
-          <img
-            src="https://images3.alphacoders.com/676/thumb-1920-676171.jpg"
-            alt=""
-            className="img_destination"
-          />
-          <img
-            src="https://wallup.net/wp-content/uploads/2016/04/06/348092-landscape-nature-island-tropical-sunset-sea-aerial_view-Eden-Raja_Ampat-Indonesia.jpg"
-            alt=""
-            className="img_destination"
-          />
-          <img
-            src="https://wallpaperaccess.com/full/1564173.jpg"
-            alt=""
-            className="img_destination"
-          />
-          <img
+        {photos.map((photo) => {
+          return (
+            <img
+              src= {photo.images_link}
+              alt="photo destinasi"
+              className="img_destination"
+            />
+          )
+        })}
+
+          {/* <img
             src="https://jurnalsecurity.com/go/wp-content/uploads/2018/11/raja-ampat.jpg"
             alt=""
             className="img_destination"
-          />
+          /> */}
         </div>
+      </section>
+
+      <section className="feedback">
+        <h1 className='title_feedback'>Customer Feedback</h1>
+            <Row xs="auto">
+              <Col><div className="divider-1"></div></Col>
+              <Col><div className="divider-2"></div></Col>
+              <Col><div className="divider-2"></div></Col>
+            </Row>
+        <Container className="card-feedback">
+          <Row xs="auto">
+            <Col>
+              <div className="feedback-1">
+                <img
+                  src="https://telegra.ph/file/c148a5d17a280a2fe3d00.jpg"
+                  alt=""
+                  className="img-profile"
+                />
+                <p className="desc_feedback">Tempatnya sangat bagus dan murah. Sangat di rekomendasikan untuk keluarga</p>
+                <p className="profile_feedback">Ghaffa Gapuy</p>
+                <p className="profile_feedback">Manager</p>
+              </div>
+            </Col>
+            <Col>
+              <div className="feedback-1">
+                <img
+                  src="https://telegra.ph/file/c148a5d17a280a2fe3d00.jpg"
+                  alt=""
+                  className="img-profile"
+                />
+                <p className="desc_feedback">Patut dikunjungi karena banyak menjual makanan enak dan spot foto</p>
+                <p className="profile_feedback">Dika Dikoy</p>
+                <p className="profile_feedback">Pejabat</p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </>
   );

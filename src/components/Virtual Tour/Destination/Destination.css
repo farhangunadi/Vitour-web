@@ -95,6 +95,8 @@
     grid-gap: 30px; */
     display: block;
     margin: 30px auto;
+    width: 100%;
+    justify-content: center;
 }
 
 .img_destination {
@@ -102,3 +104,125 @@
     height: auto;
     margin: 10px;
 }
+
+
+.img_destination {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+}
+
+.top_destinasi{
+    text-align: center;
+}
+
+.rekomendasi_destinasi{
+    top: 40%;
+    left: 10%;
+    margin: 0;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.desc_destination {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px!important;
+    margin-bottom: 60px!important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000000;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.title_destination {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 80px!important;
+}
+
+.title_feedback{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 80px!important;
+}
+
+.feedback{
+    top: 40%;
+    left: 10%;
+    margin: 0;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.divider-1{
+    width: 114px;
+    height: 8px;
+    /* dark blue */
+    background: #022F46;
+    border-radius: 50px;
+}
+
+.divider-2{
+    width: 55px;
+    height: 8px;
+    /* dark blue */
+    background: #022F46;
+    border-radius: 50px;
+}
+
+.card-feedback{
+    margin-top: 40px!important;
+}
+
+.feedback-1{
+    border: 1px solid #022F46;
+    border-radius: 18px;
+    width: 540px;
+    height: 368px;
+    padding: 35px;
+}
+
+.desc_feedback {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 40px!important;
+    margin-bottom: 30px!important;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000000;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.profile_feedback{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #b3b3b3;
+    text-align: left;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1119px) {
+    .video_destinasi {
+        height: 400px;
+    }
+}
+
