@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Select from "react-select";
 import { Dots } from "loading-animations-react";
 import Image from "../../assets/images/kuliner.jpg";
 import "./Store.css";
+import { Footer } from "../LandingPageCompt/Footer/Footer";
 
 function Store() {
+  const location = useLocation();
   const [dummy, setDummy] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
   const [search, setSearch] = useState("");
   const [merch, setMerch] = useState([]);
@@ -87,11 +89,13 @@ function Store() {
     setMerch(result);
     console.log(result);
   };
+  console.log(location.state)
   return (
+    <>
     <div className="store_container">
       <div className="store_header">
         <h1 className="store_header_title">
-          Find Some Merch From UMKM in Several Destination
+          Find Some Merch From UMKM in  {location.state ? location.state.title : "Several Destination"}
         </h1>
         <div className="filter_search">
           <input
@@ -177,7 +181,13 @@ function Store() {
           ) : (
             merch
               .filter((value) => {
-                if (search === " ") {
+                if(location.state) {
+                  if (value.city_id === location.state.id ) {
+                    console.log("berhasil")
+                    return value;
+                  }
+                }               
+                else if (search === " ") {
                   return value;
                 } else if (
                   value.nama_merchandise
@@ -232,6 +242,9 @@ function Store() {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
+    
   );
 }
 
