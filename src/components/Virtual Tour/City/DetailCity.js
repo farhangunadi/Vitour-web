@@ -9,6 +9,8 @@ import { CardCompt6 } from "../../Component/CardComponent/CardCompt6";
 import Image from "../../../assets/images/pict (3).png";
 import Empty from "../../../assets/images/empty.jpg";
 import "./city.css";
+import defaultPhoto from "./default-city-bg.webp"
+import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function DetailCity(props) {
   //mengambil data dari page sebelumnya
@@ -16,7 +18,7 @@ function DetailCity(props) {
   const navigate = useNavigate();
   const [cities, setCities] = useState([]);
   const [destinasi, setDestination] = useState([]);
-  const [cityImage, setCityImage] = useState([]);
+  const [cityImage, setCityImage] = useState("");
   const [culture, setCulture] = useState("");
   const [loading, setLoading] = useState(false);
   const [empty, isEmpty] = useState(false);
@@ -45,14 +47,17 @@ function DetailCity(props) {
       axios
         // .get(`https://vitour-backend.herokuapp.com/api/cities/${city_id}`)
         .get(
-          `https://vitour-backend.herokuapp.com/api/cities/${id}`
+          `https://vitour-backend.herokuapp.com/api/cities/name/${id}`
         )
         .then((res) => {
-          // console.log("result :", res.data.data.city_id);
+          console.log("result :", res.data.data);
           // setCityId(res.data.data.city_id)
           // city_id = res.data.data.city_id
-          // // console.log("Image1 :", res.data.data[0].city_id);
-          setCityImage(res.data.data.images[1]);
+          // console.log("Image1 :", res.data.data.images[1]);
+          if(res.data.data.images.length > 0) {
+            setCityImage(res.data.data.images[1].images_link);
+          }
+          
           setCities(res.data.data);
           setLoading(false);
           isEmpty(true);
@@ -85,7 +90,6 @@ function DetailCity(props) {
     });
     console.log("success");
   };
-  console.log(cities)
   let getDestinationData = () => {
     if (loading) {
       return (
@@ -150,7 +154,7 @@ function DetailCity(props) {
       <section className="header_detailcity">
         <div className="img_wrap">
           <img
-            src={cityImage.images_link}
+            src={cityImage == [] ? defaultPhoto : cityImage}
             alt=""
             className="header_background"
           />
@@ -193,6 +197,7 @@ function DetailCity(props) {
           ></CardCompt2>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }
