@@ -22,7 +22,7 @@ function VirtualTour() {
   }, []);
 
   const handleCityDetail = (id, nama_kota) => {
-    navigate(`/city/${id}`, { state: { id: id, nama_kota: nama_kota } });
+    navigate(`/virtualtour/${nama_kota}`);
   };
   return (
     <>
