@@ -12,7 +12,6 @@ import gambarFacebook from "./../../assets/images/LoginRegister/facebook.png";
 import gambarTwitter from "./../../assets/images/LoginRegister/twitter.png";
 import "./Login.css";
 import { useNavigate } from 'react-router-dom';
-import LoginRegisterNavBar from './LoginRegisterNavBar';
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -34,9 +33,14 @@ function Login(props) {
                     console.log(res.data);
                     console.log(res.data.data.token)
                     sessionStorage.setItem('token', res.data.data.token);
+                    sessionStorage.setItem('name', res.data.data.name);
                     // setToken(res.data.data.token)
                     
-                    navigate('/');
+                    if (window.history.state && window.history.state.idx > 0) {
+                        navigate(-1);
+                    } else {
+                        navigate('/', { replace: true }); // the current entry in the history stack will be replaced with the new one with { replace: true }
+                    }
                     window.location.reload(true);
                     // return res.data;
                     
@@ -65,7 +69,7 @@ function Login(props) {
     // console.log("saya aidil")
   return (
     <>
-    <LoginRegisterNavBar pageName={"Login Page"} />
+    {/* <LoginRegisterNavBar pageName={"Login Page"} /> */}
     <Container className="vh-100 px-0" fluid={true}>
       <Row >
         <Col style={{ backgroundImage: `url(${gambarLogin}`}} id='gambar'>
