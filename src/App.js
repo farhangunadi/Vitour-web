@@ -22,8 +22,10 @@ import Store from "./components/Store Page/Store";
 import { DetailItem } from "./components/Store Page/DetailItem";
 import Protected from "./components/ProtectedRoute";
 import Cart from "./components/Cart/Cart";
-import LoginRegisterNavBar from "./components/LoginRegister/LoginRegisterNavBar";
 import SearchDestination from "./components/Virtual Tour/Destination/SearchDestination";
+import PageNotFound from "./components/ComingSoon/PageNotFound";
+import Orders from "./components/Profile/Orders";
+import OrderDetail from "./components/Profile/OrderDetail/OrderDetail";
 
 function App() {
   // const [token, setToken] = useState("");
@@ -37,13 +39,14 @@ function App() {
     <Router>
       {/* <LoginRegisterNavBar /> */}
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        
       </Routes>
 
       {/* semua routes masukin aja dsini dlu, nanti comment mana yang harus dibatesi buat routesnya */}
       <Navbar2 />
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route
           path="/my-cart"
           element={
@@ -63,20 +66,42 @@ function App() {
             </Protected>
           }
         />
+        <Route
+          path="/orders"
+          element={
+            <Protected>
+              {" "}
+              <Orders />{" "}
+            </Protected>
+          }
+        />
+        <Route
+          path="/orders/detail/:id"
+          element={
+            <Protected>
+              {" "}
+              <OrderDetail/>{" "}
+            </Protected>
+          }
+        />
         <Route path="/" element={<Beranda />} />
         {/* <Route path="/Store" element={<Rekomendasi />} /> */}
         <Route path="/item" element={<ItemPage />} />
         <Route path="/store" element={<Store />} />
         <Route path="/store/item/:id" element={<DetailItem />} />
         <Route path="/!#" element={<ItemPage />} />
-        <Route path="/virtualtour" element={<VirtualTour />} />
         <Route path="/about" element={<About />} />
-        <Route path="/city/:id" element={<City />} />
         <Route path="/destination/:id" element={<Destination />} />
         <Route path="/search" element={<SearchDestination />} />
-        <Route path="/culture" element={<Budaya />} />
-        <Route path="/culinary" element={<Kuliner />} />
-        <Route path="/comingsoon" element={<Comingsoon />} />
+        
+        <Route path="/virtualtour" element={<VirtualTour />} />
+        <Route path="/virtualtour">
+          <Route path=":id/culture" element={<Budaya />} />
+          <Route path=":id/culinary" element={<Kuliner />} />
+          <Route path=":id" element={<City />} />
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+        {/* <Route path="/comingsoon" element={<Comingsoon />} /> */}
       </Routes>
       {/* <Beranda /> */}
     </Router>
