@@ -126,7 +126,6 @@ function Navbar2() {
     return (
       <>
       <nav className={stickyNav ? "navbar active": "navbar"}>
-        {console.log(hideNav)}
         <div className="img-wrapper">
           <Link to="/" onClick={() => {setHideNav(false);}}><img src={Logo} alt="" className="logo" /></Link>
         </div>
