@@ -25,11 +25,16 @@ function DetailCity(props) {
   const dummy = [1, 2, 3, 4, 5, 6, 7, 8];
   // const city_id = location.state.id;
   // const city_name = location.state.nama_kota;
-  const [city_id, setCityId] = useState("");
+  // const [city_id, setCityId] = useState("");
+  let city_id = "";
   let city_name = "";
   const { id } = useParams();
 
-  if (id != undefined) {
+  if(location.state){
+    city_id = location.state.id;
+    city_name = location.state.nama_kota;
+  }
+  else if (id != undefined) {
     city_name = id
   }
 
@@ -43,9 +48,9 @@ function DetailCity(props) {
           `https://vitour-backend.herokuapp.com/api/cities/${id}`
         )
         .then((res) => {
-          console.log("result :", res.data.data);
-          setCityId(res.data.data.city_id)
-          // // city_id = res.data.data[0].city_id
+          // console.log("result :", res.data.data.city_id);
+          // setCityId(res.data.data.city_id)
+          // city_id = res.data.data.city_id
           // // console.log("Image1 :", res.data.data[0].city_id);
           setCityImage(res.data.data.images[1]);
           setCities(res.data.data);
@@ -138,6 +143,7 @@ function DetailCity(props) {
       );
     }
   };
+
   // const Image1 = cities.images[0].images_link;
   return (
     <>
