@@ -8,6 +8,7 @@ import "./Destination.css";
 
 //Image
 import ImgHeader from "../../../assets/images/jakarta.jpg";
+import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function Destination() {
   const location = useLocation();
@@ -24,19 +25,20 @@ function Destination() {
       axios
         .get(`https://vitour-backend.herokuapp.com/api/city/destinations/${id}`)
         .then((res) => {
-          console.log("result :", res.data.data[0].videovrs.length);
-          setDestination(res.data.data[0]);
-          if(res.data.data[0].videovrs.length != 0) {
-            setVideo(res.data.data[0].videovrs[0].link_video);
+          console.log("result :", res.data.data);
+          console.log("result :", res.data.data.videovrs.length);
+          setDestination(res.data.data);
+          if(res.data.data.videovrs.length != 0) {
+            setVideo(res.data.data.videovrs[0].link_video);
             setHandle(true);
           } else {
             setVideo("");
             setHandle(false);
           }
           // setVideo(res.data.data[0].videovrs[0].link_video);
-          setPhotos(res.data.data[0].images)
+          setPhotos(res.data.data.images)
           
-          console.log(res.data.data[0].images)
+          console.log(res.data.data.images)
         });
     };
 
@@ -135,6 +137,7 @@ function Destination() {
           </Row>
         </Container>
       </section>
+      <Footer/>
     </>
   );
 }
