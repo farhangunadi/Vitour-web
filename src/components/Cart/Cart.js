@@ -79,7 +79,7 @@ function Cart(props) {
           console.log(res.status)
           if (res.data.data.status_code == 201) {
             // alert("");
-            navigate(`/orders/detail/${res.data.data.order_id}`)
+            navigate(`/orders/detail/${res.data.data.order_id}`, { state: { bank: bank } })
           }
           // setGrossPay(res.data.data.sub_total_price+tax)
           
