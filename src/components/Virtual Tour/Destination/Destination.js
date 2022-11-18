@@ -24,11 +24,18 @@ function Destination() {
       axios
         .get(`https://vitour-backend.herokuapp.com/api/city/destinations/${id}`)
         .then((res) => {
-          console.log("result :", res.data.data);
+          console.log("result :", res.data.data[0].videovrs.length);
           setDestination(res.data.data[0]);
-          setVideo(res.data.data[0].videovrs[0].link_video);
+          if(res.data.data[0].videovrs.length != 0) {
+            setVideo(res.data.data[0].videovrs[0].link_video);
+            setHandle(true);
+          } else {
+            setVideo("");
+            setHandle(false);
+          }
+          // setVideo(res.data.data[0].videovrs[0].link_video);
           setPhotos(res.data.data[0].images)
-          setHandle(true);
+          
           console.log(res.data.data[0].images)
         });
     };
