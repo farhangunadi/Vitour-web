@@ -61,3 +61,35 @@
 #note {
     padding: 10px;
 }
+
+.btn-counter button {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 6px 11px;
+	cursor: pointer;
+    border: 1px solid gray;
+	
+    
+    font-weight: bold;
+    border-radius: 0;
+    
+}
+
+.btn-counter button:hover {
+    /* border: 1px solid $slime-green; */
+	background-color:  #e0e0e0;
+}
+
+#value-box {
+    border: 1px solid gray;
+    font-weight: bold;
+    border-collapse: collapse;
+    padding: 8px 11px;
+}
+
+.box-counter-hide {
+    display: none;
+}
+
+.box-counter-hide {
+    display: blok;
+}
