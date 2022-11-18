@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Dots } from "loading-animations-react";
@@ -13,6 +13,7 @@ import "./city.css";
 function DetailCity(props) {
   //mengambil data dari page sebelumnya
   const location = useLocation();
+  const navigate = useNavigate();
   const [cities, setCities] = useState([]);
   const [destinasi, setDestination] = useState([]);
   const [cityImage, setCityImage] = useState([]);
@@ -21,12 +22,17 @@ function DetailCity(props) {
   const [empty, isEmpty] = useState(false);
 
   // console.log(location);
-
   const dummy = [1, 2, 3, 4, 5, 6, 7, 8];
-  const city_id = location.state.id;
-  const city_name = location.state.nama_kota;
+  // const city_id = location.state.id;
+  // const city_name = location.state.nama_kota;
+  const [city_id, setCityId] = useState("");
+  let city_name = "";
+  const { id } = useParams();
 
-  const navigate = useNavigate();
+  if (id != undefined) {
+    city_name = id
+  }
+
 
   useEffect(() => {
     const fetchCityByID = async () => {
@@ -34,15 +40,19 @@ function DetailCity(props) {
       axios
         // .get(`https://vitour-backend.herokuapp.com/api/cities/${city_id}`)
         .get(
-          `https://vitour-backend.herokuapp.com/api/cities?filter=${city_name}&type_gambar=gambar_kota`
+          `https://vitour-backend.herokuapp.com/api/cities/${id}`
         )
         .then((res) => {
-          // console.log("result :", res.data.data[0]);
-          // console.log("Image1 :", res.data.data[0].images);
-          setCityImage(res.data.data[0].images[1]);
-          setCities(res.data.data[0]);
+          console.log("result :", res.data.data);
+          setCityId(res.data.data.city_id)
+          // // city_id = res.data.data[0].city_id
+          // // console.log("Image1 :", res.data.data[0].city_id);
+          setCityImage(res.data.data.images[1]);
+          setCities(res.data.data);
           setLoading(false);
           isEmpty(true);
+        }).catch((err) => {
+          console.log(err)
         });
     };
     const fetchDestination = async () => {
@@ -56,9 +66,11 @@ function DetailCity(props) {
           isEmpty(true);
         });
     };
+    
 
     fetchDestination();
     fetchCityByID();
+
   }, []);
 
   //handler untuk navigasi ke page destination
@@ -68,7 +80,7 @@ function DetailCity(props) {
     });
     console.log("success");
   };
-
+  console.log(cities)
   let getDestinationData = () => {
     if (loading) {
       return (
@@ -84,7 +96,7 @@ function DetailCity(props) {
           </h1>
           <div className="detailcity_destination_content">
             {destinasi
-              .filter((filterData) => filterData.city_id === city_id)
+              .filter((filterData) => filterData.city_id === cities.city_id)
               .map((data) => {
                 return data != null ? (
                   <div
@@ -153,7 +165,7 @@ function DetailCity(props) {
             image="https://www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Daerah-tiap-Provinsi-di-Indonesia-Serta-Daerah-Asalnya.jpg"
             sendId={city_id}
             title={city_name}
-            address={"culinary"}
+            address={"virtualtour/"+city_name+"/culinary"}
             text="Find some culinary from this city in here"
           ></CardCompt2>
           <CardCompt2
@@ -161,7 +173,7 @@ function DetailCity(props) {
             image="https://sumbernesia.com/wp-content/uploads/2019/01/Keragaman-Kebudayaan-Indonesia.jpg"
             sendId={city_id}
             title={city_name}
-            address={"culture"}
+            address={"virtualtour/"+city_name+"/culture"}
             text="Get know culture from this city in here"
             // goToCulture={handleCulture(city_id)}
           ></CardCompt2>
