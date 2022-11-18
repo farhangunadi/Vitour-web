@@ -4,10 +4,11 @@ body .profile {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
+    padding-bottom: 3vw;
   }
 
 .left-col {
-    margin: 0;
+    width: 30%;
 }
 
 .right-col {
@@ -53,4 +54,14 @@ h5 {
 .form-edit label {
     color: #699BF7;
     font-weight: 600;
+}
+
+@media screen and (max-width: 1399px) {
+    .left-col {
+        width: 100%;
+    }
+    
+    .right-col {
+        width: 100%;
+    }
 }
