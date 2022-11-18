@@ -4,8 +4,11 @@ import axios from "axios";
 import "./cart.css";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
+import { Footer } from "../LandingPageCompt/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 function Cart(props) {
+  const navigate = useNavigate();
   const [dummy, setDummy] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
   const [search, setSearch] = useState("");
   const [filterCity, setFilterCity] = useState("");
@@ -56,6 +59,37 @@ function Cart(props) {
       })
   }
 
+  const paymentHandling = (e) => {
+    e.preventDefault();
+
+      axios.post(`https://vitour-backend.herokuapp.com/api/order/charge`,{
+        payment_type: paymentType,
+        bank: bank,
+        gross_amount: grossPay
+      },
+      {
+          headers: {
+            'Authorization': `Bearer ${myToken}`
+          }
+        })
+        .then((res) => {
+          // setCartItem(res.data.data.cart_item);
+          // setSubTotal(res.data.data.sub_total_price);
+          console.log(res.data.data.order_id)
+          console.log(res.status)
+          if (res.data.data.status_code == 201) {
+            // alert("");
+            navigate(`/orders/detail/${res.data.data.order_id}`)
+          }
+          // setGrossPay(res.data.data.sub_total_price+tax)
+          
+          // setLoading(false);
+        }).catch(error => {
+          console.log(error)
+        })
+    
+  }
+
   useEffect(() => {
     const fetchCart = async () => {
       setLoading(true);
@@ -69,6 +103,7 @@ function Cart(props) {
           setCartItem(res.data.data.cart_item);
           setSubTotal(res.data.data.sub_total_price);
           console.log(res.data.data)
+          setGrossPay(res.data.data.sub_total_price+tax)
           
           setLoading(false);
         }).catch(error => {
@@ -85,22 +120,21 @@ function Cart(props) {
 
     // fetchCity();
     fetchCart();
-    setGrossPay(subTotal+tax)
     // cart.map((item) => { console.log(item)})
   }, []);
 
   const paymentTypeOnChange = (e) => {
     console.log(e)
   }
-
+  console.log(bank)
   const paymentMethod =  (paymentType) => {
     if (paymentType == "bank_transfer") {
       return (
         <div class="pay-button d-flex justify-content-center">
-          <Form.Select aria-label="Payment type">
+          <Form.Select aria-label="Payment type" onChange={e => setBank(e.target.value)}>
             <option>Select Bank</option>
-            <option value="permata">Bank Permata</option>
-            <option value="mandiri">Bank Mandiri</option>
+            <option value="bri">BRI</option>
+            <option value="bni">BNI</option>
             <option value="bca">BCA</option>
           </Form.Select>
         </div>
@@ -113,7 +147,7 @@ function Cart(props) {
   console.log(grossPay)
   return (
     <>
-      <Container style={{paddingTop: "5vw"}} fluid>
+      <Container style={{paddingTop: "5vw", paddingBottom: "3vw"}} fluid>
         <Row>
           <Col className="cart-left">
             <Container>
@@ -197,16 +231,17 @@ function Cart(props) {
                 
                 {paymentMethod(paymentType)}
                 <div class="pay-button d-flex justify-content-center">
-                  <a class="pay" href="#"><button class="pay-btn">Pay</button></a>
+                  <button class="pay-btn" onClick={paymentHandling}>Pay</button>
                 </div>
-                <div class="cancel-button  d-flex justify-content-center">
-                  <a class="cancel" href="#"><button class="cancel-btn">Cancel</button></a>
-                </div>
+                {/* <div class="cancel-button  d-flex justify-content-center">
+                  <a class="cancel" href="/"><button class="cancel-btn">Cancel</button></a>
+                </div> */}
               </div>
             </Container>
           </Col>
         </Row>
       </Container>
+      <Footer/>
     </>
   );
 };
