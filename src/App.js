@@ -47,7 +47,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route
+        <Route path="/my-cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/orders/detail/:id" element={<OrderDetail />} />
+        {/* <Route
           path="/my-cart"
           element={
             <Protected>
@@ -56,7 +60,6 @@ function App() {
             </Protected>
           }
         />
-        {/* <Route path="/" element={<Detail_Item />} /> */}
         <Route
           path="/profile"
           element={
@@ -83,7 +86,7 @@ function App() {
               <OrderDetail/>{" "}
             </Protected>
           }
-        />
+        /> */}
         <Route path="/" element={<Beranda />} />
         {/* <Route path="/Store" element={<Rekomendasi />} /> */}
         <Route path="/item" element={<ItemPage />} />
