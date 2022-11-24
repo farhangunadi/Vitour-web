@@ -8,6 +8,7 @@ import "./Destination.css";
 
 //Image
 import ImgHeader from "../../../assets/images/jakarta.jpg";
+import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function Destination() {
   const location = useLocation();
@@ -149,6 +150,7 @@ function Destination() {
           </Row>
         </Container>
       </section>
+      <Footer />
     </>
   );
 }

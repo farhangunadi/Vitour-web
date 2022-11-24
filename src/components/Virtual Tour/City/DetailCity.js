@@ -10,6 +10,8 @@ import Image from "../../../assets/images/pict (3).png";
 import Empty from "../../../assets/images/empty.jpg";
 import defaultPhoto from "./default-city-bg.webp";
 import "./city.css";
+import defaultPhoto from "./default-city-bg.webp";
+import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function DetailCity(props) {
   //mengambil data dari page sebelumnya
@@ -17,7 +19,7 @@ function DetailCity(props) {
   const navigate = useNavigate();
   const [cities, setCities] = useState([]);
   const [destinasi, setDestination] = useState([]);
-  const [cityImage, setCityImage] = useState([]);
+  const [cityImage, setCityImage] = useState("");
   const [culture, setCulture] = useState("");
   const [loading, setLoading] = useState(false);
   const [empty, isEmpty] = useState(false);
@@ -192,6 +194,7 @@ function DetailCity(props) {
           ></CardCompt2>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
