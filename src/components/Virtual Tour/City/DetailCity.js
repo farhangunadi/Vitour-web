@@ -8,8 +8,9 @@ import CardCompt2 from "../../Component/CardComponent/CardCompt2";
 import { CardCompt6 } from "../../Component/CardComponent/CardCompt6";
 import Image from "../../../assets/images/pict (3).png";
 import Empty from "../../../assets/images/empty.jpg";
+import defaultPhoto from "./default-city-bg.webp";
 import "./city.css";
-import defaultPhoto from "./default-city-bg.webp"
+import defaultPhoto from "./default-city-bg.webp";
 import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function DetailCity(props) {
@@ -32,37 +33,34 @@ function DetailCity(props) {
   let city_name = "";
   const { id } = useParams();
 
-  if(location.state){
+  if (location.state) {
     city_id = location.state.id;
     city_name = location.state.nama_kota;
+  } else if (id != undefined) {
+    city_name = id;
   }
-  else if (id != undefined) {
-    city_name = id
-  }
-
 
   useEffect(() => {
     const fetchCityByID = async () => {
       setLoading(true);
       axios
         // .get(`https://vitour-backend.herokuapp.com/api/cities/${city_id}`)
-        .get(
-          `https://vitour-backend.herokuapp.com/api/cities/name/${id}`
-        )
+        .get(`https://vitour-backend.herokuapp.com/api/cities/name/${id}`)
         .then((res) => {
           console.log("result :", res.data.data);
           // setCityId(res.data.data.city_id)
           // city_id = res.data.data.city_id
           // console.log("Image1 :", res.data.data.images[1]);
-          if(res.data.data.images.length > 0) {
+          if (res.data.data.images.length > 0) {
             setCityImage(res.data.data.images[1].images_link);
           }
-          
+
           setCities(res.data.data);
           setLoading(false);
           isEmpty(true);
-        }).catch((err) => {
-          console.log(err)
+        })
+        .catch((err) => {
+          console.log(err);
         });
     };
     const fetchDestination = async () => {
@@ -76,11 +74,9 @@ function DetailCity(props) {
           isEmpty(true);
         });
     };
-    
 
     fetchDestination();
     fetchCityByID();
-
   }, []);
 
   //handler untuk navigasi ke page destination
@@ -90,6 +86,7 @@ function DetailCity(props) {
     });
     console.log("success");
   };
+  console.log(cities);
   let getDestinationData = () => {
     if (loading) {
       return (
@@ -175,7 +172,7 @@ function DetailCity(props) {
             image="https://www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Daerah-tiap-Provinsi-di-Indonesia-Serta-Daerah-Asalnya.jpg"
             sendId={city_id}
             title={city_name}
-            address={"virtualtour/"+city_name+"/culinary"}
+            address={"virtualtour/" + city_name + "/culinary"}
             text="Find some culinary from this city in here"
           ></CardCompt2>
           <CardCompt2
@@ -183,7 +180,7 @@ function DetailCity(props) {
             image="https://sumbernesia.com/wp-content/uploads/2019/01/Keragaman-Kebudayaan-Indonesia.jpg"
             sendId={city_id}
             title={city_name}
-            address={"virtualtour/"+city_name+"/culture"}
+            address={"virtualtour/" + city_name + "/culture"}
             text="Get know culture from this city in here"
             // goToCulture={handleCulture(city_id)}
           ></CardCompt2>
@@ -197,7 +194,7 @@ function DetailCity(props) {
           ></CardCompt2>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 }
