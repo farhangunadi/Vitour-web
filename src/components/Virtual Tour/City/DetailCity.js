@@ -10,7 +10,6 @@ import Image from "../../../assets/images/pict (3).png";
 import Empty from "../../../assets/images/empty.jpg";
 import defaultPhoto from "./default-city-bg.webp";
 import "./city.css";
-import defaultPhoto from "./default-city-bg.webp";
 import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function DetailCity(props) {

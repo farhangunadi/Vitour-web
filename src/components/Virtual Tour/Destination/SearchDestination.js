@@ -16,6 +16,7 @@ function SearchDestination() {
   const location = useLocation();
   const keywordSearch = location.state.keyword;
   const keywordCat = location.state.cat;
+  console.log(keywordCat);
   //initialize data from search bar in homepage
   useEffect(() => {
     setSearch(keywordSearch);
@@ -76,7 +77,7 @@ function SearchDestination() {
       }
       return categories === curData.tipe_destinasi;
     });
-    setGetKeyword(categories);
+    setGetKeyword(null);
     setDestination(result);
     console.log(result);
   };
@@ -89,7 +90,7 @@ function SearchDestination() {
       }
       return city_id === curData.city_id;
     });
-    setGetKeyword(city_name);
+    setGetKeyword(null);
     setDestination(result);
     console.log(result);
   };
@@ -151,15 +152,27 @@ function SearchDestination() {
         </Col>
       </Row>
       <div className="result">
-        <h3 className="result_search">
+        {/* <h3 className="result_search">
           Search by keyword <mark>"{search}"</mark> ,{" "}
           <mark>"{getKeyword}"</mark>
-        </h3>
+        </h3> */}
       </div>
       <div className="detailcity_destination_content onSearch">
         {destinasi
           .filter((value) => {
-            if (search === " ") {
+            if (getKeyword) {
+              if (
+                value.tipe_destinasi.toLowerCase() === getKeyword.toLowerCase()
+              ) {
+                return value;
+                console.log("berhasil");
+              } else if (value.city_id === getKeyword) {
+                return value;
+                console.log("berhasil");
+              }
+            } else if (keywordCat === null) {
+              return value;
+            } else if (search === " ") {
               return value;
             } else if (
               value.nama_destinasi.toLowerCase().includes(search.toLowerCase())

@@ -308,6 +308,14 @@
     background: #FFE2C8;
 }
 
+.link:nth-child(4) .category-item {
+    background: #d6fdf2;
+}
+
+.link:nth-child(5) .category-item {
+    background: #fdd6f3;
+}
+
 .nature,
 .cat1 {
     fill: #0039FF;
@@ -326,10 +334,16 @@
     color: #FF7900;
 }
 
-.other,
+.iconic,
 .cat4 {
     fill: #00C98E;
     color: #00C98E;
+}
+
+.mall,
+.cat5 {
+    fill: #ff20c7;
+    color: #ff20c7;
 }
 
 .category-item-title {

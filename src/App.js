@@ -38,20 +38,18 @@ function App() {
   return (
     <Router>
       {/* <LoginRegisterNavBar /> */}
-      <Routes>
-        
-      </Routes>
+      <Routes></Routes>
 
       {/* semua routes masukin aja dsini dlu, nanti comment mana yang harus dibatesi buat routesnya */}
       <Navbar2 />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/my-cart" element={<Cart />} />
+        {/* <Route path="/my-cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/orders/detail/:id" element={<OrderDetail />} />
-        {/* <Route
+        <Route path="/orders" element={<Orders />} /> */}
+        {/* <Route path="/orders/detail/:id" element={<OrderDetail />} /> */}
+        <Route
           path="/my-cart"
           element={
             <Protected>
@@ -83,10 +81,10 @@ function App() {
           element={
             <Protected>
               {" "}
-              <OrderDetail/>{" "}
+              <OrderDetail />{" "}
             </Protected>
           }
-        /> */}
+        />
         <Route path="/" element={<Beranda />} />
         {/* <Route path="/Store" element={<Rekomendasi />} /> */}
         <Route path="/item" element={<ItemPage />} />
@@ -96,7 +94,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/destination/:id" element={<Destination />} />
         <Route path="/search" element={<SearchDestination />} />
-        
+
         <Route path="/virtualtour" element={<VirtualTour />} />
         <Route path="/virtualtour">
           <Route path=":id/culture" element={<Budaya />} />
