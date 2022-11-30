@@ -7,7 +7,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./Destination.css";
 
 //Image
-import ImgHeader from "../../../assets/images/jakarta.jpg";
 import { Footer } from "../../LandingPageCompt/Footer/Footer";
 
 function Destination() {
@@ -17,7 +16,6 @@ function Destination() {
 
   const [destination, setDestination] = useState([]);
   const [video, setVideo] = useState([]);
-  const [image, setImage] = useState([]);
   const [handle, setHandle] = useState(false);
   const [photos, setPhotos] = useState([]);
 
@@ -86,13 +84,7 @@ function Destination() {
         <h1 className="title_gallery">Destination Photos</h1>
         <div className="grid_gallery">
           {photos.map((photo) => {
-            return (
-              <img
-                src={photo.images_link}
-                alt="photo destinasi"
-                className="img_destination"
-              />
-            );
+            return <img src={photo.images_link} className="img_destination" />;
           })}
 
           {/* <img

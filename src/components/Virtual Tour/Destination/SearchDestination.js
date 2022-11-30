@@ -16,13 +16,11 @@ function SearchDestination() {
   const location = useLocation();
   const keywordSearch = location.state.keyword;
   const keywordCat = location.state.cat;
-  console.log(keywordCat);
   //initialize data from search bar in homepage
   useEffect(() => {
     setSearch(keywordSearch);
     setGetKeyword(keywordCat);
   }, []);
-  console.log(search);
 
   useEffect(() => {
     const fetchDestination = async () => {
@@ -79,7 +77,7 @@ function SearchDestination() {
     });
     setGetKeyword(null);
     setDestination(result);
-    console.log(result);
+    // console.log(result);
   };
 
   //function for filter by city
@@ -92,7 +90,7 @@ function SearchDestination() {
     });
     setGetKeyword(null);
     setDestination(result);
-    console.log(result);
+    // console.log(result);
   };
   return (
     <div className="search_container vh-100 px-0" fluid={true}>
@@ -165,10 +163,14 @@ function SearchDestination() {
                 value.tipe_destinasi.toLowerCase() === getKeyword.toLowerCase()
               ) {
                 return value;
-                console.log("berhasil");
+                {
+                  /* console.log("berhasil"); */
+                }
               } else if (value.city_id === getKeyword) {
                 return value;
-                console.log("berhasil");
+                {
+                  /* console.log("berhasil"); */
+                }
               }
             } else if (keywordCat === null) {
               return value;
