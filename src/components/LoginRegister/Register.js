@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 import { Container, Row, Col } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import PropTypes from 'prop-types'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button';
@@ -35,7 +35,7 @@ function Register(props) {
         // } catch (error) {
 
         // }
-        axios.post(`https://vitour-backend.herokuapp.com/api/register`, { 
+        axios.post(process.env.REACT_APP_BASE_URL + `/api/register`, { 
             name: name,
             email: email,
             password: password
@@ -78,7 +78,7 @@ function Register(props) {
         <Col id="form-section">
             <Container>
                 <h1>Lets Get Started</h1>
-                <p className="mb-3 text-muted" >Have an account <a href="/login">Login</a></p>
+                <p className="mb-3 text-muted" >Have an account <Link to="/login">Login</Link></p>
                 <Form noValidate validated={validated} onSubmit={handleRegister}>
                     <Form.Group className="mb-3" controlId="name" style={{fontWeight: "bold"}}>
                         <Form.Label>Name</Form.Label>

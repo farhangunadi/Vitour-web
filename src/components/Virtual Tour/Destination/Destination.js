@@ -22,7 +22,7 @@ function Destination() {
   useEffect(() => {
     const fetchDestination = async () => {
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/city/destinations/${id}`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/city/destinations/${id}`)
         .then((res) => {
           console.log("result :", res.data.data);
           console.log("result :", res.data.data.videovrs.length);

@@ -18,7 +18,7 @@ function Budaya(props) {
     const fetchCulture = async () => {
       axios
         .get(
-          `https://vitour-backend.herokuapp.com/api/city/cultures?filter=${city_id}`
+          process.env.REACT_APP_BASE_URL + `/api/city/cultures?filter=${city_id}`
         )
         .then((res) => {
           console.log("Culture :", res.data.data);

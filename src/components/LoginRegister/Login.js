@@ -11,7 +11,7 @@ import gambarGoogle from "./../../assets/images/LoginRegister/google.png";
 import gambarFacebook from "./../../assets/images/LoginRegister/facebook.png";
 import gambarTwitter from "./../../assets/images/LoginRegister/twitter.png";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -21,10 +21,10 @@ function Login(props) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    console.log(process.env.REACT_APP_BASE_URL);
     axios
       .post(
-        `https://vitour-backend.herokuapp.com/api/login`,
+        process.env.REACT_APP_BASE_URL + '/api/login',
         {
           email: email,
           password: password,
@@ -122,7 +122,7 @@ function Login(props) {
                   </Col>
 
                   <Col>
-                    <a href="/register">
+                    <Link to="/register">
                       <Button
                         md="3"
                         variant="primary"
@@ -130,7 +130,7 @@ function Login(props) {
                       >
                         Register
                       </Button>
-                    </a>
+                    </Link>
                   </Col>
                 </Row>
                 <Row className="mb-3">

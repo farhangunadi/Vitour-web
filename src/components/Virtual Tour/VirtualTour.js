@@ -14,7 +14,7 @@ function VirtualTour() {
   useEffect(() => {
     const fetchCity = async () => {
       const res = await axios.get(
-        "https://vitour-backend.herokuapp.com/api/cities"
+        process.env.REACT_APP_BASE_URL + "/api/cities"
       );
       setCity(res.data.data);
     };

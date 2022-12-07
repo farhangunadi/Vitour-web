@@ -22,7 +22,7 @@ export const DetailItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/city/merchandises/${id}`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/city/merchandises/${id}`)
         .then((res) => {
           console.log(res.data.data[0]);
           setImage(res.data.data[0].images[0]);
@@ -38,7 +38,7 @@ export const DetailItem = () => {
   const handleAddToCart = async (e) => {
     e.preventDefault();
 
-    axios.post(`https://vitour-backend.herokuapp.com/api/cart`,
+    axios.post(process.env.REACT_APP_BASE_URL + `/api/cart`,
         {
             merchandise_id: mercId,
             price: price,

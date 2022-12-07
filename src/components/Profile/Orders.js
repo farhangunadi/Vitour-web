@@ -16,7 +16,7 @@ function Orders(props) {
     const fetchCart = async () => {
       // setLoading(true);
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/order/user/find`, {
+        .get(process.env.REACT_APP_BASE_URL + `/api/order/user/find`, {
           headers: {
             'Authorization': `Bearer ${myToken}`
           }

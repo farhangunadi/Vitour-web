@@ -30,7 +30,7 @@ function Body(props) {
     const fetchPostsCities = async () => {
       setLoading(true);
       const res = await axios.get(
-        "https://vitour-backend.herokuapp.com/api/cities"
+        process.env.REACT_APP_BASE_URL + "/api/cities"
       );
       setCities(res.data.data);
       setLoading(false);

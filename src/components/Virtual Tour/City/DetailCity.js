@@ -44,7 +44,7 @@ function DetailCity(props) {
       setLoading(true);
       axios
         // .get(`https://vitour-backend.herokuapp.com/api/cities/${city_id}`)
-        .get(`https://vitour-backend.herokuapp.com/api/cities/name/${id}`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/cities/name/${id}`)
         .then((res) => {
           console.log("result :", res.data.data);
           // setCityId(res.data.data.city_id)
@@ -65,7 +65,7 @@ function DetailCity(props) {
     const fetchDestination = async () => {
       setLoading(true);
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/city/destinations`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/city/destinations`)
         .then((res) => {
           console.log("Destination :", res.data.data);
           setDestination(res.data.data);

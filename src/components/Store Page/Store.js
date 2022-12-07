@@ -17,17 +17,22 @@ function Store() {
   const [filterCity, setfilterCity] = useState([]);
   const [city, setCity] = useState([]);
   const [getKeyword, setGetKeyword] = useState("");
+  const [getTitle, setTitle] = useState("Several Destination");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setGetKeyword(location.state.id);
+    if(location.state) {
+      setGetKeyword(location.state.id);
+      setTitle(location.state.title);
+    }
+    
   }, []);
 
   useEffect(() => {
     const fetchMerch = async () => {
       setLoading(true);
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/city/merchandises`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/city/merchandises`)
         .then((res) => {
           setMerch(res.data.data);
           setfilterItem(res.data.data);
@@ -37,7 +42,7 @@ function Store() {
     };
     const fetchCity = async () => {
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/cities`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/cities`)
         .then((res) => {
           setCity(res.data.data);
         });
@@ -104,7 +109,7 @@ function Store() {
         <div className="store_header">
           <h1 className="store_header_title">
             Find Some Merch From UMKM in{" "}
-            {getKeyword != null ? location.state.title : "Several Destination"}
+            {getTitle}
           </h1>
           <div className="filter_search">
             <input

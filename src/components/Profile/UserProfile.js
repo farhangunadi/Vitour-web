@@ -33,7 +33,7 @@ function Profile(props) {
     const handleEdit = async (e) => {
         e.preventDefault();
 
-        axios.put(`https://vitour-backend.herokuapp.com/api/my-profile`,
+        axios.put(process.env.REACT_APP_BASE_URL + `/api/my-profile`,
         {
             name: name,
             address: address,
@@ -74,7 +74,7 @@ function Profile(props) {
             axios
                 // .get(`https://vitour-backend.herokuapp.com/api/cities/${city_id}`)
                 .get(
-                `https://vitour-backend.herokuapp.com/api/my-profile`, {
+                    process.env.REACT_APP_BASE_URL + `/api/my-profile`, {
                     headers: {
                       'Authorization': `Bearer ${myToken}`
                     }

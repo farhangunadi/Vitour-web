@@ -28,7 +28,7 @@ function Cart(props) {
     // e.preventDefault();
     console.log(cartId);
     axios
-      .delete(`https://vitour-backend.herokuapp.com/api/cart/` + cartId, {
+      .delete( process.env.REACT_APP_BASE_URL + `/api/cart/` + cartId, {
         headers: {
           Authorization: `Bearer ${myToken}`,
         },
@@ -61,7 +61,7 @@ function Cart(props) {
 
     axios
       .post(
-        `https://vitour-backend.herokuapp.com/api/order/charge`,
+        process.env.REACT_APP_BASE_URL + `/api/order/charge`,
         {
           payment_type: paymentType,
           bank: bank,
@@ -97,7 +97,7 @@ function Cart(props) {
     const fetchCart = async () => {
       setLoading(true);
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/cart`, {
+        .get(process.env.REACT_APP_BASE_URL + `/api/cart`, {
           headers: {
             Authorization: `Bearer ${myToken}`,
           },

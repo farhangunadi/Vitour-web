@@ -25,7 +25,7 @@ function SearchDestination() {
   useEffect(() => {
     const fetchDestination = async () => {
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/city/destinations`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/city/destinations`)
         .then((res) => {
           console.log("result :", res.data.data);
           setDestination(res.data.data);
@@ -35,7 +35,7 @@ function SearchDestination() {
     };
     const fetchCity = async () => {
       axios
-        .get(`https://vitour-backend.herokuapp.com/api/cities`)
+        .get(process.env.REACT_APP_BASE_URL + `/api/cities`)
         .then((res) => {
           setCity(res.data.data);
         });
