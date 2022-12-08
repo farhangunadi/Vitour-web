@@ -25,7 +25,7 @@ function OrderDetail(props) {
     const fetchCart = async () => {
       // setLoading(true);
       await axios
-        .get(process.env.REACT_APP_BASE_URL `/api/order/`+id, {
+        .get(process.env.REACT_APP_BASE_URL + `/api/order/`+id, {
           headers: {
             'Authorization': `Bearer ${myToken}`
           }
