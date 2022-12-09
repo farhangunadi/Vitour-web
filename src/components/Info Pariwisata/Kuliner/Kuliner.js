@@ -18,7 +18,8 @@ function Kuliner(props) {
     const fetchCulinary = async () => {
       axios
         .get(
-          `https://vitour-backend.herokuapp.com/api/city/culinaries?filter=${city_id}`
+          process.env.REACT_APP_BASE_URL +
+            `/api/city/culinaries?filter=${city_id}`
         )
         .then((res) => {
           console.log("culinaries :", res.data.data);
