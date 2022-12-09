@@ -16,6 +16,15 @@ function OrderDetail(props) {
   
   const myToken = sessionStorage.getItem('token')
   console.log(myToken)
+
+  function isValidJSONString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+  }
   
   useEffect(() => {
 
@@ -25,14 +34,20 @@ function OrderDetail(props) {
     const fetchCart = async () => {
       // setLoading(true);
       await axios
-        .get(process.env.REACT_APP_BASE_URL + `/api/order/detail/`+id, {
+        .get(process.env.REACT_APP_BASE_URL + `/api/order/`+id, {
           headers: {
             'Authorization': `Bearer ${myToken}`
           }
         })
         .then((res) => {
+          if(isValidJSONString(res.data.data[0].response_midtrans)){
+            //cool we are valid, lets parse
+            res.data.data[0].response_midtrans = JSON.parse(res.data.data[0].response_midtrans)
+          }
+          // res.data.data[0].response_midtrans = JSON.parse(res.data.data[0].response_midtrans)
           setOrders(res.data.data)
           console.log(res.data.data)
+          console.log(res.data.data[0].response_midtrans)
           
           // setLoading(false);
         }).catch(err => {

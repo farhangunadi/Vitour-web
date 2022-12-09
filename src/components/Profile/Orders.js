@@ -55,8 +55,8 @@ function Orders(props) {
                   </Col>
                   <Col>
                     <p>: {order.order_id}</p>
-                    <p>: Rp {order.response_midtrans.gross_amount}</p>
-                    <p>: {order.response_midtrans.transaction_status}</p>
+                    <p>: Rp {order.total_price}</p>
+                    <p>: {order.status}</p>
                   </Col>
                 </Row>
                 <div className='d-flex justify-content-end button-detail'>
