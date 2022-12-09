@@ -69,6 +69,8 @@ export const DetailItem = () => {
                 if(err.response.status === 401){
                   alert("You're not Logging, redirecting to login page");
                   navigate("/login");
+                  window.location.reload(true);
+                  
                   // return res.data;
                 }
             })

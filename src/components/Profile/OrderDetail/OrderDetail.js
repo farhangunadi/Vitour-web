@@ -25,7 +25,7 @@ function OrderDetail(props) {
     const fetchCart = async () => {
       // setLoading(true);
       await axios
-        .get(process.env.REACT_APP_BASE_URL + `/api/order/`+id, {
+        .get(process.env.REACT_APP_BASE_URL + `/api/order/detail/`+id, {
           headers: {
             'Authorization': `Bearer ${myToken}`
           }
@@ -50,6 +50,7 @@ function OrderDetail(props) {
       </div>
       
       <Container className="orders">
+        {console.log(orders)}
         {orders.map((order) => {
           return (
             <Card className='order-card'>
@@ -73,7 +74,7 @@ function OrderDetail(props) {
                     <p>: {order.response_midtrans.merchant_id}</p>
                     <p>: {order.response_midtrans.transaction_id}</p>
                     <p>: Rp {order.response_midtrans.gross_amount}</p>
-                    <p>: {order.response_midtrans.payment_type ? order.response_midtrans.payment_type : "bank_transfer"} ({location.state ? location.state.bank : order.response_midtrans.va_numbers[0].bank})
+                    <p>: {order.response_midtrans.payment_type ? order.response_midtrans.payment_type : "bank_transfer"}
                     </p>                    
                     <p>: <b>{order.response_midtrans.va_numbers ? order.response_midtrans.va_numbers[0].va_number : order.response_midtrans.permata_va_number}</b></p> 
                     <p>: {order.response_midtrans.transaction_time}</p>
