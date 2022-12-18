@@ -37,6 +37,7 @@ function Cart(props) {
         if (res.status === 200) {
           alert(res.data.message);
           window.location.reload(true);
+          navigate("/my-cart");
         } else if (res.status === 400) {
           alert(res.data.message);
           // window.location.reload(true);
